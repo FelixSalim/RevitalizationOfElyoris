@@ -1,3 +1,26 @@
-[gd_scene format=3 uid="uid://o8d8w6n2nmsc"]
+[gd_scene load_steps=5 format=3 uid="uid://o8d8w6n2nmsc"]
+
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_34hig"]
+[ext_resource type="Texture2D" uid="uid://8lcffxccasmd" path="res://Player/PlayerPrototype.png" id="1_qebfv"]
+[ext_resource type="PackedScene" uid="uid://ccy2104o4brdk" path="res://Joystick.tscn" id="3_0lcn0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_745oj"]
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_34hig")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3.05, 3.05)
+shape = SubResource("RectangleShape2D_745oj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_qebfv")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Joystick" parent="Control" instance=ExtResource("3_0lcn0")]
