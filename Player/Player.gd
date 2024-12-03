@@ -10,10 +10,12 @@ var stateManager
 # Character Speed
 var speed = 10000
 
-# Initiates State Manager, Set Initial State to Idle
+# Initiates State Manager, Set Initial State to Idle and set animations accordingly
 func _ready():
 	stateManager = StateManager.new()
 	change_moving_state("idle")
+	state.playerAnimation.play("Idle Down")
+	state.hitboxAnimation.play("Interact Down")
 
 # Process User Input
 func get_input(delta):
@@ -61,7 +63,7 @@ func change_moving_state(stateName):
 	state = stateManager.get_state(stateName).new()
 	
 	# Initializes State Attributes
-	state.init(Callable(self, "change_moving_state"), self, $AnimationPlayer)
+	state.init(Callable(self, "change_moving_state"), self, $AnimationPlayer, $InteractBoxCollision)
 	
 	# Name the state
 	state.name = str(stateName)
