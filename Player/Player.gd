@@ -8,7 +8,7 @@ var state
 var stateManager
 
 # Character Speed
-var speed = 10000
+var speed = 300
 
 # Initiates State Manager, Set Initial State to Idle
 func _ready():
@@ -16,7 +16,7 @@ func _ready():
 	change_moving_state("idle")
 
 # Process User Input
-func get_input(delta):
+func get_input():
 	# Reset velocity
 	velocity = Vector2(delta)
 	
@@ -31,11 +31,11 @@ func get_input(delta):
 		move_down()
 	
 	# Update Velocity
-	velocity = velocity.normalized() * speed * delta
+	velocity = velocity.normalized() * speed
 
 # Get Input and Move Player Each Frame
 func _process(delta):
-	get_input(delta)
+	get_input()
 	move_and_slide()
 
 # Movement Handling (Handled in the individual state class like RunState and IdleState)
