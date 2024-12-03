@@ -24,18 +24,22 @@ func move_left():
 	player.velocity.x -= Input.get_action_strength("ui_left")
 	if Input.get_action_strength("ui_left") > Input.get_action_strength("ui_up") and Input.get_action_strength("ui_left") > Input.get_action_strength("ui_down"):
 		playerAnimation.play("Idle Left")
+		hitboxAnimation.play("Interact Left")
 
 func move_right():
 	player.velocity.x += Input.get_action_strength("ui_right")
 	if Input.get_action_strength("ui_right") > Input.get_action_strength("ui_up") and Input.get_action_strength("ui_right") > Input.get_action_strength("ui_down"):
 		playerAnimation.play("Idle Right")
+		hitboxAnimation.play("Interact Right")
 
 func move_up():
 	player.velocity.y -= Input.get_action_strength("ui_up")
 	if Input.get_action_strength("ui_up") > Input.get_action_strength("ui_left") and Input.get_action_strength("ui_up") > Input.get_action_strength("ui_right"):
 		playerAnimation.play("Idle Up")
+		hitboxAnimation.play("Interact Up")
 
 func move_down():
 	player.velocity.y += Input.get_action_strength("ui_down")
 	if Input.get_action_strength("ui_down") > Input.get_action_strength("ui_left") and Input.get_action_strength("ui_down") > Input.get_action_strength("ui_right"):
 		playerAnimation.play("Idle Down")
+		hitboxAnimation.play("Interact Down")
