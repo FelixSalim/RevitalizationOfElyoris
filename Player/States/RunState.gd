@@ -19,15 +19,23 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 
-# Movement Handling, Set velocity to corresponding movement direction
+# Movement Handling, Set velocity to corresponding movement direction, also plays animation accordingly
 func move_left():
 	player.velocity.x -= Input.get_action_strength("ui_left")
+	if Input.get_action_strength("ui_left") > Input.get_action_strength("ui_up") and Input.get_action_strength("ui_left") > Input.get_action_strength("ui_down"):
+		playerAnimation.play("Idle Left")
 
 func move_right():
 	player.velocity.x += Input.get_action_strength("ui_right")
+	if Input.get_action_strength("ui_right") > Input.get_action_strength("ui_up") and Input.get_action_strength("ui_right") > Input.get_action_strength("ui_down"):
+		playerAnimation.play("Idle Right")
 
 func move_up():
 	player.velocity.y -= Input.get_action_strength("ui_up")
+	if Input.get_action_strength("ui_up") > Input.get_action_strength("ui_left") and Input.get_action_strength("ui_up") > Input.get_action_strength("ui_right"):
+		playerAnimation.play("Idle Up")
 
 func move_down():
 	player.velocity.y += Input.get_action_strength("ui_down")
+	if Input.get_action_strength("ui_down") > Input.get_action_strength("ui_left") and Input.get_action_strength("ui_down") > Input.get_action_strength("ui_right"):
+		playerAnimation.play("Idle Down")
