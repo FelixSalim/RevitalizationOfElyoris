@@ -13,7 +13,7 @@ var speed = 300
 # Initiates State Manager, Set Initial State to Idle
 func _ready():
 	stateManager = StateManager.new()
-	change_state("idle")
+	change_moving_state("idle")
 
 # Process User Input
 func get_input():
@@ -51,9 +51,9 @@ func move_up():
 func move_down():
 	state.move_down()
 
-# Handles Player State Changing
-func change_state(stateName):
-	# If there is currently a state, destroy it
+# Handles Player Moving State Changing From Idling to Running
+func change_moving_state(stateName):
+	# If there is currently a state, destroy it (make sure that player state is not idle and run at the same time
 	if state != null:
 		state.queue_free()
 	
@@ -61,7 +61,7 @@ func change_state(stateName):
 	state = stateManager.get_state(stateName).new()
 	
 	# Initializes State Attributes
-	state.init(Callable(self, "change_state"), self)
+	state.init(Callable(self, "change_moving_state"), self, $AnimationPlayer)
 	
 	# Name the state
 	state.name = str(stateName)
