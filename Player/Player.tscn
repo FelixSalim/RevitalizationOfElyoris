@@ -1,12 +1,12 @@
-[gd_scene load_steps=18 format=3 uid="uid://o8d8w6n2nmsc"]
+[gd_scene load_steps=22 format=3 uid="uid://o8d8w6n2nmsc"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_34hig"]
 [ext_resource type="Texture2D" uid="uid://dr1s1qk2280mm" path="res://Assets/PlayerSprites/Player_Character_Spritesheet.png" id="2_c0ogq"]
 [ext_resource type="PackedScene" uid="uid://ccy2104o4brdk" path="res://Joystick.tscn" id="3_0lcn0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rrlrk"]
-radius = 8.19672
-height = 31.8033
+radius = 8.68853
+height = 32.7869
 
 [sub_resource type="Animation" id="Animation_u4q7c"]
 resource_name = "Idle Down"
@@ -83,13 +83,85 @@ tracks/0/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_j5gge"]
+resource_name = "Walk Down"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_c13ii"]
+resource_name = "Walk Left"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_rfvag"]
+resource_name = "Walk Right"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_4i47o"]
+resource_name = "Walk Up"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2ykrm"]
 _data = {
 "Idle Down": SubResource("Animation_u4q7c"),
 "Idle Left": SubResource("Animation_6dtaa"),
 "Idle Right": SubResource("Animation_yuyy2"),
 "Idle Up": SubResource("Animation_u1lt7"),
-"RESET": SubResource("Animation_lnv7a")
+"RESET": SubResource("Animation_lnv7a"),
+"Walk Down": SubResource("Animation_j5gge"),
+"Walk Left": SubResource("Animation_c13ii"),
+"Walk Right": SubResource("Animation_rfvag"),
+"Walk Up": SubResource("Animation_4i47o")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w765m"]
@@ -146,7 +218,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-54, 31)]
+"values": [Vector2(-55, 15)]
 }
 
 [sub_resource type="Animation" id="Animation_n378a"]
@@ -173,7 +245,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(55, 25)]
+"values": [Vector2(55, 13)]
 }
 
 [sub_resource type="Animation" id="Animation_mplib"]
