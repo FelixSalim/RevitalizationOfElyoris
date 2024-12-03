@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://o8d8w6n2nmsc"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_34hig"]
-[ext_resource type="Texture2D" uid="uid://4n78lvgygonq" path="res://Assets/PlayerSprites/Player_Character_Spritesheet_NoAnimation.png" id="2_lsd2v"]
+[ext_resource type="Texture2D" path="res://Assets/PlayerSprites/Player_Character_Spritesheet_NoAnimation.png" id="2_lsd2v"]
 [ext_resource type="PackedScene" uid="uid://ccy2104o4brdk" path="res://Joystick.tscn" id="3_0lcn0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rrlrk"]
