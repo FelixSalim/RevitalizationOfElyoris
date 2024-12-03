@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://o8d8w6n2nmsc"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_34hig"]
-[ext_resource type="Texture2D" uid="uid://dr1s1qk2280mm" path="res://Assets/PlayerSprites/Player_Character_Spritesheet.png" id="2_c0ogq"]
+[ext_resource type="Texture2D" uid="uid://05e5mk0ljtys" path="res://Assets/PlayerSprites/Special_Spritesheet.png" id="2_407ux"]
 [ext_resource type="PackedScene" uid="uid://ccy2104o4brdk" path="res://Joystick.tscn" id="3_0lcn0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rrlrk"]
@@ -20,7 +20,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [16]
 }
 
 [sub_resource type="Animation" id="Animation_6dtaa"]
@@ -97,7 +97,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3]
+"values": [16, 17, 18, 19]
 }
 
 [sub_resource type="Animation" id="Animation_c13ii"]
@@ -324,9 +324,9 @@ libraries = {
 }
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_c0ogq")
+texture = ExtResource("2_407ux")
 hframes = 4
-vframes = 4
+vframes = 5
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

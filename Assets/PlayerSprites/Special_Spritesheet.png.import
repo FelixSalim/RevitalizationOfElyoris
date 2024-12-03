@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2y8gnv6f27vc"
-path="res://.godot/imported/Birthday_Spritesheet.png-1f77f28755dd71c0ebd45829a04e1a23.ctex"
+uid="uid://05e5mk0ljtys"
+path="res://.godot/imported/Special_Spritesheet.png-6384ea3bccbd5337a7e7bfaaff1e5261.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/PlayerSprites/Birthday_Spritesheet.png"
-dest_files=["res://.godot/imported/Birthday_Spritesheet.png-1f77f28755dd71c0ebd45829a04e1a23.ctex"]
+source_file="res://Assets/PlayerSprites/Special_Spritesheet.png"
+dest_files=["res://.godot/imported/Special_Spritesheet.png-6384ea3bccbd5337a7e7bfaaff1e5261.ctex"]
 
 [params]
 
