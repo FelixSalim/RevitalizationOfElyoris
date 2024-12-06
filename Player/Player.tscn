@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_34hig"]
 [ext_resource type="Texture2D" uid="uid://dr1s1qk2280mm" path="res://Assets/PlayerSprites/Player_Character_Spritesheet.png" id="2_c0ogq"]
-[ext_resource type="PackedScene" uid="uid://ccy2104o4brdk" path="res://Joystick.tscn" id="3_0lcn0"]
+[ext_resource type="PackedScene" uid="uid://ccy2104o4brdk" path="res://UI.tscn" id="3_0lcn0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rrlrk"]
 radius = 8.68853
@@ -346,3 +346,7 @@ shape = SubResource("RectangleShape2D_w765m")
 libraries = {
 "": SubResource("AnimationLibrary_qlhs3")
 }
+
+[node name="movementState" type="Node" parent="."]
+
+[node name="interactingState" type="Node" parent="."]

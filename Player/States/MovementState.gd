@@ -2,7 +2,7 @@
 extends Node2D
 
 # State Class
-class_name State
+class_name MovementState
 
 # Stores changeState function
 var changeState
