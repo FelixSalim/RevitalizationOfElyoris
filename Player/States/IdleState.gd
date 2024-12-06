@@ -1,5 +1,5 @@
 # Inherit State Class
-extends State
+extends MovementState
 
 # IdleState Class
 class_name IdleState
