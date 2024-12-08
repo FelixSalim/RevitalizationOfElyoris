@@ -4,6 +4,7 @@ extends MovementState
 # RunState class
 class_name RunState
 
+# Stores last player direction
 var lastDir = "down"
 
 # Get Input, Detects when player stop moving, if so, change state to idle and set animation to idle
