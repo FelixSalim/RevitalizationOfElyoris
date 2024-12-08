@@ -33,13 +33,6 @@ func get_input(delta):
 	if Input.is_action_pressed("ui_down"):
 		move_down()
 	
-	# Calls for interaction
-	# currently prototype, later will change so that this state is enterred via equipping tools
-	if Input.is_action_just_pressed("ui_equip_till_later_will_be_replaced"):
-		change_interacting_state("till")
-	if Input.is_action_just_pressed("ui_unequip"):
-		change_interacting_state("none")
-	
 	# Update Velocity
 	velocity = velocity.normalized() * speed * delta
 
