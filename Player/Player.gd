@@ -8,6 +8,9 @@ var interactingState
 var movementState
 var stateManager
 
+# Stores last player direction
+var lastDir = "down"
+
 # Character Speed
 var speed = 12000
 
