@@ -95,6 +95,9 @@ func change_interacting_state(stateName):
 	# Attach a script to such state
 	interactingState.set_script(stateManager.get_state_script(stateName))
 	
+	# Initializes the state
+	interactingState.init(self, $AnimationPlayer, $InteractBoxCollision)
+	
 	# Save the state to global
 	Game.currentInteractingState = str(stateName)
 	
