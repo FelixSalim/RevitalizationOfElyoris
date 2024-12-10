@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bpgb66jvhsx41"]
+[gd_scene load_steps=4 format=3 uid="uid://bpgb66jvhsx41"]
 
 [ext_resource type="Script" path="res://Environments/TillableLand.gd" id="1_8dn5u"]
+[ext_resource type="Texture2D" uid="uid://bajo7cf5jeqif" path="res://Assets/EnvironmentSprites/Normal Land-Sheet.png" id="2_uhi14"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sb865"]
 size = Vector2(39, 37)
@@ -9,6 +10,7 @@ size = Vector2(39, 37)
 script = ExtResource("1_8dn5u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_uhi14")
 
 [node name="Label" type="Label" parent="."]
 offset_left = -39.0
