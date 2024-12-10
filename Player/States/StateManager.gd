@@ -13,7 +13,6 @@ func _init():
 		"idle" : IdleState,
 		"run" : RunState,
 		"notify" : NotificationState,
-		"till" : TillState
 		"till" : TillState,
 		"water" : WaterState,
 		"seed" : SeedState
