@@ -23,6 +23,10 @@ func _process(delta):
 # Updates the tilestate
 func change_tile_state(tileState):
 	self.tileState = tileState
+	#if(tileState == "Tilled"):
+		#Sprite2D.texture = load("res://Assets/EnvironmentSprites/Dry Land-Sheet.png")
+	#if(tileState == "Watered"):
+		#Sprite2D.texture = load("res://Assets/EnvironmentSprites/Wet Land-Sheet.png")
 
 # Calls the corresponding state machine so that player can interact
 func enter():
