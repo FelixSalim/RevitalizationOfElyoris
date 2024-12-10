@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://o8d8w6n2nmsc" path="res://Player/Player.tscn" id="1_pwkan"]
 [ext_resource type="PackedScene" uid="uid://bpgb66jvhsx41" path="res://Environments/TillableLand.tscn" id="2_yhp2k"]
-[ext_resource type="PackedScene" uid="uid://dlaplc8jav2wg" path="res://Environments/Mailbox.tscn" id="3_5pam0"]
+[ext_resource type="PackedScene" path="res://Environments/Mailbox.tscn" id="3_5pam0"]
 
 [node name="World" type="Node2D"]
 
