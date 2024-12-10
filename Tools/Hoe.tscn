@@ -1,10 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://c8tcu06wwmwme"]
 
 [ext_resource type="Script" path="res://Tools/Hoe.gd" id="1_kr4m1"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_42ppb"]
-size = Vector2(100, 100)
+[ext_resource type="Texture2D" uid="uid://cgwqte5ojukdo" path="res://Assets/EnvironmentSprites/hoe.png" id="1_qr2d3"]
 
 [node name="Hoe" type="Sprite2D"]
-texture = SubResource("PlaceholderTexture2D_42ppb")
+position = Vector2(65, 62)
+texture = ExtResource("1_qr2d3")
 script = ExtResource("1_kr4m1")
