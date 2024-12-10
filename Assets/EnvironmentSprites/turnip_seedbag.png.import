@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5v3hhogy3j72"
-path="res://.godot/imported/Mail Box-Sheet.png-a57b2158892df70a15de3d7d0de023cf.ctex"
+uid="uid://br525c17wyla5"
+path="res://.godot/imported/turnip_seedbag.png-eedbe2cba0c7b0f9aafea808ea75ed57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/EnvironmentSprites/Mail Box-Sheet.png"
-dest_files=["res://.godot/imported/Mail Box-Sheet.png-a57b2158892df70a15de3d7d0de023cf.ctex"]
+source_file="res://Assets/EnvironmentSprites/turnip_seedbag.png"
+dest_files=["res://.godot/imported/turnip_seedbag.png-eedbe2cba0c7b0f9aafea808ea75ed57.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5v3hhogy3j72"
-path="res://.godot/imported/Mail Box-Sheet.png-a57b2158892df70a15de3d7d0de023cf.ctex"
+uid="uid://dvc5boj2lakyn"
+path="res://.godot/imported/watering_can.png-ed7381d6acd81ef060f1e18bf9daa38d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/EnvironmentSprites/Mail Box-Sheet.png"
-dest_files=["res://.godot/imported/Mail Box-Sheet.png-a57b2158892df70a15de3d7d0de023cf.ctex"]
+source_file="res://Assets/EnvironmentSprites/watering_can.png"
+dest_files=["res://.godot/imported/watering_can.png-ed7381d6acd81ef060f1e18bf9daa38d.ctex"]
 
 [params]
 

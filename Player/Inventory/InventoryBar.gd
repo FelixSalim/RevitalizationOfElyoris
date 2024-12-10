@@ -22,6 +22,10 @@ func _process(delta):
 		var tool = get_child(Game.selected + 1).get_child(1)
 		if ItemData.item[tool.itemID]["Name"] == "Hoe": # change to the corresponding state
 			get_parent().get_parent().get_parent().change_interacting_state("till")
+		elif ItemData.item[tool.itemID]["Name"] == "WateringCan":
+			get_parent().get_parent().get_parent().change_interacting_state("water")
+		elif ItemData.item[tool.itemID]["Name"] == "TurnipSeed":
+			get_parent().get_parent().get_parent().change_interacting_state("seed")
 	else: # else change back to the none state
 		get_parent().get_parent().get_parent().change_interacting_state("none")
 
