@@ -16,6 +16,6 @@ func interact(tile, tileState, collision):
 			if player.lastDir == "up":
 				playerAnimation.play("TillUp")
 			
-			await playerAnimation.animation_finished 
+			#await playerAnimation.animation_finished 
 			tile.tileState = "Tilled"
 			
