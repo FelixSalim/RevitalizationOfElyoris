@@ -12,6 +12,7 @@ func _init():
 	states = {
 		"idle" : IdleState,
 		"run" : RunState,
+		"notify" : NotificationState,
 		"till" : TillState
 	}
 	

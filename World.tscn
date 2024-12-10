@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cush35jqh0n05"]
+[gd_scene load_steps=4 format=3 uid="uid://cush35jqh0n05"]
 
 [ext_resource type="PackedScene" uid="uid://o8d8w6n2nmsc" path="res://Player/Player.tscn" id="1_pwkan"]
 [ext_resource type="PackedScene" uid="uid://bpgb66jvhsx41" path="res://Environments/TillableLand.tscn" id="2_yhp2k"]
+[ext_resource type="PackedScene" uid="uid://dlaplc8jav2wg" path="res://Environments/Mailbox.tscn" id="3_5pam0"]
 
 [node name="World" type="Node2D"]
 
@@ -10,3 +11,6 @@ position = Vector2(441, 210)
 
 [node name="Player" parent="." instance=ExtResource("1_pwkan")]
 position = Vector2(143, 87)
+
+[node name="Mailbox" parent="." instance=ExtResource("3_5pam0")]
+position = Vector2(650, 120)
