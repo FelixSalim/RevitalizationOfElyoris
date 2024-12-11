@@ -33,7 +33,6 @@ func _process(delta):
 func change_tile_state(tileState):
 	self.tileState = tileState
 	
-
 # Calls the corresponding state machine so that player can interact
 func enter():
 	if Game.currentInteractingState != "None" and interactingState.get_node(Game.currentInteractingState) != null:

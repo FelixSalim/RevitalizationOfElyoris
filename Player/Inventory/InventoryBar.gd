@@ -3,6 +3,8 @@ extends Node2D
 var defaultStyleBox = StyleBoxFlat.new()
 var selectedStyleBox = StyleBoxFlat.new()
 
+@onready var player = get_parent().get_parent().get_parent()
+
 # When ready, sets stylebox and load player items into screen
 func _ready():
 	defaultStyleBox.set("bg_color", Color(0.6, 0.6, 0.6))
@@ -21,14 +23,14 @@ func _process(delta):
 	if get_child(Game.selected + 1).get_child_count() > 1:
 		var tool = get_child(Game.selected + 1).get_child(1)
 		# change to the corresponding state if the tool is selected
-		if ItemData.item[tool.itemID]["Name"] == "Hoe": 
-			get_parent().get_parent().get_parent().change_interacting_state("till")
-		elif ItemData.item[tool.itemID]["Name"] == "WateringCan":
-			get_parent().get_parent().get_parent().change_interacting_state("water")
-		elif ItemData.item[tool.itemID]["Name"] == "TurnipSeed":
-			get_parent().get_parent().get_parent().change_interacting_state("seed")
+		if ItemData.item[tool.itemID]["Name"] == "Hoe" and Game.currentInteractingState != "till": 
+			player.change_interacting_state("till")
+		elif ItemData.item[tool.itemID]["Name"] == "WateringCan" and Game.currentInteractingState != "water":
+			player.change_interacting_state("water")
+		elif ItemData.item[tool.itemID]["Name"] == "TurnipSeed" and Game.currentInteractingState != "seed":
+			player.change_interacting_state("seed")
 	else: # else change back to the none state
-		get_parent().get_parent().get_parent().change_interacting_state("none")
+		player.change_interacting_state("none")
 
 # Get player input and move to selected slot
 func _input(event):
