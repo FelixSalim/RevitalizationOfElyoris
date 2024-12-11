@@ -3,8 +3,9 @@ extends Area2D
 # Declares class
 class_name TillableLand
 
-# Gets player state onready
+# Gets player state and tile sprite onready
 @onready var interactingState = get_parent().get_node("Player/interactingState")
+@onready var tileSprite = get_node("Sprite2D")
 
 # Stores this current tile state
 var tileState = "Tillable"
@@ -19,14 +20,19 @@ func _process(delta):
 	get_node("Label").text = tileState
 	if collision.size() > 0:
 		enter()
+	
+	# Changed texture depending on tile state
+	if(tileState == "Tilled"):
+		tileSprite.texture = load("res://Assets/EnvironmentSprites/Dry Land-Sheet.png")
+		tileSprite.scale = Vector2(1, 1)
+	if(tileState == "Watered"):
+		tileSprite.texture = load("res://Assets/EnvironmentSprites/Wet Land-Sheet.png")
+		tileSprite.scale = Vector2(6, 6)
 
 # Updates the tilestate
 func change_tile_state(tileState):
 	self.tileState = tileState
-	#if(tileState == "Tilled"):
-		#Sprite2D.texture = load("res://Assets/EnvironmentSprites/Dry Land-Sheet.png")
-	#if(tileState == "Watered"):
-		#Sprite2D.texture = load("res://Assets/EnvironmentSprites/Wet Land-Sheet.png")
+	
 
 # Calls the corresponding state machine so that player can interact
 func enter():

@@ -20,7 +20,8 @@ func _process(delta):
 	# if child is more than 1, it has a tool
 	if get_child(Game.selected + 1).get_child_count() > 1:
 		var tool = get_child(Game.selected + 1).get_child(1)
-		if ItemData.item[tool.itemID]["Name"] == "Hoe": # change to the corresponding state
+		# change to the corresponding state if the tool is selected
+		if ItemData.item[tool.itemID]["Name"] == "Hoe": 
 			get_parent().get_parent().get_parent().change_interacting_state("till")
 		elif ItemData.item[tool.itemID]["Name"] == "WateringCan":
 			get_parent().get_parent().get_parent().change_interacting_state("water")

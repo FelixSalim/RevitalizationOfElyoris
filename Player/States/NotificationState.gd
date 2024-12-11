@@ -4,14 +4,14 @@ extends MovementState
 # IdleState Class
 class_name NotificationState
 
-# Stores current notification popup state
-var inNotif = true
-
+# Load the notification
 var notif = preload("res://UI/Notification.tscn")
 
+# Instantiate the notification
 func _ready():
+	playerAnimation.stop()
+	player.isInteracting = true
 	var notification = notif.instantiate()
-	notification.set_notification("Hi, this is a mailbox")
 	notification.name = "Notification"
 	get_parent().get_parent().get_node("Control/UI").add_child(notification)
 
@@ -19,21 +19,22 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		get_parent().get_parent().get_node("Control/UI/Notification").queue_free()
-		inNotif = false
+		player.isInteracting = false
 
 # Movement Handling, Change State to Run, calls the function stored in changeState (a.k.a change_state)
+# Also makes sure that player is not interacting
 func move_left():
-	if not inNotif:
+	if not player.isInteracting:
 		changeState.call("run")
 
 func move_right():
-	if not inNotif:
+	if not player.isInteracting:
 		changeState.call("run")
 
 func move_up():
-	if not inNotif:
+	if not player.isInteracting:
 		changeState.call("run")
 
 func move_down():
-	if not inNotif:
+	if not player.isInteracting:
 		changeState.call("run")

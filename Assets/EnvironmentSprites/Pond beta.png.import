@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdxlox6btjsth"
-path="res://.godot/imported/Pond beta.png-ad546d0385b9861892c7b397d80640de.ctex"
+path="res://.godot/imported/Pond beta.png-cb18dc6be224cc2dd8bcad02ea7ce36d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Environments/Pond beta.png"
-dest_files=["res://.godot/imported/Pond beta.png-ad546d0385b9861892c7b397d80640de.ctex"]
+source_file="res://Assets/EnvironmentSprites/Pond beta.png"
+dest_files=["res://.godot/imported/Pond beta.png-cb18dc6be224cc2dd8bcad02ea7ce36d.ctex"]
 
 [params]
 
