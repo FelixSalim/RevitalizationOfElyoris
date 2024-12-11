@@ -7,34 +7,41 @@ class_name NotificationState
 # Load the notification
 var notif = preload("res://UI/Notification.tscn")
 
-# Instantiate the notification
+# Instantiate the notification when it is called
 func _ready():
 	playerAnimation.stop()
 	player.isInteracting = true
 	var notification = notif.instantiate()
 	notification.name = "Notification"
-	get_parent().get_parent().get_node("Control/UI").add_child(notification)
+	player.get_node("Control/UI").add_child(notification)
 
-# Read user input, if player pressed confirm, stop notification
+# Read user input, if player pressed confirm, hide notification, if player interact with it again, show the notification
 func _input(event):
-	if event.is_action_pressed("ui_accept"):
-		get_parent().get_parent().get_node("Control/UI/Notification").queue_free()
+	if event.is_action_pressed("ui_accept") and player.isInteracting:
+		player.get_node("Control/UI/Notification").hide()
 		player.isInteracting = false
+	elif event.is_action_pressed("ui_accept") and not player.isInteracting:
+		player.get_node("Control/UI/Notification").show()
+		player.isInteracting = true
 
 # Movement Handling, Change State to Run, calls the function stored in changeState (a.k.a change_state)
-# Also makes sure that player is not interacting
+# Also makes sure that player is not interacting and free notification after change of state
 func move_left():
 	if not player.isInteracting:
 		changeState.call("run")
+		player.get_node("Control/UI/Notification").queue_free()
 
 func move_right():
 	if not player.isInteracting:
 		changeState.call("run")
+		player.get_node("Control/UI/Notification").queue_free()
 
 func move_up():
 	if not player.isInteracting:
 		changeState.call("run")
+		player.get_node("Control/UI/Notification").queue_free()
 
 func move_down():
 	if not player.isInteracting:
 		changeState.call("run")
+		player.get_node("Control/UI/Notification").queue_free()
