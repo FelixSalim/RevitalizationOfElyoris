@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://o8d8w6n2nmsc" path="res://Player/Player.tscn" id="1_pwkan"]
 [ext_resource type="PackedScene" uid="uid://bpgb66jvhsx41" path="res://Environments/TillableLand.tscn" id="2_yhp2k"]
-[ext_resource type="PackedScene" uid="uid://dlaplc8jav2wg" path="res://Environments/Mailbox.tscn" id="3_5pam0"]
+[ext_resource type="PackedScene" path="res://Environments/Mailbox.tscn" id="3_5pam0"]
 [ext_resource type="Texture2D" uid="uid://nd1tw50sbuj6" path="res://Assets/EnvironmentSprites/house.png" id="4_jwdvd"]
 [ext_resource type="Texture2D" uid="uid://dcg4o2px5betb" path="res://Assets/EnvironmentSprites/Bush.png" id="6_u6n1u"]
 [ext_resource type="Texture2D" uid="uid://e2267cnnxt1y" path="res://Assets/EnvironmentSprites/dark tree.png" id="7_ou6pe"]
