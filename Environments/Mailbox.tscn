@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlaplc8jav2wg"]
+
+[ext_resource type="Script" path="res://Environments/Mailbox.gd" id="1_0xn0e"]
+[ext_resource type="Texture2D" uid="uid://5v3hhogy3j72" path="res://Assets/EnvironmentSprites/Mail Box-Sheet.png" id="2_8cso4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sxu7s"]
+radius = 50.0
+height = 120.0
+
+[node name="Mailbox" type="Area2D"]
+script = ExtResource("1_0xn0e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_sxu7s")
+
+[node name="Mailbox" type="Sprite2D" parent="."]
+position = Vector2(4, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_8cso4")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

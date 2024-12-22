@@ -5,14 +5,19 @@ extends MovementState
 class_name IdleState
 
 # Movement Handling, Change State to Run, calls the function stored in changeState (a.k.a change_state)
+# Also makes sure player is not interacting
 func move_left():
-	changeState.call("run")
+	if not player.isInteracting:
+		changeState.call("run")
 
 func move_right():
-	changeState.call("run")
+	if not player.isInteracting:
+		changeState.call("run")
 
 func move_up():
-	changeState.call("run")
+	if not player.isInteracting:
+		changeState.call("run")
 
 func move_down():
-	changeState.call("run")
+	if not player.isInteracting:
+		changeState.call("run")

@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://caaw2if5xgfgw"]
+
+[ext_resource type="Script" path="res://UI/TimeInfo.gd" id="1_pr1jq"]
+[ext_resource type="Texture2D" uid="uid://dw6nm7cnofl7s" path="res://Assets/UI/daynightcycle-ui.png" id="2_kkmre"]
+[ext_resource type="Texture2D" uid="uid://dhj0mhse4my7s" path="res://Assets/UI/arrow.png" id="3_tmciq"]
+
+[node name="TimeInfo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pr1jq")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_kkmre")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 265.0
+offset_bottom = 120.0
+scale = Vector2(0.2, 0.2)
+
+[node name="DayLabel" type="Label" parent="CenterContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Day 1"
+
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 22.0
+offset_right = 335.0
+offset_bottom = 162.0
+scale = Vector2(0.15, 0.15)
+
+[node name="TimeLabel" type="Label" parent="CenterContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "06:00 am"
+
+[node name="Arrow" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 17.0
+offset_right = 69.0
+offset_bottom = 28.0
+pivot_offset = Vector2(2.5, 5.5)
+texture = ExtResource("3_tmciq")
+stretch_mode = 2

@@ -12,11 +12,16 @@ func _init():
 	states = {
 		"idle" : IdleState,
 		"run" : RunState,
-		"till" : TillState
+		"notify" : NotificationState,
+		"till" : TillState,
+		"water" : WaterState,
+		"seed" : SeedState
 	}
 	
 	stateScript = {
-		"till" : load("res://Player/States/TillState.gd")
+		"till" : load("res://Player/States/TillState.gd"),
+		"water" : load("res://Player/States/WaterState.gd"),
+		"seed" : load("res://Player/States/SeedState.gd")
 	}
 
 # Get Requested State

@@ -8,6 +8,12 @@ var interactingState
 var movementState
 var stateManager
 
+# Stores last player direction
+var lastDir = "down"
+
+# Stores if player is currently is interacting
+var isInteracting = false
+
 # Character Speed
 var speed = 12000
 
@@ -92,9 +98,22 @@ func change_interacting_state(stateName):
 	# Attach a script to such state
 	interactingState.set_script(stateManager.get_state_script(stateName))
 	
+	# Initializes the state
+	interactingState.init(self, $AnimationPlayer, $InteractBoxCollision)
+	
 	# Save the state to global
 	Game.currentInteractingState = str(stateName)
 	
 	# Add the state to child (display on screen)
 	get_node("interactingState").add_child(interactingState, true)
 		
+
+# Read when player is not interacting, change the interacting variable
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name not in ["Walk Up", "Walk Down", "Walk Left", "Walk Right", "Idle Up", "Idle Down", "Idle Left", "Idle Right"]:
+		isInteracting = false
+
+# Read when player is interacting, change the interacting variable
+func _on_animation_player_animation_started(anim_name: StringName) -> void:
+	if anim_name not in ["Walk Up", "Walk Down", "Walk Left", "Walk Right", "Idle Up", "Idle Down", "Idle Left", "Idle Right"]:
+		isInteracting = true

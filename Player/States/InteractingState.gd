@@ -4,4 +4,18 @@ extends Node2D
 class_name InteractingState
 
 # Get the interact box of player
-@onready var interactBox = get_parent().get_parent().get_node("InteractBox")
+var interactBox
+
+# Stores player class
+var player
+
+# Stores animations
+var playerAnimation
+var hitboxAnimation
+
+# Initialize Class
+func init(player, playerAnimation, hitboxAnimation):
+	self.player = player
+	self.playerAnimation = playerAnimation
+	self.hitboxAnimation = hitboxAnimation
+	self.interactBox = player.get_node("InteractBox")
