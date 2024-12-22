@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cush35jqh0n05"]
+[gd_scene load_steps=10 format=3 uid="uid://cush35jqh0n05"]
 
 [ext_resource type="PackedScene" uid="uid://o8d8w6n2nmsc" path="res://Player/Player.tscn" id="1_pwkan"]
 [ext_resource type="PackedScene" uid="uid://bpgb66jvhsx41" path="res://Environments/TillableLand.tscn" id="2_yhp2k"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dcg4o2px5betb" path="res://Assets/EnvironmentSprites/Bush.png" id="6_u6n1u"]
 [ext_resource type="Texture2D" uid="uid://e2267cnnxt1y" path="res://Assets/EnvironmentSprites/dark tree.png" id="7_ou6pe"]
 [ext_resource type="Texture2D" uid="uid://da5r0i7llhobv" path="res://Assets/EnvironmentSprites/Stone land.png" id="7_yg0u3"]
+[ext_resource type="Script" path="res://Environments/DayNightCycle.gd" id="8_t8x00"]
+[ext_resource type="Texture2D" uid="uid://bkpc1kjm4t2xn" path="res://Assets/UI/daynightcycle-gradient-texture.tres" id="9_ukaek"]
 
 [node name="World" type="Node2D"]
 
@@ -190,3 +192,7 @@ texture = ExtResource("7_ou6pe")
 [node name="DarkTree2" type="Sprite2D" parent="."]
 position = Vector2(1348, 926)
 texture = ExtResource("7_ou6pe")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+script = ExtResource("8_t8x00")
+gradient = ExtResource("9_ukaek")
