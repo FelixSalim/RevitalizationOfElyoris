@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://ccy2104o4brdk" path="res://UI/UI.tscn" id="3_0lcn0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rrlrk"]
-radius = 8.68853
-height = 32.7869
+radius = 3.60655
+height = 10.1639
 
 [sub_resource type="Animation" id="Animation_u4q7c"]
 resource_name = "Idle Down"
@@ -519,7 +519,7 @@ _data = {
 script = ExtResource("1_34hig")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 7)
+position = Vector2(-5.99998, 71)
 scale = Vector2(6.1, 6.1)
 shape = SubResource("CapsuleShape2D_rrlrk")
 
@@ -531,7 +531,7 @@ libraries = {
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_q60sr")
 hframes = 5
-vframes = 16
+vframes = 24
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

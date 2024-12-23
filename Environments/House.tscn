@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bpwfwhca4dlob"]
+
+[ext_resource type="Texture2D" uid="uid://nd1tw50sbuj6" path="res://Assets/EnvironmentSprites/house.png" id="1_jxqvt"]
+[ext_resource type="Script" path="res://Environments/House.gd" id="1_qbkx1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvpo6"]
+size = Vector2(48.5, 67)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5pxog"]
+size = Vector2(178, 381)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x3t6x"]
+size = Vector2(190, 261)
+
+[node name="House" type="StaticBody2D"]
+script = ExtResource("1_qbkx1")
+
+[node name="House" type="Sprite2D" parent="."]
+texture = ExtResource("1_jxqvt")
+
+[node name="EnterZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnterZone"]
+position = Vector2(-95, 154)
+shape = SubResource("RectangleShape2D_vvpo6")
+
+[node name="Collision1" type="CollisionShape2D" parent="."]
+position = Vector2(-96, -0.5)
+shape = SubResource("RectangleShape2D_5pxog")
+
+[node name="Collision2" type="CollisionShape2D" parent="."]
+position = Vector2(89, -61.5)
+shape = SubResource("RectangleShape2D_x3t6x")
+
+[connection signal="area_entered" from="EnterZone" to="." method="_on_enter_zone_area_entered"]
+[connection signal="area_exited" from="EnterZone" to="." method="_on_enter_zone_area_exited"]

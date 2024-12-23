@@ -25,9 +25,10 @@ func _process(delta: float) -> void:
 	colorTime += delta / 240
 	if(colorTime >= PI):
 		colorTime = 0.0
-		
+	# Calculates value to time
 	var value = (cos(colorTime) + 1)/2
 	
+	# Set color to value
 	self.color = gradient.gradient.sample(value)
 	# Calculate in game time with respect to real time
 	recalculate_time()
