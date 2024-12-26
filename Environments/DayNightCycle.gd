@@ -30,6 +30,7 @@ func _process(delta: float) -> void:
 	
 	# Set color to value
 	self.color = gradient.gradient.sample(value)
+	
 	# Calculate in game time with respect to real time
 	recalculate_time()
 
