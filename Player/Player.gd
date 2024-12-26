@@ -49,7 +49,11 @@ func _process(delta):
 
 # Sleep, move to the next day
 func sleep(forced):
-	var dayNightCycle = get_node("../../CanvasModulate").next_day()
+	if self.movementState.name != "notify":
+		self.change_moving_state("notify")
+		self.movementState.initialize("sleep")
+		get_node("Control/UI/Notification").set_notification("Go to sleep?")
+		
 
 # Movement Handling (Handled in the individual state class like RunState and IdleState)
 func move_left():
