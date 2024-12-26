@@ -5,8 +5,6 @@ extends Control
 @onready var timeLabel = $CenterContainer2/TimeLabel
 @onready var arrow = $Arrow
 
-
-
 func set_daytime(day, hour, minute):
 	# Update text, day is added by 1 because day starts from 0
 	dayLabel.text = "Day" + str(day + 1) 

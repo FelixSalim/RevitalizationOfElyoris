@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://44t0qjq75mml"]
+[gd_scene load_steps=5 format=3 uid="uid://44t0qjq75mml"]
 
 [ext_resource type="PackedScene" uid="uid://o8d8w6n2nmsc" path="res://Player/Player.tscn" id="1_cwaeq"]
 [ext_resource type="Script" path="res://Environments/DayNightCycle.gd" id="1_kl7qs"]
 [ext_resource type="Texture2D" uid="uid://bkpc1kjm4t2xn" path="res://Assets/UI/daynightcycle-gradient-texture.tres" id="2_s3fux"]
+[ext_resource type="PackedScene" uid="uid://c7mm8qy6snsww" path="res://Environments/Bed.tscn" id="4_7d3li"]
 
 [node name="Home" type="Node2D"]
 
@@ -10,8 +11,11 @@
 script = ExtResource("1_kl7qs")
 gradient = ExtResource("2_s3fux")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Bed" parent="." instance=ExtResource("4_7d3li")]
+position = Vector2(834, 479)
+
+[node name="Player" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Player" parent="Node2D" instance=ExtResource("1_cwaeq")]
+[node name="Player" parent="Player" instance=ExtResource("1_cwaeq")]
 position = Vector2(568, 802)

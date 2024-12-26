@@ -33,9 +33,39 @@ func _process(delta: float) -> void:
 	# Calculate in game time with respect to real time
 	recalculate_time()
 
+# Move to beginning of next day
+func next_day():
+	# Current total game minutes
+	var curTime = real_to_ingame_time(time)
+	
+	# Total day that has passed
+	var day = int(curTime / MINUTES_PER_DAY)
+	
+	# Remaining minutes for the day
+	var currentTotalMinutes = curTime % MINUTES_PER_DAY
+
+	var missingTime
+	# If 6 am has passed, move to the next day, else, move to 6 am of current day	
+	if currentTotalMinutes / MINUTES_PER_HOUR >= 6:
+		missingTime = MINUTES_PER_DAY - currentTotalMinutes + 6 * MINUTES_PER_HOUR
+	else:
+		missingTime = 6 * MINUTES_PER_HOUR - currentTotalMinutes
+
+	# Add the missing time equivalent to real time
+	time += ingame_to_real_time(missingTime)
+
+# Convert real time to ingame time
+func real_to_ingame_time(inTime):
+	return int(inTime / INGAME_TO_REAL_MINUTE_DURATION)
+
+# Convert ingame time to real time
+func ingame_to_real_time(inTime):
+	return inTime * INGAME_TO_REAL_MINUTE_DURATION
+
+# Recalibrate time every frame
 func recalculate_time():
 	# Total game minutes
-	var totalMinutes = int(time / INGAME_TO_REAL_MINUTE_DURATION)
+	var totalMinutes = real_to_ingame_time(time)
 	
 	# Total game days
 	var day = int(totalMinutes / MINUTES_PER_DAY)

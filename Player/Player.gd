@@ -47,6 +47,10 @@ func _process(delta):
 	get_input(delta)
 	move_and_slide()
 
+# Sleep, move to the next day
+func sleep(forced):
+	var dayNightCycle = get_node("../../CanvasModulate").next_day()
+
 # Movement Handling (Handled in the individual state class like RunState and IdleState)
 func move_left():
 	movementState.move_left()
