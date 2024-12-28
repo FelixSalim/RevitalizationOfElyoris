@@ -1,7 +1,7 @@
 extends Node2D
 
 # Get player
-@onready var player = get_parent().get_parent().get_parent()
+@onready var player = get_node("../../..")
 
 # When ready, sets stylebox and load player items into screen
 func _ready():
@@ -29,25 +29,26 @@ func _process(delta):
 	else: # else change back to the none state
 		player.change_interacting_state("none")
 
-# Get player input and move to selected slot
+# Get player input and move to selected slot if player is not interacting
 func _input(event):
-	if event.is_action_pressed("ui_1"):
-		Game.selected = 0	
-	if event.is_action_pressed("ui_2"):
-		Game.selected = 1
-	if event.is_action_pressed("ui_3"):
-		Game.selected = 2
-	if event.is_action_pressed("ui_4"):
-		Game.selected = 3
-	if event.is_action_pressed("ui_5"):
-		Game.selected = 4
-	if event.is_action_pressed("ui_6"):
-		Game.selected = 5
-	if event.is_action_pressed("ui_7"):
-		Game.selected = 6
-	if event.is_action_pressed("ui_8"):
-		Game.selected = 7
-	hide_all()
+	if not player.isInteracting:
+		if event.is_action_pressed("ui_1"):
+			Game.selected = 0	
+		if event.is_action_pressed("ui_2"):
+			Game.selected = 1
+		if event.is_action_pressed("ui_3"):
+			Game.selected = 2
+		if event.is_action_pressed("ui_4"):
+			Game.selected = 3
+		if event.is_action_pressed("ui_5"):
+			Game.selected = 4
+		if event.is_action_pressed("ui_6"):
+			Game.selected = 5
+		if event.is_action_pressed("ui_7"):
+			Game.selected = 6
+		if event.is_action_pressed("ui_8"):
+			Game.selected = 7
+		hide_all()
 	
 # Deselect all inventory item
 func hide_all():

@@ -28,28 +28,42 @@ func sleep_handler():
 	# Hides player UI
 	player.get_node("Control/UI").hide()
 	
+	# Move to next day
+	player.get_node("../../CanvasModulate").next_day()
+	
 	# Play fade in animation
 	playerAnimation.play("Fade In")
 	
 	# Wait for 2 seconds
 	await get_tree().create_timer(2).timeout
 	
+	# Move player to the bed
+	player.global_position = Vector2(8468, -1554)
+	
+	# reset player
+	playerAnimation.play("Idle Down")
+	hitboxAnimation.play("Interact Down")
+	player.isInteracting = false
+
+	# Wait for 1 seconds
+	await get_tree().create_timer(1).timeout
+	
 	# Play fade out animation
 	playerAnimation.play("Fade Out")
 	
-	# Move to next day
-	get_node("../../../../CanvasModulate").next_day()
-	
 	# Show player UI again
 	player.get_node("Control/UI").show()
+	
+	# Reset state
+	changeState.call("idle")
 
 # Read user input, if player pressed confirm, hide notification, if player interact with it again, show the notification
 func _input(event):
 	if event.is_action_pressed("ui_accept") and player.isInteracting:
 		player.get_node("Control/UI/Notification").hide()
-		player.isInteracting = false
 		if use == "sleep":
 			sleep_handler()
+		player.isInteracting = false
 	elif event.is_action_pressed("ui_cancel") and player.isInteracting:
 		player.get_node("Control/UI/Notification").hide()
 		player.isInteracting = false

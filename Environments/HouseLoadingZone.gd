@@ -1,10 +1,7 @@
-extends StaticBody2D
-
-# Loads zone to enter the house
-@onready var enterZone = $EnterZone
+extends Area2D
 
 # Stores player
-@onready var player = get_node("../Player/Player")
+@onready var player = get_node("../../Player/Player")
 
 # Stores colliding area
 var collisions = []
@@ -18,12 +15,12 @@ func _process(delta: float) -> void:
 # If player pressed accept then enter the zone
 func enter_zone():
 	if Input.is_action_just_pressed("ui_accept") and player.get_node("InteractBox") in collisions:
-		get_tree().change_scene_to_file("res://Areas/Home.tscn")	
+		player.global_position = Vector2(7936, -1531)
 
 # Adds the area to collision when colliding
-func _on_enter_zone_area_entered(area: Area2D) -> void:
+func _on_area_entered(area: Area2D) -> void:
 	collisions.append(area)
 
 # Removes the area from collision when not colliding
-func _on_enter_zone_area_exited(area: Area2D) -> void:
+func _on_area_exited(area: Area2D) -> void:
 	collisions.erase(area)

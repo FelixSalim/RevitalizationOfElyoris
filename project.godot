@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Game="*res://Global/Game.gd"
 ItemData="*res://Global/ItemData.gd"
+AreaManager="*res://Areas/AreaManager.gd"
 
 [display]
 

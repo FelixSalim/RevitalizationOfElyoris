@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dawdo8p75w76r"]
+[gd_scene load_steps=5 format=3 uid="uid://67xhspqk6c8h"]
 
 [ext_resource type="Script" path="res://Environments/DayNightCycle.gd" id="1_kl7qs"]
 [ext_resource type="Texture2D" uid="uid://bkpc1kjm4t2xn" path="res://Assets/UI/daynightcycle-gradient-texture.tres" id="2_s3fux"]

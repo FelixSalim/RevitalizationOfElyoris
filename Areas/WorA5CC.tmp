@@ -9,15 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://e2267cnnxt1y" path="res://Assets/EnvironmentSprites/dark tree.png" id="7_jurk8"]
 [ext_resource type="Script" path="res://Environments/DayNightCycle.gd" id="8_k12yi"]
 [ext_resource type="Texture2D" uid="uid://bkpc1kjm4t2xn" path="res://Assets/UI/daynightcycle-gradient-texture.tres" id="9_hg7hj"]
-[ext_resource type="PackedScene" uid="uid://c7mm8qy6snsww" path="res://Environments/Bed.tscn" id="10_0bcbb"]
+[ext_resource type="PackedScene" uid="uid://cruej3hywqwja" path="res://Areas/Home.tscn" id="10_oq2d0"]
 
 [node name="World" type="Node2D"]
-
-[node name="Home" type="Node2D" parent="."]
-position = Vector2(8103, -1387)
-
-[node name="Bed" parent="Home" instance=ExtResource("10_0bcbb")]
-position = Vector2(367, -92)
 
 [node name="TillableLands" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -216,3 +210,9 @@ texture = ExtResource("7_jurk8")
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 script = ExtResource("8_k12yi")
 gradient = ExtResource("9_hg7hj")
+
+[node name="Home" parent="." instance=ExtResource("10_oq2d0")]
+position = Vector2(7625, -2021)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(8468, -1554)

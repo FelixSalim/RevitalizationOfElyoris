@@ -42,18 +42,26 @@ func get_input(delta):
 	# Update Velocity
 	velocity = velocity.normalized() * speed * delta
 
-# Get Input and Move Player Each Frame
+# Get Input and Move Player Each Frame, also updates on player if it is interacting
 func _process(delta):
 	get_input(delta)
 	move_and_slide()
+	if Game.isInteracting != self.isInteracting:
+		Game.isInteracting = self.isInteracting
 
 # Sleep, move to the next day
-func sleep(forced):
-	if self.movementState.name != "notify":
+func sleep(forced):		
+	if self.movementState.name != "notify" and not forced:
 		self.change_moving_state("notify")
 		self.movementState.initialize("sleep")
 		get_node("Control/UI/Notification").set_notification("Go to sleep?")
 		
+	# If sleep is forced
+	if forced:
+		self.change_moving_state("notify")
+		self.movementState.initialize("sleep")
+		get_node("Control/UI/Notification").set_notification("You are exhausted, you can't move anymore!")
+
 
 # Movement Handling (Handled in the individual state class like RunState and IdleState)
 func move_left():

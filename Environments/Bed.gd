@@ -1,7 +1,5 @@
 extends Sprite2D
 
-# Stores player
-@onready var player = get_node("../Player/Player")
 
 # Stores any object colliding this tile
 var collisions = []
@@ -13,6 +11,10 @@ func _process(delta: float) -> void:
 		enter_sleep()
 
 func enter_sleep():
+	# Stores player
+	var player = get_node("../../Player/Player")
+	
+	# If player interact then go to sleep
 	if Input.is_action_just_pressed("ui_accept") and player.get_node("InteractBox") in collisions:
 		player.sleep(false)
 
