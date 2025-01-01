@@ -8,6 +8,7 @@ var colorTime = 0.08 * PI
 @export var gradient:GradientTexture1D
 
 # Constants
+const DAY_PER_MONTH = 28
 const MINUTES_PER_DAY = 1440
 const MINUTES_PER_HOUR = 60
 const INGAME_TO_REAL_MINUTE_DURATION = (2 * PI) / MINUTES_PER_DAY
@@ -45,7 +46,7 @@ func next_day():
 	# Current total game minutes
 	var curTime = real_to_ingame_time(time)
 	
-	# Total day that has passed
+	# Total day that has passed (starts from 0)
 	var day = int(curTime / MINUTES_PER_DAY)
 	
 	# Remaining minutes for the day
@@ -54,9 +55,9 @@ func next_day():
 	var missingTime
 	# If 6 am has passed, move to the next day, else, move to 6 am of current day	
 	if currentTotalMinutes / MINUTES_PER_HOUR >= 6:
-		missingTime = MINUTES_PER_DAY - currentTotalMinutes + 6 * MINUTES_PER_HOUR - 3
+		missingTime = MINUTES_PER_DAY - currentTotalMinutes + 6 * MINUTES_PER_HOUR - 6
 	else:
-		missingTime = 6 * MINUTES_PER_HOUR - currentTotalMinutes - 3
+		missingTime = 6 * MINUTES_PER_HOUR - currentTotalMinutes - 6
 	
 	# Add the missing time equivalent to real time
 	time += ingame_to_real_time(missingTime)
@@ -81,6 +82,12 @@ func recalculate_time():
 	# Total game days
 	var day = int(totalMinutes / MINUTES_PER_DAY)
 	
+	# Total month that has passed (starts from 0)
+	var month = int(day / DAY_PER_MONTH)
+	
+	# Current day of the month
+	var curDay = day % DAY_PER_MONTH
+	
 	# Total minutes passed for current day
 	var currentDayMinutes = totalMinutes % MINUTES_PER_DAY
 	
@@ -93,7 +100,7 @@ func recalculate_time():
 	# Emit tick signal if minute change
 	if lastMinute != minute:
 		lastMinute = minute
-		time_tick.emit(day, hour, minute)
+		time_tick.emit(curDay, hour, minute)
 	
 		# if time has reach 2 am, emit force sleep signal
 		if hour == 2:

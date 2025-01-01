@@ -7,7 +7,7 @@ extends Control
 
 func set_daytime(day, hour, minute):
 	# Update text, day is added by 1 because day starts from 0
-	dayLabel.text = "Day" + str(day + 1) 
+	dayLabel.text = "Day " + str(day + 1) 
 	var am_pm = "am"
 	var shownHour = hour
 	

@@ -17,8 +17,14 @@ func initialize(use):
 
 # Instantiate the notification when it is called
 func _ready():
-	playerAnimation.stop()
+	# Stop unwanted animation
+	if playerAnimation.current_animation not in ["Fade Out", "Idle Down", ""]:
+		playerAnimation.stop()
+	
+	# Player is interacting
 	player.isInteracting = true
+	
+	# Instantiate notification
 	var notification = notif.instantiate()
 	notification.name = "Notification"
 	player.get_node("Control/UI").add_child(notification)
@@ -55,6 +61,7 @@ func sleep_handler():
 	player.get_node("Control/UI").show()
 	
 	# Reset state
+	player.get_node("Control/UI/Notification").queue_free()
 	changeState.call("idle")
 
 # Read user input, if player pressed confirm, hide notification, if player interact with it again, show the notification
@@ -75,20 +82,20 @@ func _input(event):
 # Also makes sure that player is not interacting and free notification after change of state
 func move_left():
 	if not player.isInteracting:
-		changeState.call("run")
 		player.get_node("Control/UI/Notification").queue_free()
+		changeState.call("run")
 
 func move_right():
 	if not player.isInteracting:
-		changeState.call("run")
 		player.get_node("Control/UI/Notification").queue_free()
+		changeState.call("run")
 
 func move_up():
 	if not player.isInteracting:
-		changeState.call("run")
 		player.get_node("Control/UI/Notification").queue_free()
+		changeState.call("run")
 
 func move_down():
 	if not player.isInteracting:
-		changeState.call("run")
 		player.get_node("Control/UI/Notification").queue_free()
+		changeState.call("run")
