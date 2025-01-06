@@ -4,7 +4,7 @@ extends Area2D
 class_name TillableLand
 
 # Gets player state and tile sprite onready
-@onready var interactingState = get_parent().get_node("Player/interactingState")
+@onready var interactingState = get_node("../../Player/Player/interactingState")
 @onready var tileSprite = get_node("Sprite2D")
 
 # Stores this current tile state

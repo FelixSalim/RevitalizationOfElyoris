@@ -1,0 +1,218 @@
+[gd_scene load_steps=11 format=3 uid="uid://cush35jqh0n05"]
+
+[ext_resource type="PackedScene" uid="uid://bpgb66jvhsx41" path="res://Environments/TillableLand.tscn" id="1_bqf72"]
+[ext_resource type="PackedScene" uid="uid://bpwfwhca4dlob" path="res://Environments/House.tscn" id="2_0otqb"]
+[ext_resource type="Texture2D" uid="uid://da5r0i7llhobv" path="res://Assets/EnvironmentSprites/Stone land.png" id="3_4pa61"]
+[ext_resource type="Texture2D" uid="uid://dcg4o2px5betb" path="res://Assets/EnvironmentSprites/Bush.png" id="4_f8gih"]
+[ext_resource type="PackedScene" uid="uid://dlaplc8jav2wg" path="res://Environments/Mailbox.tscn" id="5_y1oy8"]
+[ext_resource type="PackedScene" uid="uid://o8d8w6n2nmsc" path="res://Player/Player.tscn" id="6_43okc"]
+[ext_resource type="Texture2D" uid="uid://e2267cnnxt1y" path="res://Assets/EnvironmentSprites/dark tree.png" id="7_jurk8"]
+[ext_resource type="Script" path="res://Environments/DayNightCycle.gd" id="8_k12yi"]
+[ext_resource type="Texture2D" uid="uid://bkpc1kjm4t2xn" path="res://Assets/UI/daynightcycle-gradient-texture.tres" id="9_hg7hj"]
+[ext_resource type="PackedScene" uid="uid://cruej3hywqwja" path="res://Areas/Home.tscn" id="10_oq2d0"]
+
+[node name="World" type="Node2D"]
+
+[node name="TillableLands" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="TillableLand" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(1910, 214)
+
+[node name="TillableLand2" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2006, 214)
+
+[node name="TillableLand3" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(1910, 310)
+
+[node name="TillableLand4" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2006, 310)
+
+[node name="TillableLand5" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(1910, 406)
+
+[node name="TillableLand6" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2006, 406)
+
+[node name="TillableLand7" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(1910, 502)
+
+[node name="TillableLand8" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2006, 502)
+
+[node name="TillableLand9" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2102, 214)
+
+[node name="TillableLand10" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2198, 214)
+
+[node name="TillableLand11" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2102, 310)
+
+[node name="TillableLand12" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2198, 310)
+
+[node name="TillableLand13" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2102, 406)
+
+[node name="TillableLand14" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2198, 406)
+
+[node name="TillableLand15" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2102, 502)
+
+[node name="TillableLand16" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2198, 502)
+
+[node name="House" parent="." instance=ExtResource("2_0otqb")]
+position = Vector2(1300, 230)
+scale = Vector2(2, 2)
+
+[node name="StoneLands" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="StoneLand" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1055, 659)
+texture = ExtResource("3_4pa61")
+flip_h = true
+
+[node name="StoneLand2" type="Sprite2D" parent="StoneLands"]
+position = Vector2(961, 659)
+texture = ExtResource("3_4pa61")
+
+[node name="StoneLand3" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1151, 659)
+texture = ExtResource("3_4pa61")
+
+[node name="StoneLand4" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1245, 659)
+texture = ExtResource("3_4pa61")
+flip_h = true
+
+[node name="StoneLand5" type="Sprite2D" parent="StoneLands"]
+position = Vector2(961, 755)
+texture = ExtResource("3_4pa61")
+flip_v = true
+
+[node name="StoneLand6" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1055, 755)
+texture = ExtResource("3_4pa61")
+flip_h = true
+flip_v = true
+
+[node name="StoneLand7" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1151, 755)
+texture = ExtResource("3_4pa61")
+flip_v = true
+
+[node name="StoneLand8" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1245, 755)
+texture = ExtResource("3_4pa61")
+flip_h = true
+flip_v = true
+
+[node name="StoneLand9" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1244, 947)
+texture = ExtResource("3_4pa61")
+flip_h = true
+flip_v = true
+
+[node name="StoneLand10" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1150, 947)
+texture = ExtResource("3_4pa61")
+flip_v = true
+
+[node name="StoneLand11" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1054, 947)
+texture = ExtResource("3_4pa61")
+flip_h = true
+flip_v = true
+
+[node name="StoneLand12" type="Sprite2D" parent="StoneLands"]
+position = Vector2(960, 947)
+texture = ExtResource("3_4pa61")
+flip_v = true
+
+[node name="StoneLand13" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1244, 851)
+texture = ExtResource("3_4pa61")
+flip_h = true
+
+[node name="StoneLand14" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1150, 851)
+texture = ExtResource("3_4pa61")
+
+[node name="StoneLand15" type="Sprite2D" parent="StoneLands"]
+position = Vector2(960, 851)
+texture = ExtResource("3_4pa61")
+
+[node name="StoneLand16" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1054, 851)
+texture = ExtResource("3_4pa61")
+flip_h = true
+
+[node name="Bushes" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Bush" type="Sprite2D" parent="Bushes"]
+position = Vector2(914.375, 708.022)
+scale = Vector2(0.302572, 0.339833)
+texture = ExtResource("4_f8gih")
+
+[node name="Bush2" type="Sprite2D" parent="Bushes"]
+position = Vector2(1218, 703)
+scale = Vector2(0.305013, 0.305013)
+texture = ExtResource("4_f8gih")
+flip_h = true
+
+[node name="Bush3" type="Sprite2D" parent="Bushes"]
+position = Vector2(942.375, 792.991)
+scale = Vector2(0.302572, 0.339833)
+texture = ExtResource("4_f8gih")
+
+[node name="Bush4" type="Sprite2D" parent="Bushes"]
+position = Vector2(1246, 787.969)
+scale = Vector2(0.305013, 0.305013)
+texture = ExtResource("4_f8gih")
+flip_h = true
+
+[node name="Bush5" type="Sprite2D" parent="Bushes"]
+position = Vector2(942.375, 792.991)
+scale = Vector2(0.302572, 0.339833)
+texture = ExtResource("4_f8gih")
+
+[node name="Bush6" type="Sprite2D" parent="Bushes"]
+position = Vector2(1246, 787.969)
+scale = Vector2(0.305013, 0.305013)
+texture = ExtResource("4_f8gih")
+flip_h = true
+
+[node name="Mailbox" parent="." instance=ExtResource("5_y1oy8")]
+position = Vector2(892, 546)
+scale = Vector2(1.2, 1.2)
+
+[node name="Player" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Player" parent="Player" instance=ExtResource("6_43okc")]
+position = Vector2(1768, 346)
+
+[node name="Camera2D" type="Camera2D" parent="Player/Player"]
+
+[node name="DarkTree" type="Sprite2D" parent="."]
+position = Vector2(628, 942)
+texture = ExtResource("7_jurk8")
+
+[node name="DarkTree2" type="Sprite2D" parent="."]
+position = Vector2(1348, 926)
+texture = ExtResource("7_jurk8")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+script = ExtResource("8_k12yi")
+gradient = ExtResource("9_hg7hj")
+
+[node name="Home" parent="." instance=ExtResource("10_oq2d0")]
+position = Vector2(7625, -2021)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(8468, -1554)

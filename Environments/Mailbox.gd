@@ -12,11 +12,11 @@ func _process(delta: float) -> void:
 
 func enter():
 	# Stores player
-	var player = get_parent().get_node("Player")
+	var player = get_parent().get_node("Player/Player")
 	# If player is colliding and pressed interact, pop notification
 	if player.get_node("InteractBox") in collision and Input.is_action_just_pressed("ui_accept") and player.movementState.name != "notify":
 		player.change_moving_state("notify")
-		get_parent().get_node("Player/Control/UI/Notification").set_notification("Hi, this is a mailbox")
+		player.get_node("Control/UI/Notification").set_notification("Hi, this is a mailbox")
 
 # When a collision occurs, add the collision to the array
 func _on_area_entered(area: Area2D) -> void:
