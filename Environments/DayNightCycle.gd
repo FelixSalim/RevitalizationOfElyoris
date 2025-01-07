@@ -63,8 +63,25 @@ func next_day():
 	time += ingame_to_real_time(missingTime)
 	colorTime = 0.08 * PI
 	
+	# Crops growth handler
+	growth_handler()
+	
 	# Recalculate time again
 	recalculate_time()
+
+func growth_handler():
+	# get land
+	var world = get_parent()
+	var lands = world.get_node("TillableLands")
+	
+	for land in lands.get_children():
+		# if land is watered and has a seed, advance seed progress
+		if land.isWatered and land.tileState == "Planted":
+			land.get_child(2).next_progress()
+			
+		# if land is not watered and not has a seed, turn back to normal land
+		if not land.isWatered and land.tileState == "Tilled":
+			land.tileState = "Tillable"
 
 # Convert real time to ingame time
 func real_to_ingame_time(inTime):

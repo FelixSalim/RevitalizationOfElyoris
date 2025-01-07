@@ -10,6 +10,9 @@ class_name TillableLand
 # Stores this current tile state
 var tileState = "Tillable"
 
+# Stores watered state
+var isWatered = false
+
 # Stores any object colliding this tile
 var collision = []
 
@@ -17,15 +20,14 @@ var collision = []
 # Set the text of this state (prototype, later will change the sprite) to the state it is on
 # Enters the state machine so that player can interact with this tile
 func _process(delta):
-	get_node("Label").text = tileState
 	if collision.size() > 0:
 		enter()
 	
 	# Changed texture depending on tile state
-	if(tileState == "Tilled"):
+	if(tileState == "Tilled" and not isWatered):
 		tileSprite.texture = load("res://Assets/EnvironmentSprites/Dry Land-Sheet.png")
 		tileSprite.scale = Vector2(1, 1)
-	if(tileState == "Watered"):
+	elif(tileState == "Tilled" and isWatered):
 		tileSprite.texture = load("res://Assets/EnvironmentSprites/Wet Land-Sheet.png")
 		tileSprite.scale = Vector2(6, 6)
 
