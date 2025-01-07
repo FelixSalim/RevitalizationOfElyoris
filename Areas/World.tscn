@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://cush35jqh0n05"]
+[gd_scene load_steps=13 format=3 uid="uid://cush35jqh0n05"]
 
 [ext_resource type="PackedScene" uid="uid://bpgb66jvhsx41" path="res://Environments/TillableLand.tscn" id="1_bqf72"]
 [ext_resource type="PackedScene" uid="uid://bpwfwhca4dlob" path="res://Environments/House.tscn" id="2_0otqb"]
+[ext_resource type="Script" path="res://Areas/LeaveZone.gd" id="2_sbbi6"]
 [ext_resource type="Texture2D" uid="uid://da5r0i7llhobv" path="res://Assets/EnvironmentSprites/Stone land.png" id="3_4pa61"]
 [ext_resource type="Texture2D" uid="uid://dcg4o2px5betb" path="res://Assets/EnvironmentSprites/Bush.png" id="4_f8gih"]
 [ext_resource type="PackedScene" uid="uid://dlaplc8jav2wg" path="res://Environments/Mailbox.tscn" id="5_y1oy8"]
@@ -11,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://bkpc1kjm4t2xn" path="res://Assets/UI/daynightcycle-gradient-texture.tres" id="9_hg7hj"]
 [ext_resource type="PackedScene" uid="uid://c7mm8qy6snsww" path="res://Environments/Bed.tscn" id="10_0bcbb"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78o4a"]
+size = Vector2(56, 55)
+
 [node name="World" type="Node2D"]
 
 [node name="Home" type="Node2D" parent="."]
@@ -18,6 +22,13 @@ position = Vector2(8103, -1387)
 
 [node name="Bed" parent="Home" instance=ExtResource("10_0bcbb")]
 position = Vector2(367, -92)
+
+[node name="LeaveZone" type="Area2D" parent="Home"]
+script = ExtResource("2_sbbi6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Home/LeaveZone"]
+position = Vector2(1, 2.5)
+shape = SubResource("RectangleShape2D_78o4a")
 
 [node name="TillableLands" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -201,9 +212,13 @@ scale = Vector2(1.2, 1.2)
 y_sort_enabled = true
 
 [node name="Player" parent="Player" instance=ExtResource("6_43okc")]
-position = Vector2(1768, 346)
+position = Vector2(1701, 290)
 
 [node name="Camera2D" type="Camera2D" parent="Player/Player"]
+limit_left = 0
+limit_top = 0
+limit_right = 2489
+limit_bottom = 1167
 
 [node name="DarkTree" type="Sprite2D" parent="."]
 position = Vector2(628, 942)
@@ -216,3 +231,5 @@ texture = ExtResource("7_jurk8")
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 script = ExtResource("8_k12yi")
 gradient = ExtResource("9_hg7hj")
+
+[connection signal="body_entered" from="Home/LeaveZone" to="Home/LeaveZone" method="_on_body_entered"]
