@@ -20,14 +20,19 @@ var collision = []
 # Set the text of this state (prototype, later will change the sprite) to the state it is on
 # Enters the state machine so that player can interact with this tile
 func _process(delta):
-	if collision.size() > 0:
+	# If it has a plant already, collCheck needs an extra to avoid plant sprite collision
+	var collCheck = 0
+	if tileState == "Planted":
+		collCheck = 1
+	if collision.size() > collCheck:
+		print(collision)
 		enter()
 	
 	# Changed texture depending on tile state
-	if(tileState == "Tilled" and not isWatered):
+	if(tileState != "Tillable" and not isWatered):
 		tileSprite.texture = load("res://Assets/EnvironmentSprites/Dry Land-Sheet.png")
 		tileSprite.scale = Vector2(1, 1)
-	elif(tileState == "Tilled" and isWatered):
+	elif (tileState != "Tillable" and isWatered):
 		tileSprite.texture = load("res://Assets/EnvironmentSprites/Wet Land-Sheet.png")
 		tileSprite.scale = Vector2(6, 6)
 

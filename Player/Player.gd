@@ -15,7 +15,7 @@ var lastDir = "down"
 var isInteracting = false
 
 # Character Speed
-var speed = 12000
+var speed = 18000
 
 # Initiates State Manager, Set Initial State to Idle and set animations accordingly
 func _ready():
