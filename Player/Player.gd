@@ -126,10 +126,10 @@ func change_interacting_state(stateName):
 
 # Read when player is not interacting, change the interacting variable
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	if anim_name not in ["Walk Up", "Walk Down", "Walk Left", "Walk Right", "Idle Up", "Idle Down", "Idle Left", "Idle Right"]:
+	if anim_name not in ["Walk Up", "Walk Down", "Walk Left", "Walk Right", "Idle Up", "Idle Down", "Idle Left", "Idle Right"] and self.movementState.name != "notify":
 		isInteracting = false
 
 # Read when player is interacting, change the interacting variable
 func _on_animation_player_animation_started(anim_name: StringName) -> void:
-	if anim_name not in ["Walk Up", "Walk Down", "Walk Left", "Walk Right", "Idle Up", "Idle Down", "Idle Left", "Idle Right"]:
+	if anim_name not in ["Walk Up", "Walk Down", "Walk Left", "Walk Right", "Idle Up", "Idle Down", "Idle Left", "Idle Right"] and self.movementState.name != "notify":
 		isInteracting = true

@@ -55,9 +55,9 @@ func next_day():
 	var missingTime
 	# If 6 am has passed, move to the next day, else, move to 6 am of current day	
 	if currentTotalMinutes / MINUTES_PER_HOUR >= 6:
-		missingTime = MINUTES_PER_DAY - currentTotalMinutes + 6 * MINUTES_PER_HOUR - 6
+		missingTime = MINUTES_PER_DAY - currentTotalMinutes + 6 * MINUTES_PER_HOUR - 3
 	else:
-		missingTime = 6 * MINUTES_PER_HOUR - currentTotalMinutes - 6
+		missingTime = 6 * MINUTES_PER_HOUR - currentTotalMinutes - 3
 	
 	# Add the missing time equivalent to real time
 	time += ingame_to_real_time(missingTime)
@@ -82,6 +82,10 @@ func growth_handler():
 		# if land is not watered and not has a seed, turn back to normal land
 		if not land.isWatered and land.tileState == "Tilled":
 			land.tileState = "Tillable"
+		
+		# if land is watered, remove the water
+		if land.isWatered:
+			land.isWatered = false
 
 # Convert real time to ingame time
 func real_to_ingame_time(inTime):

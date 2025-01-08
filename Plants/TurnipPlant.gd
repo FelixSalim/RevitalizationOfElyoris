@@ -13,6 +13,7 @@ var progress = 1
 func _process(delta):
 	plant.text = "Stage " + str(stage)
 	
+	# Update stage
 	if progress == 2:
 		stage = 2
 	elif progress == 4:
