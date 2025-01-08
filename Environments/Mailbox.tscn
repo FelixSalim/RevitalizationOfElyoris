@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dlaplc8jav2wg"]
+[gd_scene load_steps=4 format=3 uid="uid://jsbmj31pygvm"]
 
 [ext_resource type="Script" path="res://Environments/Mailbox.gd" id="1_0xn0e"]
 [ext_resource type="Texture2D" uid="uid://5v3hhogy3j72" path="res://Assets/EnvironmentSprites/Mail Box-Sheet.png" id="2_8cso4"]
