@@ -1,16 +1,17 @@
-[gd_scene load_steps=13 format=3 uid="uid://cush35jqh0n05"]
+[gd_scene load_steps=14 format=3 uid="uid://cush35jqh0n05"]
 
 [ext_resource type="PackedScene" uid="uid://bpgb66jvhsx41" path="res://Environments/TillableLand.tscn" id="1_bqf72"]
 [ext_resource type="PackedScene" uid="uid://bpwfwhca4dlob" path="res://Environments/House.tscn" id="2_0otqb"]
 [ext_resource type="Script" path="res://Areas/LeaveZone.gd" id="2_sbbi6"]
 [ext_resource type="Texture2D" uid="uid://da5r0i7llhobv" path="res://Assets/EnvironmentSprites/Stone land.png" id="3_4pa61"]
 [ext_resource type="Texture2D" uid="uid://dcg4o2px5betb" path="res://Assets/EnvironmentSprites/Bush.png" id="4_f8gih"]
-[ext_resource type="PackedScene" uid="uid://dlaplc8jav2wg" path="res://Environments/Mailbox.tscn" id="5_y1oy8"]
+[ext_resource type="PackedScene" path="res://Environments/Mailbox.tscn" id="5_y1oy8"]
 [ext_resource type="PackedScene" uid="uid://o8d8w6n2nmsc" path="res://Player/Player.tscn" id="6_43okc"]
 [ext_resource type="Texture2D" uid="uid://e2267cnnxt1y" path="res://Assets/EnvironmentSprites/dark tree.png" id="7_jurk8"]
 [ext_resource type="Script" path="res://Environments/DayNightCycle.gd" id="8_k12yi"]
 [ext_resource type="Texture2D" uid="uid://bkpc1kjm4t2xn" path="res://Assets/UI/daynightcycle-gradient-texture.tres" id="9_hg7hj"]
 [ext_resource type="PackedScene" uid="uid://c7mm8qy6snsww" path="res://Environments/Bed.tscn" id="10_0bcbb"]
+[ext_resource type="PackedScene" uid="uid://oqe4y5x25kl4" path="res://NPC/Red Panda/RedPanda.tscn" id="12_3k0kd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78o4a"]
 size = Vector2(56, 55)
@@ -207,6 +208,9 @@ flip_h = true
 [node name="Mailbox" parent="." instance=ExtResource("5_y1oy8")]
 position = Vector2(892, 546)
 scale = Vector2(1.2, 1.2)
+
+[node name="RedPanda" parent="." instance=ExtResource("12_3k0kd")]
+position = Vector2(1485, 337)
 
 [node name="Player" type="Node2D" parent="."]
 y_sort_enabled = true

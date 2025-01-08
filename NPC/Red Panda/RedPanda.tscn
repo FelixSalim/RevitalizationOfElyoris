@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://oqe4y5x25kl4"]
+
+[ext_resource type="Script" path="res://NPC/Red Panda/RedPanda.gd" id="1_1tmms"]
+[ext_resource type="Texture2D" uid="uid://oydi74chaa62" path="res://Assets/NPC/RedPanda/redpanda-Sheet.png" id="2_8cyve"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1nwyi"]
+size = Vector2(127.063, 228.938)
+
+[node name="Red Panda" type="CharacterBody2D"]
+script = ExtResource("1_1tmms")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_8cyve")
+
+[node name="Collision1" type="CollisionShape2D" parent="."]
+position = Vector2(2, -3)
+shape = SubResource("RectangleShape2D_1nwyi")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collision1"]
