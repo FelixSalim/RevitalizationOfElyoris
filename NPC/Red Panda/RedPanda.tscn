@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dofn471xoaf6c"]
+
+[ext_resource type="Script" path="res://NPC/Red Panda/RedPanda.gd" id="1_minra"]
+[ext_resource type="Texture2D" uid="uid://oydi74chaa62" path="res://Assets/NPC/RedPanda/redpanda-Sheet.png" id="2_l0h32"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sxu7s"]
+radius = 53.0
+height = 166.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pgrnl"]
+radius = 57.0
+height = 194.0
+
+[node name="RedPanda" type="CharacterBody2D"]
+
+[node name="RedPanda" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_l0h32")
+
+[node name="InteractArea" type="Area2D" parent="."]
+script = ExtResource("1_minra")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+shape = SubResource("CapsuleShape2D_sxu7s")
+
+[node name="Collision1" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("CapsuleShape2D_pgrnl")
+
+[connection signal="area_entered" from="InteractArea" to="InteractArea" method="_on_area_entered"]
+[connection signal="area_exited" from="InteractArea" to="InteractArea" method="_on_area_exited"]
