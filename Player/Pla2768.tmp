@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://o8d8w6n2nmsc"]
+[gd_scene load_steps=40 format=3 uid="uid://o8d8w6n2nmsc"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_34hig"]
 [ext_resource type="Texture2D" uid="uid://cqk5afmqhelv4" path="res://Assets/PlayerSprites/Player_Character_Collection_Spritesheet-Sheet.png" id="2_q60sr"]
@@ -455,150 +455,10 @@ tracks/0/keys = {
 "values": [80, 81, 82, 83]
 }
 
-[sub_resource type="Animation" id="Animation_e43am"]
-resource_name = "HoldLeft"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [88]
-}
-
-[sub_resource type="Animation" id="Animation_dp5ys"]
-resource_name = "HoldUp"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [98]
-}
-
-[sub_resource type="Animation" id="Animation_ogeko"]
-resource_name = "HoldRight"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [93]
-}
-
-[sub_resource type="Animation" id="Animation_18bnc"]
-resource_name = "HoldDown"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [83]
-}
-
-[sub_resource type="Animation" id="Animation_lyynv"]
-resource_name = "HoldWalkDown"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [101, 102, 103, 100]
-}
-
-[sub_resource type="Animation" id="Animation_5rnes"]
-resource_name = "HoldWalkLeft"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [106, 107, 108, 105]
-}
-
-[sub_resource type="Animation" id="Animation_jwtrk"]
-resource_name = "HoldWalkRight"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [111, 112, 113, 110]
-}
-
-[sub_resource type="Animation" id="Animation_jh8ee"]
-resource_name = "HoldWalkUp"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [116, 117, 118, 115]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2ykrm"]
 _data = {
 "Fade In": SubResource("Animation_728xe"),
 "Fade Out": SubResource("Animation_wwo2i"),
-"HoldDown": SubResource("Animation_18bnc"),
-"HoldLeft": SubResource("Animation_e43am"),
-"HoldRight": SubResource("Animation_ogeko"),
-"HoldUp": SubResource("Animation_dp5ys"),
-"HoldWalkDown": SubResource("Animation_lyynv"),
-"HoldWalkLeft": SubResource("Animation_5rnes"),
-"HoldWalkRight": SubResource("Animation_jwtrk"),
-"HoldWalkUp": SubResource("Animation_jh8ee"),
 "Idle Down": SubResource("Animation_u4q7c"),
 "Idle Left": SubResource("Animation_6dtaa"),
 "Idle Right": SubResource("Animation_yuyy2"),
@@ -734,7 +594,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, -33)]
+"values": [Vector2(0, -98)]
 }
 
 [sub_resource type="Animation" id="Animation_hdxph"]

@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 func enter():
 	# Stores player
-	var player = get_parent().get_parent().get_node("Player/Player")
+	var player = get_node("../../../Player/Player")
 	# If player is colliding and pressed interact, pop notification
 	if player.get_node("InteractBox") in collision and Input.is_action_just_pressed("ui_accept") and player.movementState.name != "notify":
 		player.change_moving_state("notify")

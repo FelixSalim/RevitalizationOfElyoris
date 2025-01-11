@@ -39,6 +39,9 @@ func _process(delta):
 		player.change_interacting_state("none")
 		# If player is holding an item (harvest etc)
 		item_check()
+	
+	# Update player sprite accordingly
+	update_holding_sprite()
 
 # Check for tools
 func tool_check():
@@ -59,11 +62,31 @@ func item_check():
 	else:
 		player.isHolding = false
 
+# Update player holding sprite
+func update_holding_sprite():
+	# If player is holding instantiate the node if it is a different node or no node exist
+	if player.isHolding and not player.isInteracting:
+		var item = load(ItemData.harvest[Game.inventory[Game.selected] - 100]["Location"]).instantiate()
+		item.name = "HoldItem"
+		if player.has_node("HoldItem"):
+			if player.get_node("HoldItem").harvestID != item.harvestID:
+				player.get_node("HoldItem").queue_free()
+				player.get_node("Sprite2D").add_sibling(item, true)
+				player.get_node("HoldItem").position = Vector2(0, -65)
+		else:
+			player.get_node("Sprite2D").add_sibling(item, true)
+			player.get_node("HoldItem").position = Vector2(0, -65)
+	else:
+		# If an item is held reset
+		if player.has_node("HoldItem"):
+			player.get_node("HoldItem").queue_free()
+		
+
 # Get player input and move to selected slot if player is not interacting
 func _input(event):
 	if not player.isInteracting:
 		if event.is_action_pressed("ui_1"):
-			Game.selected = 0	
+			Game.selected = 0
 		if event.is_action_pressed("ui_2"):
 			Game.selected = 1
 		if event.is_action_pressed("ui_3"):
