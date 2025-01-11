@@ -7,7 +7,7 @@ extends Area2D
 var stage = 1
 
 # Stores plant progress
-var progress = 5
+var progress = 1
 
 # Stores any collision
 var collision = []
