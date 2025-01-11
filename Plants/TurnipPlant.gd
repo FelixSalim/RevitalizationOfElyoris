@@ -7,7 +7,7 @@ extends Area2D
 var stage = 1
 
 # Stores plant progress
-var progress = 1
+var progress = 5
 
 # Stores any collision
 var collision = []
@@ -34,10 +34,26 @@ func enter():
 		harvest()
 
 func harvest():
+	var player = get_node("../../../Player/Player")
+	
+	# Play harvest animation
+	player.change_moving_state("idle")
+	if player.lastDir == "left":
+		player.get_node("AnimationPlayer").play("PickLeft")
+	elif player.lastDir == "right":
+		player.get_node("AnimationPlayer").play("PickRight")
+	elif player.lastDir == "up":
+		player.get_node("AnimationPlayer").play("PickUp")
+	elif player.lastDir == "down":
+		player.get_node("AnimationPlayer").play("PickDown")
+
+	# Wait a bit
+	await get_tree().create_timer(0.5).timeout
+
 	# Update inventory
 	Game.inventory[Game.selected] = 100
 	Game.inventoryAmount[Game.selected] += 1
-	get_node("../../../Player/Player/Control/UI/InventoryBar").load_inventory()
+	player.get_node("Control/UI/InventoryBar").load_inventory()
 	
 	# Return land back to normal
 	get_parent().tileState = "Tillable"
