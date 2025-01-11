@@ -7,10 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://dcg4o2px5betb" path="res://Assets/EnvironmentSprites/Bush.png" id="4_f8gih"]
 [ext_resource type="PackedScene" uid="uid://jsbmj31pygvm" path="res://Environments/Mailbox.tscn" id="5_y1oy8"]
 [ext_resource type="PackedScene" uid="uid://o8d8w6n2nmsc" path="res://Player/Player.tscn" id="6_43okc"]
-[ext_resource type="Texture2D" uid="uid://e2267cnnxt1y" path="res://Assets/EnvironmentSprites/dark tree.png" id="7_jurk8"]
 [ext_resource type="Script" path="res://Environments/DayNightCycle.gd" id="8_k12yi"]
 [ext_resource type="Texture2D" uid="uid://bkpc1kjm4t2xn" path="res://Assets/UI/daynightcycle-gradient-texture.tres" id="9_hg7hj"]
 [ext_resource type="PackedScene" uid="uid://c7mm8qy6snsww" path="res://Environments/Bed.tscn" id="10_0bcbb"]
+[ext_resource type="PackedScene" uid="uid://du80ujcd0b21c" path="res://Environments/Tree.tscn" id="10_7kolj"]
 [ext_resource type="PackedScene" uid="uid://dofn471xoaf6c" path="res://NPC/Red Panda/RedPanda.tscn" id="12_3k0kd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78o4a"]
@@ -224,13 +224,11 @@ limit_top = 0
 limit_right = 5000
 limit_bottom = 1167
 
-[node name="DarkTree" type="Sprite2D" parent="."]
-position = Vector2(628, 942)
-texture = ExtResource("7_jurk8")
+[node name="Tree2" parent="." instance=ExtResource("10_7kolj")]
+position = Vector2(1271, 1136)
 
-[node name="DarkTree2" type="Sprite2D" parent="."]
-position = Vector2(1348, 926)
-texture = ExtResource("7_jurk8")
+[node name="Tree" parent="." instance=ExtResource("10_7kolj")]
+position = Vector2(674, 1108)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 script = ExtResource("8_k12yi")
