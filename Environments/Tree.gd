@@ -18,7 +18,6 @@ func enter():
 			get_node("../Sprite2D").modulate.a -= 0.1
 			await get_tree().create_timer(0.1).timeout
 	else:
-		print("a")
 		while get_node("../Sprite2D").modulate.a < 1:
 			get_node("../Sprite2D").modulate.a += 0.1
 			await get_tree().create_timer(0.1).timeout
