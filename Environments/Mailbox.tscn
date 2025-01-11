@@ -4,14 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://5v3hhogy3j72" path="res://Assets/EnvironmentSprites/Mail Box-Sheet.png" id="2_8cso4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ar3xx"]
-size = Vector2(101.5, 133)
+size = Vector2(101.5, 81.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7s62n"]
-size = Vector2(101, 131)
+size = Vector2(60.5, 45.5)
 
 [node name="Mailbox" type="StaticBody2D"]
 
-[node name="Mailbox" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(4, 0)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_8cso4")
@@ -20,12 +20,14 @@ texture = ExtResource("2_8cso4")
 script = ExtResource("1_0xn0e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
-position = Vector2(3, 49)
+position = Vector2(9, -21.125)
 shape = SubResource("RectangleShape2D_ar3xx")
 
 [node name="Collision1" type="CollisionShape2D" parent="."]
-position = Vector2(2, 48)
+position = Vector2(9, 44)
 shape = SubResource("RectangleShape2D_7s62n")
 
 [connection signal="area_entered" from="InteractArea" to="InteractArea" method="_on_area_entered"]
 [connection signal="area_exited" from="InteractArea" to="InteractArea" method="_on_area_exited"]
+[connection signal="body_entered" from="InteractArea" to="InteractArea" method="_on_body_entered"]
+[connection signal="body_exited" from="InteractArea" to="InteractArea" method="_on_body_exited"]
