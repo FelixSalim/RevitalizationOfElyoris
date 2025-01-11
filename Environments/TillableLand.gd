@@ -25,7 +25,6 @@ func _process(delta):
 	if tileState == "Planted":
 		collCheck = 1
 	if collision.size() > collCheck:
-		print(collision)
 		enter()
 	
 	# Changed texture depending on tile state

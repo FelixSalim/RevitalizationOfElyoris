@@ -45,11 +45,11 @@ func sleep_handler():
 	
 	# Move player to the bed
 	var playerCam = player.get_node("Camera2D")
-	player.global_position = Vector2(8468, -1554)
-	playerCam.limit_left = 7655
-	playerCam.limit_bottom = -1149
-	playerCam.limit_right = 9003.938
-	playerCam.limit_top = -1885.753
+	player.global_position = Settings.GlobalPositions["Bed"]
+	playerCam.limit_left = Settings.LoadingZones["House"]["Left"]
+	playerCam.limit_bottom = Settings.LoadingZones["House"]["Bottom"]
+	playerCam.limit_right = Settings.LoadingZones["House"]["Right"]
+	playerCam.limit_top = Settings.LoadingZones["House"]["Top"]
 	
 	# reset player
 	playerAnimation.play("Idle Down")

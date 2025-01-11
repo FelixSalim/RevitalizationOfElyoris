@@ -14,15 +14,22 @@ var lastDir = "down"
 # Stores if player is currently is interacting
 var isInteracting = false
 
+# Stores if player is holding something
+var isHolding = false
+
 # Character Speed
 var speed = 18000
 
-# Initiates State Manager, Set Initial State to Idle and set animations accordingly
+# Initiates State Manager, Set Initial State to Idle, Set player camera and set animations accordingly
 func _ready():
 	stateManager = StateManager.new()
 	change_moving_state("idle")
 	movementState.playerAnimation.play("Idle Down")
 	movementState.hitboxAnimation.play("Interact Down")
+	get_node("Camera2D").limit_left = Settings.LoadingZones["World"]["Left"]
+	get_node("Camera2D").limit_bottom = Settings.LoadingZones["World"]["Bottom"]
+	get_node("Camera2D").limit_right = Settings.LoadingZones["World"]["Right"]
+	get_node("Camera2D").limit_top = Settings.LoadingZones["World"]["Top"]
 
 # Process User Input
 func get_input(delta):

@@ -21,9 +21,6 @@ size = Vector2(56, 55)
 [node name="Home" type="Node2D" parent="."]
 position = Vector2(8103, -1387)
 
-[node name="RedPanda" parent="Home" instance=ExtResource("12_3k0kd")]
-position = Vector2(-500, -144)
-
 [node name="Bed" parent="Home" instance=ExtResource("10_0bcbb")]
 position = Vector2(367, -92)
 
@@ -212,6 +209,9 @@ flip_h = true
 position = Vector2(892, 546)
 scale = Vector2(1.2, 1.2)
 
+[node name="RedPanda" parent="." instance=ExtResource("12_3k0kd")]
+position = Vector2(1880, 740)
+
 [node name="Player" type="Node2D" parent="."]
 y_sort_enabled = true
 
@@ -221,7 +221,7 @@ position = Vector2(1701, 290)
 [node name="Camera2D" type="Camera2D" parent="Player/Player"]
 limit_left = 0
 limit_top = 0
-limit_right = 5000
+limit_right = 2489
 limit_bottom = 1167
 
 [node name="DarkTree" type="Sprite2D" parent="."]

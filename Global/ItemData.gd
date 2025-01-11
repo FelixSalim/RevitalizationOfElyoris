@@ -16,3 +16,12 @@ const item = [
 		"Location" : "res://Player/Inventory/Tools/TurnipSeed.tscn"
 	}
 ]
+
+# Stores harvest crops data
+# Id starts from 100
+const harvest = [
+	{
+		"Name" : "Turnip",
+		"Location" : "res://Player/Inventory/Harvest/Turnip.tscn"
+	}
+]

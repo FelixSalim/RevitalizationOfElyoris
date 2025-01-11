@@ -16,11 +16,11 @@ func _process(delta: float) -> void:
 # If player pressed accept then enter the zone
 func enter_zone():
 	if Input.is_action_just_pressed("ui_accept") and player.get_node("InteractBox") in collisions:
-		player.global_position = Vector2(7936, -1531)
-		playerCam.limit_left = 7655
-		playerCam.limit_bottom = -1149
-		playerCam.limit_right = 9003.938
-		playerCam.limit_top = -1885.753
+		player.global_position = Settings.GlobalPositions["House"]
+		playerCam.limit_left = Settings.LoadingZones["House"]["Left"]
+		playerCam.limit_bottom = Settings.LoadingZones["House"]["Bottom"]
+		playerCam.limit_right = Settings.LoadingZones["House"]["Right"]
+		playerCam.limit_top = Settings.LoadingZones["House"]["Top"]
 
 # Adds the area to collision when colliding
 func _on_area_entered(area: Area2D) -> void:
