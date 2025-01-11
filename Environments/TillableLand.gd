@@ -35,6 +35,8 @@ func _process(delta):
 	elif (tileState != "Tillable" and isWatered):
 		tileSprite.texture = load("res://Assets/EnvironmentSprites/Wet Land-Sheet.png")
 		tileSprite.scale = Vector2(6, 6)
+	elif tileState == "Tillable":
+		tileSprite.texture = load("res://Assets/EnvironmentSprites/Normal Land-Sheet.png")
 
 # Updates the tilestate
 func change_tile_state(tileState):

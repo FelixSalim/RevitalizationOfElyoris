@@ -5,14 +5,14 @@ extends Node
 const item = [
 	{
 		"Name" : "Hoe",
-		"Location" : "res://Tools/Hoe.tscn"
+		"Location" : "res://Player/Inventory/Tools/Hoe.tscn"
 	},
 	{
 		"Name" : "WateringCan",
-		"Location" : "res://Tools/WateringCan.tscn"
+		"Location" : "res://Player/Inventory/Tools/WateringCan.tscn"
 	},
 	{
 		"Name" : "TurnipSeed",
-		"Location" : "res://Tools/TurnipSeed.tscn"
+		"Location" : "res://Player/Inventory/Tools/TurnipSeed.tscn"
 	}
 ]

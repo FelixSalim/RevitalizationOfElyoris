@@ -1,8 +1,8 @@
 [gd_scene load_steps=3 format=3 uid="uid://clowhjxulgw7"]
 
 [ext_resource type="Texture2D" uid="uid://br525c17wyla5" path="res://Assets/EnvironmentSprites/turnip_seedbag.png" id="1_d1hsj"]
-[ext_resource type="Script" path="res://Tools/TurnipSeed.gd" id="2_haxpv"]
+[ext_resource type="Script" path="res://Player/Inventory/Tools/TurnipSeed.gd" id="2_0tvre"]
 
 [node name="TurnipSeed" type="Sprite2D"]
 texture = ExtResource("1_d1hsj")
-script = ExtResource("2_haxpv")
+script = ExtResource("2_0tvre")

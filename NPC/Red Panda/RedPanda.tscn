@@ -8,8 +8,8 @@ radius = 53.0
 height = 166.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pgrnl"]
-radius = 57.0
-height = 194.0
+radius = 28.0
+height = 118.0
 
 [node name="RedPanda" type="CharacterBody2D"]
 
@@ -24,7 +24,7 @@ script = ExtResource("1_minra")
 shape = SubResource("CapsuleShape2D_sxu7s")
 
 [node name="Collision1" type="CollisionShape2D" parent="."]
-position = Vector2(0, -2)
+position = Vector2(1, 2)
 shape = SubResource("CapsuleShape2D_pgrnl")
 
 [connection signal="area_entered" from="InteractArea" to="InteractArea" method="_on_area_entered"]
