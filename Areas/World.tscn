@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://Environments/DayNightCycle.gd" id="8_k12yi"]
 [ext_resource type="Texture2D" uid="uid://bkpc1kjm4t2xn" path="res://Assets/UI/daynightcycle-gradient-texture.tres" id="9_hg7hj"]
 [ext_resource type="PackedScene" uid="uid://c7mm8qy6snsww" path="res://Environments/Bed.tscn" id="10_0bcbb"]
-[ext_resource type="PackedScene" path="res://Environments/Tree.tscn" id="10_7kolj"]
+[ext_resource type="PackedScene" uid="uid://du80ujcd0b21c" path="res://Environments/Tree.tscn" id="10_7kolj"]
 [ext_resource type="PackedScene" uid="uid://dofn471xoaf6c" path="res://NPC/Red Panda/RedPanda.tscn" id="12_3k0kd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78o4a"]

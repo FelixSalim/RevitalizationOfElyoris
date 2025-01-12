@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dkdu8uvx0uyg2"]
+
+[ext_resource type="StyleBox" uid="uid://d3iafy0ikn4ek" path="res://UI/NotificationTexture.tres" id="1_34ufk"]
+
+[resource]
+Panel/styles/panel = ExtResource("1_34ufk")

@@ -7,7 +7,6 @@ var collision = []
 func change_opacity(player, collision):
 	if player in collision:
 		while get_node("../Sprite2D").modulate.a > 0.3:
-			print("a");
 			get_node("../Sprite2D").modulate.a -= 0.1
 			await get_tree().create_timer(0.1).timeout
 	else:

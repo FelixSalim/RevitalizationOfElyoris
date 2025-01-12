@@ -16,6 +16,8 @@ func initialize(use):
 	self.use = use
 
 # Instantiate the notification when it is called
+
+
 func _ready():
 	# Stop unwanted animation
 	if playerAnimation.current_animation not in ["Fade Out", "Idle Down", ""]:
@@ -26,7 +28,9 @@ func _ready():
 	
 	# Instantiate notification
 	var notification = notif.instantiate()
+	print(notification)
 	notification.name = "Notification"
+	notification.visible = false
 	player.get_node("Control/UI").add_child(notification)
 
 # Handles sleep notification
