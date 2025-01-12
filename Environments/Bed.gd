@@ -15,7 +15,7 @@ func enter_sleep():
 	var player = get_node("../../Player/Player")
 	
 	# If player interact then go to sleep
-	if Input.is_action_just_pressed("ui_accept") and player.get_node("InteractBox") in collisions:
+	if Input.is_action_just_pressed("ui_accept") and player.get_node("InteractBox") in collisions and not player.isInteracting:
 		player.sleep(false)
 
 # Adds the area to collision when colliding
