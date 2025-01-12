@@ -14,7 +14,7 @@ func enter():
 	# If player is colliding and pressed interact, pop notification
 	if player.get_node("InteractBox") in collision and Input.is_action_just_pressed("ui_accept") and player.movementState.name != "notify":
 		player.change_moving_state("notify")
-		player.get_node("Control/UI/Notification").set_notification("No mail for todayawait get_tree().create_timer(time_in_seconds).timeoutawait get_tree().create_timer(time_in_seconds).timeoutawait get_tree().create_timer(time_in_seconds).timeoutawait get_tree().create_timer(time_in_seconds).timeoutawait get_tree().create_timer(time_in_seconds).timeoutawait get_tree().create_timer(time_in_seconds).timeout")
+		player.get_node("Control/UI/Notification").set_notification("No mail for today")
 
 	
 # When a collision occurs, add the collision to the array
