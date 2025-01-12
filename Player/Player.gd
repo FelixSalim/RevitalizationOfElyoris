@@ -52,6 +52,7 @@ func get_input(delta):
 
 # Get Input and Move Player Each Frame, also updates on player if it is interacting
 func _process(delta):
+	print(self.isInteracting)
 	get_input(delta)
 	move_and_slide()
 	if Game.isInteracting != self.isInteracting:
@@ -85,7 +86,7 @@ func check_idling_animation():
 
 # Sleep, move to the next day
 func sleep(forced):		
-	if self.movementState.name != "notify" and not forced:
+	if self.movementState.name != "notify" and not forced and not self.isInteracting:
 		self.change_moving_state("notify")
 		self.movementState.initialize("sleep")
 		get_node("Control/UI/Notification").set_notification("Go to sleep?")

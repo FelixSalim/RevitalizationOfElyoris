@@ -33,6 +33,9 @@ func _ready():
 
 # Handles sleep notification
 func sleep_handler():
+	# Set use to postSleep
+	use = "postSleep"
+	
 	# Hides player UI
 	player.get_node("Control/UI").hide()
 	
@@ -78,8 +81,9 @@ func sleep_handler():
 
 # Read user input, if player pressed confirm, hide notification, if player interact with it again, show the notification
 func _input(event):
-	if event.is_action_pressed("ui_accept") and player.isInteracting:
+	if event.is_action_pressed("ui_accept") and player.isInteracting and use != "postSleep":
 		player.get_node("Control/UI/Notification").hide()
+		# If player is interacting with a bed
 		if use == "sleep":
 			sleep_handler()
 		else:
