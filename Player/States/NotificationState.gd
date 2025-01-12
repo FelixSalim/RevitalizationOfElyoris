@@ -45,7 +45,7 @@ func sleep_handler():
 	# Play fade in animation
 	playerAnimation.play("Fade In")
 	
-	# Wait for 2 seconds
+	# Wait for 1 seconds
 	await get_tree().create_timer(1).timeout
 	
 	# Move player to the bed

@@ -55,9 +55,9 @@ func next_day():
 	var missingTime
 	# If 6 am has passed, move to the next day, else, move to 6 am of current day	
 	if currentTotalMinutes / MINUTES_PER_HOUR >= 6:
-		missingTime = MINUTES_PER_DAY - currentTotalMinutes + 6 * MINUTES_PER_HOUR - 3
+		missingTime = MINUTES_PER_DAY - currentTotalMinutes + 6 * MINUTES_PER_HOUR
 	else:
-		missingTime = 6 * MINUTES_PER_HOUR - currentTotalMinutes - 3
+		missingTime = 6 * MINUTES_PER_HOUR - currentTotalMinutes
 	
 	# Add the missing time equivalent to real time
 	time += ingame_to_real_time(missingTime)
