@@ -28,9 +28,7 @@ func _ready():
 	
 	# Instantiate notification
 	var notification = notif.instantiate()
-	print(notification)
 	notification.name = "Notification"
-	notification.visible = false
 	player.get_node("Control/UI").add_child(notification)
 
 # Handles sleep notification
