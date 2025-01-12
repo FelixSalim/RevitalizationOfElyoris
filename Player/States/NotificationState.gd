@@ -66,7 +66,7 @@ func sleep_handler():
 	# Play fade out animation
 	playerAnimation.play("Fade Out")
 	
-	# Wait for 1 seconds
+	# Wait for 0.6 seconds
 	await get_tree().create_timer(0.6).timeout
 	
 	# Show player UI again
@@ -74,9 +74,12 @@ func sleep_handler():
 	
 	# Reset state
 	player.get_node("Control/UI/Notification").queue_free()
-	changeState.call("idle")
+	
+	# Wait for 0.2 seconds
+	await get_tree().create_timer(0.2).timeout
 	
 	# Player no longer in a cutscene
+	changeState.call("idle")
 	player.isInteracting = false
 
 # Read user input, if player pressed confirm, hide notification, if player interact with it again, show the notification
@@ -92,8 +95,9 @@ func _input(event):
 		player.get_node("Control/UI/Notification").hide()
 		player.isInteracting = false
 	elif event.is_action_pressed("ui_accept") and not player.isInteracting:
-		player.get_node("Control/UI/Notification").show()
-		player.isInteracting = true
+		if player.has_node("Control/UI/Notification"):
+			player.get_node("Control/UI/Notification").show()
+			player.isInteracting = true
 
 # Movement Handling, Change State to Run, calls the function stored in changeState (a.k.a change_state)
 # Also makes sure that player is not interacting and free notification after change of state

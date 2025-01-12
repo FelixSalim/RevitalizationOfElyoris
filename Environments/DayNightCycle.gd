@@ -39,7 +39,7 @@ func _process(delta: float) -> void:
 		self.color = gradient.gradient.sample(value)
 		
 		# Calculate in game time with respect to real time
-		recalculate_time()
+		recalculate_time(false)
 
 # Move to beginning of next day
 func next_day():
@@ -67,7 +67,7 @@ func next_day():
 	growth_handler()
 	
 	# Recalculate time again
-	recalculate_time()
+	recalculate_time(true)
 
 func growth_handler():
 	# get land
@@ -96,7 +96,7 @@ func ingame_to_real_time(inTime):
 	return inTime * INGAME_TO_REAL_MINUTE_DURATION
 
 # Recalibrate time every frame
-func recalculate_time():
+func recalculate_time(forced):
 	# Total game minutes
 	var totalMinutes = real_to_ingame_time(time)
 	
@@ -119,7 +119,7 @@ func recalculate_time():
 	var minute = int(currentDayMinutes % MINUTES_PER_HOUR)
 	
 	# Emit tick signal if minute change
-	if lastMinute != minute:
+	if lastMinute != minute or forced:
 		lastMinute = minute
 		time_tick.emit(curDay, hour, minute)
 	
