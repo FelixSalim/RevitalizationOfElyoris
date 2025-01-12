@@ -19,7 +19,7 @@ var isHolding = false
 var lastIsHolding = false
 
 # Character Speed
-var speed = 18000
+var speed = 24000
 
 # Initiates State Manager, Set Initial State to Idle, Set player camera and set animations accordingly
 func _ready():
