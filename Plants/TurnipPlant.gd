@@ -30,11 +30,11 @@ func _process(delta):
 
 func enter():
 	# Harvest prompted
-	if Input.is_action_just_pressed("ui_accept") and get_node("../../../Player/Player/InteractBox") in collision and stage == 4 and (Game.inventory[Game.selected] == -1 or Game.inventory[Game.selected] == 100):
+	if Input.is_action_just_pressed("ui_accept") and get_node("../../../Environments/Player/Player/InteractBox") in collision and stage == 4 and (Game.inventory[Game.selected] == -1 or Game.inventory[Game.selected] == 100):
 		harvest()
 
 func harvest():
-	var player = get_node("../../../Player/Player")
+	var player = get_node("../../../Environments/Player/Player")
 	
 	# Play harvest animation
 	player.change_moving_state("idle")

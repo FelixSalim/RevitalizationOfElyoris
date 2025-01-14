@@ -22,6 +22,10 @@ signal force_sleep(forced)
 # Stores last minute
 var lastMinute = 0
 
+# load saved time
+func _ready():
+	self.time = Game.gameTime
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 # Every frame add time and adjust color to time cycle
 # Only do so if player is not interacting
@@ -68,6 +72,9 @@ func next_day():
 	
 	# Recalculate time again
 	recalculate_time(true)
+	
+	# Save game
+	Utils.save_game()
 
 func growth_handler():
 	# get land
@@ -78,7 +85,7 @@ func growth_handler():
 		# if land is watered and has a seed, advance seed progress
 		if land.isWatered and land.tileState == "Planted":
 			land.get_child(2).next_progress()
-			
+		
 		# if land is not watered and not has a seed, turn back to normal land
 		if not land.isWatered and land.tileState == "Tilled":
 			land.tileState = "Tillable"
@@ -86,6 +93,25 @@ func growth_handler():
 		# if land is watered, remove the water
 		if land.isWatered:
 			land.isWatered = false
+			
+		# Keep track of plot data
+		var data
+		if land.tileState == "Planted":
+			data = {
+				"tileState" : land.tileState,
+				"isWatered" : land.isWatered,
+				"plant" : land.get_child(2).name,
+				"plantProgress" : land.get_child(2).progress
+			}
+		else:
+			data = {
+				"tileState" : land.tileState,
+				"isWatered" : land.isWatered,
+				"plant" : null,
+				"plantProgress" : 0
+			}
+		
+		Game.plot[str(land.id - 1)] = data
 
 # Convert real time to ingame time
 func real_to_ingame_time(inTime):
@@ -122,6 +148,7 @@ func recalculate_time(forced):
 	if lastMinute != minute or forced:
 		lastMinute = minute
 		time_tick.emit(curDay, hour, minute)
+		Game.gameTime = time
 	
 		# if time has reach 2 am, emit force sleep signal
 		if hour == 2:

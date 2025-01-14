@@ -40,7 +40,7 @@ func sleep_handler():
 	player.get_node("Control/UI").hide()
 	
 	# Move to next day
-	player.get_node("../../CanvasModulate").next_day()
+	player.get_node("../../../CanvasModulate").next_day()
 	
 	# Play fade in animation
 	playerAnimation.play("Fade In")

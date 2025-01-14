@@ -1,7 +1,7 @@
 extends Area2D
 
 # Get players
-@onready var player = get_node("../../Player/Player")
+@onready var player = get_node("../../Environments/Player/Player")
 @onready var playerCam = player.get_node("Camera2D")
 
 # When player enter move back to overworld

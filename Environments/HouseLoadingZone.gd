@@ -1,7 +1,7 @@
 extends Area2D
 
 # Stores player
-@onready var player = get_node("../../Player/Player")
+@onready var player = get_node("../../Environments/Player/Player")
 @onready var playerCam = player.get_node("Camera2D")
 
 # Stores colliding area

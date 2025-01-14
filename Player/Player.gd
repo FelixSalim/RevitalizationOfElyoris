@@ -52,7 +52,6 @@ func get_input(delta):
 
 # Get Input and Move Player Each Frame, also updates on player if it is interacting
 func _process(delta):
-	print(self.isInteracting)
 	get_input(delta)
 	move_and_slide()
 	if Game.isInteracting != self.isInteracting:
