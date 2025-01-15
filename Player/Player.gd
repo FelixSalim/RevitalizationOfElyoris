@@ -18,6 +18,11 @@ var isInteracting = false
 var isHolding = false
 var lastIsHolding = false
 
+#Stores if there is still dialogue from the npc
+var isChatting = true
+var isChoosing = false
+var chattingWith
+
 # Character Speed
 var speed = 24000
 
