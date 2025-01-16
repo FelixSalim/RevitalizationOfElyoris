@@ -1,0 +1,80 @@
+[gd_scene load_steps=3 format=3 uid="uid://ditf512boa1ms"]
+
+[ext_resource type="Script" path="res://UI/Choices.gd" id="1_sjtgb"]
+[ext_resource type="Theme" uid="uid://dkdu8uvx0uyg2" path="res://UI/Notification.tres" id="2_4l5df"]
+
+[node name="Choices" type="CanvasLayer"]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+script = ExtResource("1_sjtgb")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = -1
+anchor_left = 0.017
+anchor_top = 0.061926
+anchor_right = 0.148917
+anchor_bottom = 0.335
+offset_left = 695.7
+offset_top = 198.62
+offset_right = 584.1
+offset_bottom = 14.7
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_4l5df")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.176
+anchor_top = 0.45
+anchor_right = 0.88
+anchor_bottom = 0.883
+offset_left = -0.0800018
+offset_top = 0.0499992
+offset_right = 433.6
+offset_bottom = 143.987
+scale = Vector2(0.25, 0.25)
+theme_override_font_sizes/font_size = 100
+text = "Test"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel2" type="Panel" parent="."]
+anchors_preset = -1
+anchor_left = 0.017
+anchor_top = 0.061926
+anchor_right = 0.148917
+anchor_bottom = 0.335
+offset_left = 937.2
+offset_top = 198.12
+offset_right = 825.6
+offset_bottom = 14.2
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_4l5df")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.176
+anchor_top = 0.45
+anchor_right = 0.88
+anchor_bottom = 0.883
+offset_left = -0.0800018
+offset_top = 0.0499992
+offset_right = 433.6
+offset_bottom = 143.987
+scale = Vector2(0.25, 0.25)
+theme_override_font_sizes/font_size = 100
+text = "Test"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[connection signal="gui_input" from="Panel" to="." method="_on_panel_gui_inputA"]
+[connection signal="gui_input" from="Panel2" to="." method="_on_panel_2_gui_inputB"]

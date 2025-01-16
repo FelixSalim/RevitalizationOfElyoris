@@ -53,12 +53,12 @@ func _input(event):
 			player.chattingWith.page = 0
 			player.chattingWith.currentChoices = 0
 			player.get_node("Control/UI/Dialogue").queue_free()
+			player.get_node("Contro/UI/Choices").queue_free()
 			player.isInteracting = false
 			player.chattingWith = null
 			
 		elif event.is_action_pressed("ui_accept") and not player.isInteracting:
-			player.change_moving_state("idle")
-			
+			player.change_moving_state("idle")	
 
 # Movement Handling, Change State to Run, calls the function stored in changeState (a.k.a change_state)
 # Also makes sure that player is not interacting and free notification after change of state

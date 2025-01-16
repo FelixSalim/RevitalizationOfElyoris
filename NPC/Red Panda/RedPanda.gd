@@ -3,18 +3,24 @@ extends Area2D
 # Stores colliding objects
 var collision = []
 
-var dialogue = ['Are you the grandchild of the owner?', 'There\'s so many things that we\'ll need to do to restore Elyoris.' , 'I\'ll be waiting for your next progress, good luck!']
+var dialogue = ['Are you the grandchild of the owner?', 'Hi Player, what are you up to?']
 var default_page = 0
 var page = 0
-
-var choiceIdx = [0]
+var choiceIdx = [0, 1]
 var choices = [
-	['Yes', 'No']
-	
+	['Yes', 'No'],
+	['What do I need to do?', 'Goodbye']	
 ]
-
 var choicesAns = [
-	['I am so happy that you have come back, my name is Lign, I am the guardian of this land.', 'You must have forgotten, well anyway, my name is Lign, I am the guardian of this land.']
+	[
+		['I am so happy that you have come back, my name is Lign, I am the guardian of this land.', 'There\'s so many things that we\'ll need to do to restore Elyoris.', 'I\'ll be waiting for your next progress, good luck!'], 
+		['You must have forgotten, well anyway, my name is Lign, I am the guardian of this land.', 'There\'s so many things that we\'ll need to do to restore Elyoris.', 'I\'ll be waiting for your next progress, good luck!']
+	],
+	
+	[
+		['There\'s so many things that we\'ll need to do to restore Elyoris.', 'I\'ll be waiting for your next progress, good luck!'], 
+		['Goodbye'],
+	],
 ]
 
 var currentChoices = 0
@@ -38,22 +44,26 @@ func enter():
 			
 func next_dialogue():
 	var player = get_node("../../../Environments/Player/Player")
-	if(page != dialogue.size()):
+	if(page < dialogue.size()):
 		player.get_node("Control/UI/Dialogue").set_dialogue(dialogue[page])
 		if(page in choiceIdx):
-			default_page = page+1
 			player.isChoosing = true
 			choice(choices[currentChoices], choicesAns[currentChoices])
-			currentChoices += 1
+			if(currentChoices == 0):
+				currentChoices = 1
+				default_page = 1
+				page = dialogue.size()
 			
 		page += 1
 		
-		if(page == dialogue.size()):
-			player.isChoosing = false
+		if(page >= dialogue.size() and not player.isChoosing):
 			player.isChatting = false
 			#player.chattingWith = null
 			page = default_page
-			currentChoices = 0
+	else:
+		player.isChatting = false
+		#player.chattingWith = null
+		page = default_page
 			
 func choice(choice, choiceAns):
 	var player = get_node("../../../Environments/Player/Player")
