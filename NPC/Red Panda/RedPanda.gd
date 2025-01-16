@@ -3,16 +3,18 @@ extends Area2D
 # Stores colliding objects
 var collision = []
 
-var dialogue = ['Are you the grandchild of the owner?', 'Hi, I am Lign, the guardian of this land']
+var dialogue = ['Are you the grandchild of the owner?', 'There\'s so many things that we\'ll need to do to restore Elyoris.' , 'I\'ll be waiting for your next progress, good luck!']
+var default_page = 0
 var page = 0
 
 var choiceIdx = [0]
 var choices = [
 	['Yes', 'No']
+	
 ]
 
 var choicesAns = [
-	['I am so happy that you have come back, I am Lign', 'You must have forgotten, well anyway, I am Lign']
+	['I am so happy that you have come back, my name is Lign, I am the guardian of this land.', 'You must have forgotten, well anyway, my name is Lign, I am the guardian of this land.']
 ]
 
 var currentChoices = 0
@@ -39,6 +41,7 @@ func next_dialogue():
 	if(page != dialogue.size()):
 		player.get_node("Control/UI/Dialogue").set_dialogue(dialogue[page])
 		if(page in choiceIdx):
+			default_page = page+1
 			player.isChoosing = true
 			choice(choices[currentChoices], choicesAns[currentChoices])
 			currentChoices += 1
@@ -46,14 +49,15 @@ func next_dialogue():
 		page += 1
 		
 		if(page == dialogue.size()):
+			player.isChoosing = false
 			player.isChatting = false
 			#player.chattingWith = null
-			page = 0
+			page = default_page
 			currentChoices = 0
 			
 func choice(choice, choiceAns):
 	var player = get_node("../../../Environments/Player/Player")
-	player.get_node("Control/UI/Choices").set_choice(choice[0], choice[1])
+	player.get_node("Control/UI/Choices").set_choice(choice, choiceAns)
 	player.get_node("Control/UI/Choices").show()
 
 # When a collision occurs, add the collision to the array

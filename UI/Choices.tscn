@@ -75,3 +75,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
+
+[connection signal="gui_input" from="Panel" to="." method="_on_panel_gui_inputA"]
+[connection signal="gui_input" from="Panel2" to="." method="_on_panel_2_gui_inputB"]

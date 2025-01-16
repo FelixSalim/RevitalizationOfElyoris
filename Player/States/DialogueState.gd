@@ -34,13 +34,13 @@ func _ready():
 	var choices = choice.instantiate()
 	choices.name = "Choices"
 	player.get_node("Control/UI").add_child(choices)
+	player.get_node("Control/UI/Choices").hide()
 
 # Read user input, if player pressed confirm, hide notification, if player interact with it again, show the notification
 func _input(event):
 	if not player.isChoosing:
 		if event.is_action_pressed("ui_accept") and player.isInteracting and not player.isChatting :
 			player.get_node("Control/UI/Dialogue").queue_free()
-			player.get_node("Control/UI/Choices").queue_free()
 			player.isInteracting = false
 			player.chattingWith = null
 			
@@ -53,7 +53,6 @@ func _input(event):
 			player.chattingWith.page = 0
 			player.chattingWith.currentChoices = 0
 			player.get_node("Control/UI/Dialogue").queue_free()
-			player.get_node("Control/UI/Choices").queue_free()
 			player.isInteracting = false
 			player.chattingWith = null
 			

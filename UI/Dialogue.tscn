@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://UI/Dialogue.gd" id="1_4cisr"]
 [ext_resource type="Theme" uid="uid://dkdu8uvx0uyg2" path="res://UI/Notification.tres" id="2_786sq"]
 
-[node name="Notification" type="CanvasLayer"]
+[node name="Dialogue" type="CanvasLayer"]
 scale = Vector2(2, 2)
 transform = Transform2D(2, 0, 0, 2, 0, 0)
 script = ExtResource("1_4cisr")
