@@ -47,15 +47,6 @@ func _input(event):
 		elif event.is_action_pressed("ui_accept") and player.isInteracting and player.isChatting:
 			#print(player.chattingWith.page)
 			player.chattingWith.next_dialogue()
-		
-			
-		elif event.is_action_pressed("ui_cancel") and player.isInteracting:
-			player.chattingWith.page = 0
-			player.chattingWith.currentChoices = 0
-			player.get_node("Control/UI/Dialogue").queue_free()
-			player.get_node("Contro/UI/Choices").queue_free()
-			player.isInteracting = false
-			player.chattingWith = null
 			
 		elif event.is_action_pressed("ui_accept") and not player.isInteracting:
 			player.change_moving_state("idle")	
