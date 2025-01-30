@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 
 func enter():
 	# Stores player
-	var player = get_node("../Environments/Player/Player")
+	var player = get_node("../../../Environments/Player/Player")
 	# If player is colliding and pressed interact, pop notification
 	if player.get_node("InteractBox") in collision and Input.is_action_just_pressed("ui_accept") and player.interactingState.name == "water" and player.get_node("Control/UI/InventoryBar/Slots").get_child(Game.selected).get_child(2).water <= 90:
 		# When player tiles the land, change player to idle (stop player from moving)
