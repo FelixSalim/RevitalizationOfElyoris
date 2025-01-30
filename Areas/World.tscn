@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cush35jqh0n05"]
+[gd_scene load_steps=18 format=3 uid="uid://cush35jqh0n05"]
 
 [ext_resource type="PackedScene" uid="uid://bpgb66jvhsx41" path="res://Environments/TillableLand.tscn" id="1_bqf72"]
 [ext_resource type="PackedScene" uid="uid://bpwfwhca4dlob" path="res://Environments/House.tscn" id="2_0otqb"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://du80ujcd0b21c" path="res://Environments/Tree.tscn" id="10_7kolj"]
 [ext_resource type="Texture2D" uid="uid://cl4100ojg1og4" path="res://Assets/EnvironmentSprites/Cut down tree-Sheet.png" id="11_86fm7"]
 [ext_resource type="PackedScene" uid="uid://dofn471xoaf6c" path="res://NPC/Red Panda/RedPanda.tscn" id="12_3k0kd"]
+[ext_resource type="PackedScene" uid="uid://cmlhis5ugxdai" path="res://Environments/ShippingBox.tscn" id="16_irb4x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78o4a"]
 size = Vector2(56, 55)
@@ -45849,6 +45850,9 @@ texture = ExtResource("4_f8gih")
 position = Vector2(3553, 1569.91)
 scale = Vector2(0.4, 0.384)
 texture = ExtResource("4_f8gih")
+
+[node name="ShippingBox" parent="." instance=ExtResource("16_irb4x")]
+position = Vector2(743, 580)
 
 [node name="Environments" type="Node2D" parent="."]
 y_sort_enabled = true

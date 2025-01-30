@@ -6,6 +6,12 @@ var currentInteractingState = "None"
 # Stores if player is currently interacting
 var isInteracting = false
 
+# Stores red panda dialogue
+var redPanda = {
+	"currentChoice" : 0,
+	"defaultPage" : 0
+}
+
 # Stores plot condition
 var plot = {
 	

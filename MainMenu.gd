@@ -4,4 +4,5 @@ extends Node2D
 func _on_touch_screen_button_pressed():
 	# Navigate to "World" Scene
 	get_tree().change_scene_to_file("res://Areas/World.tscn")
+	# Load save
 	Utils.load_game()
