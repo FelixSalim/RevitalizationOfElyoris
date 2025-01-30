@@ -24,14 +24,19 @@ func load_inventory():
 # Update amount to show
 func update_amount():
 	for i in range(len(Game.inventoryAmount)):
-		if Game.inventoryAmount[i] > 0:
-			get_node("Slots").get_child(i).get_child(1).text = str(Game.inventoryAmount[i])
-			get_node("Slots").get_child(i).get_child(1).visible = true
+		# Different Amount for watering cans
+		if Game.inventory[i] != 1:
+			if Game.inventoryAmount[i] > 0:
+				get_node("Slots").get_child(i).get_child(1).text = str(Game.inventoryAmount[i])
+				get_node("Slots").get_child(i).get_child(1).visible = true
+			else:
+				# If it doesn't exist remove it
+				if get_node("Slots").get_child(i).get_child_count() > 2:
+					get_node("Slots").get_child(i).get_child(2).free()
+				Game.inventory[i] = -1
 		else:
-			# If it doesn't exist remove it
-			if get_node("Slots").get_child(i).get_child_count() > 2:
-				get_node("Slots").get_child(i).get_child(2).free()
-			Game.inventory[i] = -1
+			get_node("Slots").get_child(i).get_child(1).text = str(get_node("Slots").get_child(i).get_child(2).water) + "%"
+			get_node("Slots").get_child(i).get_child(1).visible = true
 
 # Move to the slot every frame and check for tools and item amounts
 func _process(delta):

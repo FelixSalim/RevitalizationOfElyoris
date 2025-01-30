@@ -8,12 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://jsbmj31pygvm" path="res://Environments/Mailbox.tscn" id="5_y1oy8"]
 [ext_resource type="PackedScene" uid="uid://o8d8w6n2nmsc" path="res://Player/Player.tscn" id="6_43okc"]
 [ext_resource type="Script" path="res://Environments/DayNightCycle.gd" id="8_k12yi"]
-[ext_resource type="Texture2D" uid="uid://cdxlox6btjsth" path="res://Assets/EnvironmentSprites/Pond beta.png" id="8_th2hq"]
 [ext_resource type="Texture2D" uid="uid://bkpc1kjm4t2xn" path="res://Assets/UI/daynightcycle-gradient-texture.tres" id="9_hg7hj"]
 [ext_resource type="PackedScene" uid="uid://c7mm8qy6snsww" path="res://Environments/Bed.tscn" id="10_0bcbb"]
 [ext_resource type="PackedScene" uid="uid://du80ujcd0b21c" path="res://Environments/Tree.tscn" id="10_7kolj"]
 [ext_resource type="Texture2D" uid="uid://cl4100ojg1og4" path="res://Assets/EnvironmentSprites/Cut down tree-Sheet.png" id="11_86fm7"]
 [ext_resource type="PackedScene" uid="uid://dofn471xoaf6c" path="res://NPC/Red Panda/RedPanda.tscn" id="12_3k0kd"]
+[ext_resource type="PackedScene" uid="uid://c1hbtwct1tsae" path="res://Environments/Pond.tscn" id="13_44qi0"]
 [ext_resource type="PackedScene" uid="uid://cmlhis5ugxdai" path="res://Environments/ShippingBox.tscn" id="16_irb4x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78o4a"]
@@ -482,13 +482,12 @@ texture = ExtResource("4_f8gih")
 [node name="ShippingBox" parent="." instance=ExtResource("16_irb4x")]
 position = Vector2(743, 580)
 
+[node name="Pond" parent="." instance=ExtResource("13_44qi0")]
+position = Vector2(2450, 1356)
+scale = Vector2(1.671, 1.671)
+
 [node name="Environments" type="Node2D" parent="."]
 y_sort_enabled = true
-
-[node name="PondBeta" type="Sprite2D" parent="Environments"]
-position = Vector2(2458, 1350)
-scale = Vector2(1.67103, 1.57825)
-texture = ExtResource("8_th2hq")
 
 [node name="Mailbox" parent="Environments" instance=ExtResource("5_y1oy8")]
 position = Vector2(906, 565)

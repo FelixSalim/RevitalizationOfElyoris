@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1hbtwct1tsae"]
+
+[ext_resource type="Script" path="res://Environments/Pond.gd" id="1_bapv6"]
+[ext_resource type="Texture2D" uid="uid://cdxlox6btjsth" path="res://Assets/EnvironmentSprites/Pond beta.png" id="2_67str"]
+
+[node name="Pond" type="StaticBody2D"]
+script = ExtResource("1_bapv6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_67str")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-90, -65, -72, -84, -58, -84, -48, -95, -24, -96, -24, -102, 12, -102, 12, -109, 54, -108, 54, -98, 78, -97, 114, -59, 126, -36, 150, -11, 150, 31, 130, 71, 79, 93, 1, 112, -74, 109, -111, 102, -126, 96, -156, 66, -163, 48, -164, 10, -157, 6, -145, 6, -145, -5, -137, -11, -121, -12, -121, -18, -107, -29, -96, -36, -90, -36)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-90, -65, -72, -84, -58, -84, -48, -95, -24, -96, -24, -102, 12, -102, 12, -109, 54, -108, 54, -98, 78, -97, 114, -59, 126, -36, 150, -11, 150, 31, 130, 71, 79, 93, 1, 112, -74, 109, -111, 102, -126, 96, -156, 66, -163, 48, -164, 10, -157, 6, -145, 6, -145, -5, -137, -11, -121, -12, -121, -18, -107, -29, -96, -36, -90, -36)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
