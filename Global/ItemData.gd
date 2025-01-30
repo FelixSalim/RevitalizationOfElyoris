@@ -5,14 +5,23 @@ extends Node
 const item = [
 	{
 		"Name" : "Hoe",
-		"Location" : "res://Tools/Hoe.tscn"
+		"Location" : "res://Player/Inventory/Tools/Hoe.tscn"
 	},
 	{
 		"Name" : "WateringCan",
-		"Location" : "res://Tools/WateringCan.tscn"
+		"Location" : "res://Player/Inventory/Tools/WateringCan.tscn"
 	},
 	{
 		"Name" : "TurnipSeed",
-		"Location" : "res://Tools/TurnipSeed.tscn"
+		"Location" : "res://Player/Inventory/Tools/TurnipSeed.tscn"
+	}
+]
+
+# Stores harvest crops data
+# Id starts from 100
+const harvest = [
+	{
+		"Name" : "Turnip",
+		"Location" : "res://Player/Inventory/Harvest/Turnip.tscn"
 	}
 ]

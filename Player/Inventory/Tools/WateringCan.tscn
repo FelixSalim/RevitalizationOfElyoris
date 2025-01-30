@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://be6o8u40g471w"]
 
-[ext_resource type="Script" path="res://Tools/WateringCan.gd" id="1_17efx"]
+[ext_resource type="Script" path="res://Player/Inventory/Tools/WateringCan.gd" id="1_17efx"]
 [ext_resource type="Texture2D" uid="uid://dvc5boj2lakyn" path="res://Assets/EnvironmentSprites/watering_can.png" id="1_yckew"]
 
 [node name="WateringCan" type="Sprite2D"]

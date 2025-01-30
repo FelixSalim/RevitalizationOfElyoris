@@ -1,28 +1,94 @@
-[gd_scene load_steps=11 format=3 uid="uid://cush35jqh0n05"]
+[gd_scene load_steps=17 format=3 uid="uid://cush35jqh0n05"]
 
 [ext_resource type="PackedScene" uid="uid://bpgb66jvhsx41" path="res://Environments/TillableLand.tscn" id="1_bqf72"]
 [ext_resource type="PackedScene" uid="uid://bpwfwhca4dlob" path="res://Environments/House.tscn" id="2_0otqb"]
+[ext_resource type="Script" path="res://Areas/LeaveZone.gd" id="2_sbbi6"]
 [ext_resource type="Texture2D" uid="uid://da5r0i7llhobv" path="res://Assets/EnvironmentSprites/Stone land.png" id="3_4pa61"]
 [ext_resource type="Texture2D" uid="uid://dcg4o2px5betb" path="res://Assets/EnvironmentSprites/Bush.png" id="4_f8gih"]
-[ext_resource type="PackedScene" uid="uid://dlaplc8jav2wg" path="res://Environments/Mailbox.tscn" id="5_y1oy8"]
+[ext_resource type="PackedScene" uid="uid://jsbmj31pygvm" path="res://Environments/Mailbox.tscn" id="5_y1oy8"]
 [ext_resource type="PackedScene" uid="uid://o8d8w6n2nmsc" path="res://Player/Player.tscn" id="6_43okc"]
-[ext_resource type="Texture2D" uid="uid://e2267cnnxt1y" path="res://Assets/EnvironmentSprites/dark tree.png" id="7_jurk8"]
+[ext_resource type="Texture2D" uid="uid://bajo7cf5jeqif" path="res://Assets/EnvironmentSprites/Normal Land-Sheet.png" id="6_uw5yu"]
 [ext_resource type="Script" path="res://Environments/DayNightCycle.gd" id="8_k12yi"]
+[ext_resource type="Texture2D" uid="uid://cdxlox6btjsth" path="res://Assets/EnvironmentSprites/Pond beta.png" id="8_th2hq"]
 [ext_resource type="Texture2D" uid="uid://bkpc1kjm4t2xn" path="res://Assets/UI/daynightcycle-gradient-texture.tres" id="9_hg7hj"]
 [ext_resource type="PackedScene" uid="uid://c7mm8qy6snsww" path="res://Environments/Bed.tscn" id="10_0bcbb"]
+[ext_resource type="PackedScene" uid="uid://du80ujcd0b21c" path="res://Environments/Tree.tscn" id="10_7kolj"]
+[ext_resource type="Texture2D" uid="uid://cl4100ojg1og4" path="res://Assets/EnvironmentSprites/Cut down tree-Sheet.png" id="11_86fm7"]
+[ext_resource type="PackedScene" uid="uid://dofn471xoaf6c" path="res://NPC/Red Panda/RedPanda.tscn" id="12_3k0kd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78o4a"]
+size = Vector2(56, 55)
 
 [node name="World" type="Node2D"]
 
 [node name="Home" type="Node2D" parent="."]
 position = Vector2(8103, -1387)
 
+[node name="RedPanda" parent="Home" instance=ExtResource("12_3k0kd")]
+position = Vector2(-500, -144)
+
 [node name="Bed" parent="Home" instance=ExtResource("10_0bcbb")]
 position = Vector2(367, -92)
+
+[node name="LeaveZone" type="Area2D" parent="Home"]
+script = ExtResource("2_sbbi6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Home/LeaveZone"]
+position = Vector2(1, 2.5)
+shape = SubResource("RectangleShape2D_78o4a")
 
 [node name="TillableLands" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="TillableLand" parent="TillableLands" instance=ExtResource("1_bqf72")]
+[node name="TillableLand17" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2422, 214)
+
+[node name="TillableLand18" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2518, 214)
+
+[node name="TillableLand19" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2422, 310)
+
+[node name="TillableLand20" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2518, 310)
+
+[node name="TillableLand21" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2422, 406)
+
+[node name="TillableLand22" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2518, 406)
+
+[node name="TillableLand23" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2422, 502)
+
+[node name="TillableLand24" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2518, 502)
+
+[node name="TillableLand25" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2614, 214)
+
+[node name="TillableLand26" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2710, 214)
+
+[node name="TillableLand27" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2614, 310)
+
+[node name="TillableLand28" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2710, 310)
+
+[node name="TillableLand29" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2614, 406)
+
+[node name="TillableLand30" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2710, 406)
+
+[node name="TillableLand31" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2614, 502)
+
+[node name="TillableLand32" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2710, 502)
+
+[node name="TillableLand1" parent="TillableLands" instance=ExtResource("1_bqf72")]
 position = Vector2(1910, 214)
 
 [node name="TillableLand2" parent="TillableLands" instance=ExtResource("1_bqf72")]
@@ -70,9 +136,2560 @@ position = Vector2(2102, 502)
 [node name="TillableLand16" parent="TillableLands" instance=ExtResource("1_bqf72")]
 position = Vector2(2198, 502)
 
-[node name="House" parent="." instance=ExtResource("2_0otqb")]
-position = Vector2(1300, 230)
-scale = Vector2(2, 2)
+[node name="TillableLand33" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2422, 715)
+
+[node name="TillableLand34" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2518, 715)
+
+[node name="TillableLand35" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2422, 811)
+
+[node name="TillableLand36" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2518, 811)
+
+[node name="TillableLand37" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2422, 907)
+
+[node name="TillableLand38" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2518, 907)
+
+[node name="TillableLand39" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2422, 1003)
+
+[node name="TillableLand40" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2518, 1003)
+
+[node name="TillableLand41" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2614, 715)
+
+[node name="TillableLand42" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2710, 715)
+
+[node name="TillableLand43" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2614, 811)
+
+[node name="TillableLand44" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2710, 811)
+
+[node name="TillableLand45" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2614, 907)
+
+[node name="TillableLand46" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2710, 907)
+
+[node name="TillableLand47" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2614, 1003)
+
+[node name="TillableLand48" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2710, 1003)
+
+[node name="TillableLand49" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(1910, 715)
+
+[node name="TillableLand50" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2006, 715)
+
+[node name="TillableLand51" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(1910, 811)
+
+[node name="TillableLand52" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2006, 811)
+
+[node name="TillableLand53" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(1910, 907)
+
+[node name="TillableLand54" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2006, 907)
+
+[node name="TillableLand55" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(1910, 1003)
+
+[node name="TillableLand56" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2006, 1003)
+
+[node name="TillableLand57" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2102, 715)
+
+[node name="TillableLand58" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2198, 715)
+
+[node name="TillableLand59" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2102, 811)
+
+[node name="TillableLand60" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2198, 811)
+
+[node name="TillableLand61" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2102, 907)
+
+[node name="TillableLand62" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2198, 907)
+
+[node name="TillableLand63" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2102, 1003)
+
+[node name="TillableLand64" parent="TillableLands" instance=ExtResource("1_bqf72")]
+position = Vector2(2198, 1003)
+
+[node name="GroundLands" type="Node2D" parent="."]
+modulate = Color(1, 0.810281, 0.586308, 1)
+light_mask = 139
+
+[node name="NormalLand-sheet" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2287, 1482)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet2" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2304, 1493)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet3" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2372, 1502)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet4" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2463, 1503)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet5" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2553, 1489)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet6" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2643, 1464)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet7" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2570, 1474)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet8" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2478, 1493)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet9" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2663, 1425)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet10" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2672, 1409)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet11" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2687, 1394)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet12" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2684, 1345)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet13" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2663, 1324)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet14" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2638, 1280)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet15" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2650, 1305)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet16" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2615, 1257)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet17" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2599, 1231)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet18" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2563, 1204)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet19" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2261, 1466)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet20" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2212, 1450)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet21" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2204, 1387)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet22" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2242, 1357)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet23" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2279, 1330)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet24" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2326, 1272)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet25" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2344, 1238)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet26" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2402, 1211)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet27" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2492, 1197)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet28" type="Sprite2D" parent="GroundLands"]
+position = Vector2(738, 1232)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+flip_h = true
+
+[node name="NormalLand-sheet29" type="Sprite2D" parent="GroundLands"]
+position = Vector2(748, 1224)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+flip_h = true
+
+[node name="NormalLand-sheet30" type="Sprite2D" parent="GroundLands"]
+position = Vector2(789, 1215)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet31" type="Sprite2D" parent="GroundLands"]
+position = Vector2(749, 1248)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet32" type="Sprite2D" parent="GroundLands"]
+position = Vector2(798, 1241)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet33" type="Sprite2D" parent="GroundLands"]
+position = Vector2(1327, 1255)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+flip_h = true
+flip_v = true
+
+[node name="NormalLand-sheet34" type="Sprite2D" parent="GroundLands"]
+position = Vector2(1337, 1247)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+flip_h = true
+flip_v = true
+
+[node name="NormalLand-sheet35" type="Sprite2D" parent="GroundLands"]
+position = Vector2(1378, 1238)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+flip_h = true
+flip_v = true
+
+[node name="NormalLand-sheet36" type="Sprite2D" parent="GroundLands"]
+position = Vector2(1338, 1271)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+flip_h = true
+flip_v = true
+
+[node name="NormalLand-sheet37" type="Sprite2D" parent="GroundLands"]
+position = Vector2(1387, 1264)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+flip_h = true
+flip_v = true
+
+[node name="NormalLand-sheet38" type="Sprite2D" parent="GroundLands"]
+position = Vector2(1407, 1255)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet39" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2673, 1861)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet40" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2729, 1834)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet41" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2542, 1933)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet42" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2578, 1959)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet43" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2667, 1947)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet44" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2796, 1810)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet45" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2867, 1807)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet46" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2949, 1755)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet47" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2890, 1767)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet48" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2811, 1757)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet49" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2825, 1738)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet50" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2903, 1736)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet51" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2979, 1745)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet52" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3043, 1754)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet53" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3071, 1688)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet54" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3029, 1708)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet55" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2970, 1708)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet56" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2905, 1714)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet57" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2853, 1697)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet58" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2923, 1678)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet59" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3016, 1657)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet60" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3111, 1620)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet61" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3137, 1603)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet62" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3220, 1535)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet63" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3293, 1486)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet64" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3224, 1479)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet65" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3167, 1570)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet66" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3139, 1529)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet67" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2953, 1694)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet68" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2981, 1628)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet69" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2939, 1648)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet70" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2880, 1648)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet71" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2815, 1654)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet72" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2763, 1637)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet73" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2833, 1618)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet74" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2926, 1597)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet75" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3021, 1560)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet76" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3047, 1543)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet77" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3130, 1475)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet78" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3203, 1426)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet79" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3134, 1419)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet80" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3077, 1510)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet81" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3049, 1469)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet82" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3164, 1544)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet83" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3190, 1527)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet84" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3273, 1459)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet85" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3346, 1410)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet86" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3277, 1403)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet87" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3220, 1494)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet88" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3192, 1453)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet89" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3006, 1618)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet90" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3034, 1552)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet91" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2992, 1572)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet92" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2933, 1572)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet93" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2868, 1578)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet94" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2816, 1561)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet95" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2886, 1542)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet96" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2979, 1521)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet97" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3074, 1484)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet98" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3100, 1467)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet99" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3183, 1399)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet100" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3256, 1350)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet101" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3187, 1343)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet102" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3130, 1434)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet103" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3102, 1393)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet104" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2327, 1880)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet105" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2405, 1878)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet106" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2481, 1887)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet107" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2545, 1896)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet108" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2573, 1830)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet109" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2531, 1850)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet110" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2472, 1850)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet111" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2407, 1856)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet112" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2355, 1839)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet113" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2425, 1820)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet114" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2518, 1799)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet115" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2613, 1762)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet116" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2639, 1745)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet117" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2722, 1677)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet118" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2795, 1628)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet119" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2726, 1621)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet120" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2669, 1712)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet121" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2641, 1671)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet122" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2455, 1836)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet123" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2483, 1770)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet124" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2441, 1790)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet125" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2382, 1790)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet126" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2317, 1796)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet127" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2265, 1779)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet128" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2335, 1760)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet129" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2428, 1739)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet130" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2523, 1702)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet131" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2549, 1685)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet132" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2632, 1617)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet133" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2705, 1568)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet134" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2636, 1561)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet135" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2579, 1652)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet136" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2551, 1611)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet137" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2666, 1686)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet138" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2692, 1669)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet139" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2775, 1601)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet140" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2848, 1552)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet141" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2779, 1545)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet142" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2722, 1636)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet143" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2694, 1595)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet144" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2508, 1760)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet145" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2536, 1694)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet146" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2494, 1714)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet147" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2435, 1714)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet148" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2370, 1720)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet149" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2318, 1703)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet150" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2388, 1684)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet151" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2481, 1663)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet152" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2576, 1626)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet153" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2602, 1609)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet154" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2685, 1541)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet155" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2758, 1492)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet156" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2689, 1485)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet157" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2632, 1576)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet158" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2604, 1535)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet159" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2657, 1459)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet160" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2727, 1440)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet161" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2820, 1419)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet162" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2915, 1382)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet163" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2941, 1365)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet164" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3024, 1297)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet165" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3097, 1248)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet166" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3028, 1241)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet167" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2971, 1332)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet168" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2943, 1291)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet169" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3058, 1366)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet170" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3084, 1349)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet171" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3167, 1281)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet172" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3240, 1232)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet173" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3171, 1225)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet174" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3114, 1316)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet175" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3086, 1275)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet176" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2900, 1440)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet177" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2928, 1374)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet178" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2886, 1394)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet179" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2827, 1394)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet180" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2762, 1400)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet181" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2710, 1383)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet182" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2780, 1364)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet183" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2873, 1343)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet184" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2968, 1306)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet185" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2994, 1289)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet186" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3077, 1221)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet187" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3150, 1172)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet188" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3081, 1165)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet189" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3024, 1256)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet190" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2996, 1215)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet191" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2221, 1702)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet192" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2299, 1700)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet193" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2375, 1709)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet194" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2439, 1718)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet195" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2467, 1652)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet196" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2425, 1672)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet197" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2366, 1672)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet198" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2301, 1678)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet199" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2249, 1661)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet200" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2319, 1642)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet201" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2412, 1621)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet202" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2507, 1584)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet203" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2533, 1567)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet204" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2616, 1499)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet205" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2689, 1450)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet206" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2620, 1443)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet207" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2563, 1534)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet208" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2535, 1493)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet209" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2349, 1658)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet210" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2377, 1592)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet211" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2335, 1612)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet212" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2276, 1612)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet213" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2211, 1618)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet214" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2159, 1601)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet215" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2229, 1582)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet216" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2322, 1561)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet217" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2417, 1524)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet218" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2443, 1507)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet219" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2526, 1439)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet220" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2599, 1390)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet221" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2530, 1383)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet222" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2473, 1474)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet223" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2445, 1433)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet224" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2560, 1508)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet225" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2586, 1491)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet226" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2669, 1423)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet227" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2742, 1374)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet228" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2673, 1367)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet229" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2616, 1458)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet230" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2588, 1417)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet231" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2402, 1582)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet232" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2430, 1516)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet233" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2388, 1536)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet234" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2329, 1536)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet235" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2264, 1542)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet236" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2212, 1525)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet237" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2282, 1506)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet238" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2375, 1485)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet239" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2470, 1448)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet240" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2496, 1431)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet241" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2579, 1363)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet242" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2652, 1314)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet243" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2583, 1307)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet244" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2526, 1398)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet246" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3346, 1350)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet247" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3250, 1292)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet248" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3325, 1267)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet249" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3376, 1319)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet250" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3369, 1393)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet251" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3361, 1453)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet245" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2498, 1357)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet252" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3091, 1588)
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet253" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3302, 1312)
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet254" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3022, 1178)
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet255" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3223, 1193)
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet256" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3127, 1141)
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet257" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2993, 1168)
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet258" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3071, 1151)
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet259" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3193, 1165)
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet260" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3289, 1246)
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet261" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3258, 1213)
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet262" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3329, 1230)
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet263" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3359, 1283)
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet264" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3411, 1325)
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet265" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2428.21, 2033)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet266" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2241.21, 2132)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet267" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2277.21, 2158)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet268" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2366.21, 2146)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet269" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2495.21, 2009)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet270" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2566.21, 2006)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet271" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2648.21, 1954)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet272" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2589.21, 1966)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet273" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2510.21, 1956)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet274" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2524.21, 1937)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet275" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2602.21, 1935)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet276" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2678.21, 1944)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet277" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2742.21, 1953)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet278" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2770.21, 1887)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet279" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2728.21, 1907)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet280" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2669.21, 1907)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet281" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2604.21, 1913)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet282" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2552.21, 1896)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet283" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2622.21, 1877)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet284" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2715.21, 1856)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet285" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2810.21, 1819)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet286" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2836.21, 1802)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet287" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2919.21, 1734)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet288" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2992.21, 1685)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet289" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2923.21, 1678)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet290" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2866.21, 1769)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet291" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2838.21, 1728)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet292" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2652.21, 1893)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet293" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2680.21, 1827)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet294" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2638.21, 1847)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet295" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2579.21, 1847)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet296" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2514.21, 1853)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet297" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2462.21, 1836)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet298" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2532.21, 1817)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet299" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2625.21, 1796)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet300" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2720.21, 1759)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet301" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2746.21, 1742)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet302" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2829.21, 1674)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet303" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2902.21, 1625)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet304" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2833.21, 1618)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet305" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2776.21, 1709)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet306" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2748.21, 1668)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet307" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2863.21, 1743)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet308" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2889.21, 1726)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet309" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2972.21, 1658)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet310" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3045.21, 1609)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet311" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2976.21, 1602)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet312" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2919.21, 1693)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet313" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2891.21, 1652)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet314" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2705.21, 1817)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet315" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2733.21, 1751)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet316" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2691.21, 1771)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet317" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2632.21, 1771)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet318" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2567.21, 1777)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet319" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2515.21, 1760)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet320" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2585.21, 1741)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet321" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2678.21, 1720)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet322" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2773.21, 1683)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet323" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2799.21, 1666)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet324" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2882.21, 1598)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet325" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2955.21, 1549)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet326" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2886.21, 1542)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet327" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2829.21, 1633)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet328" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2801.21, 1592)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet329" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2026.21, 2079)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet330" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2104.21, 2077)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet331" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2180.21, 2086)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet332" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2244.21, 2095)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet333" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2272.21, 2029)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet334" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2230.21, 2049)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet335" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2171.21, 2049)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet336" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2106.21, 2055)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet337" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2054.21, 2038)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet338" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2124.21, 2019)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet339" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2217.21, 1998)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet340" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2312.21, 1961)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet341" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2338.21, 1944)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet342" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2421.21, 1876)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet343" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2494.21, 1827)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet344" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2425.21, 1820)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet345" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2368.21, 1911)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet346" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2340.21, 1870)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet347" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2154.21, 2035)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet348" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2182.21, 1969)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet349" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2140.21, 1989)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet350" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2081.21, 1989)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet351" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2016.21, 1995)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet352" type="Sprite2D" parent="GroundLands"]
+position = Vector2(1964.21, 1978)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet353" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2034.21, 1959)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet354" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2127.21, 1938)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet355" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2222.21, 1901)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet356" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2248.21, 1884)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet357" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2331.21, 1816)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet358" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2404.21, 1767)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet359" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2335.21, 1760)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet360" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2278.21, 1851)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet361" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2250.21, 1810)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet362" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2365.21, 1885)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet363" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2391.21, 1868)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet364" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2474.21, 1800)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet365" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2547.21, 1751)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet366" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2478.21, 1744)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet367" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2421.21, 1835)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet368" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2393.21, 1794)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet369" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2207.21, 1959)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet370" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2235.21, 1893)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet371" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2193.21, 1913)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet372" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2134.21, 1913)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet373" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2069.21, 1919)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet374" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2017.21, 1902)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet375" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2087.21, 1883)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet376" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2180.21, 1862)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet377" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2275.21, 1825)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet378" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2301.21, 1808)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet379" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2384.21, 1740)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet380" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2457.21, 1691)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet381" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2388.21, 1684)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet382" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2331.21, 1775)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet383" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2303.21, 1734)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet384" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2356.21, 1658)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet385" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2426.21, 1639)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet386" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2519.21, 1618)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet387" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2614.21, 1581)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet388" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2640.21, 1564)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet389" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2723.21, 1496)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet390" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2796.21, 1447)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet391" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2727.21, 1440)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet392" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2670.21, 1531)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet393" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2642.21, 1490)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet394" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2757.21, 1565)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet395" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2783.21, 1548)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet396" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2866.21, 1480)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet397" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2939.21, 1431)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet398" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2870.21, 1424)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet399" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2813.21, 1515)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet400" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2785.21, 1474)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet401" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2599.21, 1639)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet402" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2627.21, 1573)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet403" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2585.21, 1593)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet404" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2526.21, 1593)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet405" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2461.21, 1599)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet406" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2409.21, 1582)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet407" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2479.21, 1563)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet408" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2572.21, 1542)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet409" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2667.21, 1505)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet410" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2693.21, 1488)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet411" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2776.21, 1420)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet412" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2849.21, 1371)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet413" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2780.21, 1364)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet414" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2723.21, 1455)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet415" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2695.21, 1414)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet416" type="Sprite2D" parent="GroundLands"]
+position = Vector2(1920.21, 1901)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet417" type="Sprite2D" parent="GroundLands"]
+position = Vector2(1998.21, 1899)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet418" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2074.21, 1908)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet419" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2138.21, 1917)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet420" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2166.21, 1851)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet421" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2124.21, 1871)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet422" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2065.21, 1871)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet423" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2000.21, 1877)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet424" type="Sprite2D" parent="GroundLands"]
+position = Vector2(1948.21, 1860)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet425" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2018.21, 1841)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet426" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2111.21, 1820)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet427" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2206.21, 1783)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet428" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2232.21, 1766)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet429" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2315.21, 1698)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet430" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2388.21, 1649)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet431" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2319.21, 1642)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet432" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2262.21, 1733)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet433" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2234.21, 1692)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet434" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2048.21, 1857)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet435" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2076.21, 1791)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet436" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2034.21, 1811)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet437" type="Sprite2D" parent="GroundLands"]
+position = Vector2(1975.21, 1811)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet438" type="Sprite2D" parent="GroundLands"]
+position = Vector2(1910.21, 1817)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet439" type="Sprite2D" parent="GroundLands"]
+position = Vector2(1858.21, 1800)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet440" type="Sprite2D" parent="GroundLands"]
+position = Vector2(1928.21, 1781)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet441" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2021.21, 1760)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet442" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2116.21, 1723)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet443" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2142.21, 1706)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet444" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2225.21, 1638)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet445" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2298.21, 1589)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet446" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2229.21, 1582)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet447" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2172.21, 1673)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet448" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2144.21, 1632)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet449" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2259.21, 1707)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet450" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2285.21, 1690)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet451" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2368.21, 1622)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet452" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2441.21, 1573)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet453" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2372.21, 1566)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet454" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2315.21, 1657)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet455" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2287.21, 1616)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet456" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2101.21, 1781)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet457" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2129.21, 1715)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet458" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2087.21, 1735)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet459" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2028.21, 1735)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet460" type="Sprite2D" parent="GroundLands"]
+position = Vector2(1963.21, 1741)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet461" type="Sprite2D" parent="GroundLands"]
+position = Vector2(1911.21, 1724)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet462" type="Sprite2D" parent="GroundLands"]
+position = Vector2(1981.21, 1705)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet463" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2074.21, 1684)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet464" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2169.21, 1647)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet465" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2195.21, 1630)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet466" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2278.21, 1562)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet467" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2351.21, 1513)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet468" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2282.21, 1506)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet469" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2225.21, 1597)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet470" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3045.21, 1549)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet471" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2949.21, 1491)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet472" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3024.21, 1466)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet473" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3075.21, 1518)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet474" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3068.21, 1592)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet475" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3060.21, 1652)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet476" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2197.21, 1556)
+rotation = 2.49727
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet477" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2790.21, 1787)
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet478" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3001.21, 1511)
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet479" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2721.21, 1377)
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet480" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2922.21, 1392)
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet481" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2826.21, 1340)
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet482" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2692.21, 1367)
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet483" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2770.21, 1350)
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet484" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2892.21, 1364)
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet485" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2988.21, 1445)
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet486" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2957.21, 1412)
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet487" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3028.21, 1429)
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet488" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3058.21, 1482)
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet489" type="Sprite2D" parent="GroundLands"]
+position = Vector2(3110.21, 1524)
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet490" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2162, 1765)
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet491" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2366, 2018)
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet492" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2331, 2084)
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet493" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2420, 2084)
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet494" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2441, 2126)
+texture = ExtResource("6_uw5yu")
+
+[node name="NormalLand-sheet495" type="Sprite2D" parent="GroundLands"]
+position = Vector2(2517, 2060)
+texture = ExtResource("6_uw5yu")
 
 [node name="StoneLands" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -157,62 +2774,650 @@ position = Vector2(1054, 851)
 texture = ExtResource("3_4pa61")
 flip_h = true
 
+[node name="StoneLand17" type="Sprite2D" parent="StoneLands"]
+position = Vector2(675, 659)
+texture = ExtResource("3_4pa61")
+flip_h = true
+
+[node name="StoneLand18" type="Sprite2D" parent="StoneLands"]
+position = Vector2(581, 659)
+texture = ExtResource("3_4pa61")
+
+[node name="StoneLand19" type="Sprite2D" parent="StoneLands"]
+position = Vector2(771, 659)
+texture = ExtResource("3_4pa61")
+
+[node name="StoneLand20" type="Sprite2D" parent="StoneLands"]
+position = Vector2(865, 659)
+texture = ExtResource("3_4pa61")
+flip_h = true
+
+[node name="StoneLand21" type="Sprite2D" parent="StoneLands"]
+position = Vector2(581, 755)
+texture = ExtResource("3_4pa61")
+flip_v = true
+
+[node name="StoneLand22" type="Sprite2D" parent="StoneLands"]
+position = Vector2(675, 755)
+texture = ExtResource("3_4pa61")
+flip_h = true
+flip_v = true
+
+[node name="StoneLand23" type="Sprite2D" parent="StoneLands"]
+position = Vector2(771, 755)
+texture = ExtResource("3_4pa61")
+flip_v = true
+
+[node name="StoneLand24" type="Sprite2D" parent="StoneLands"]
+position = Vector2(865, 755)
+texture = ExtResource("3_4pa61")
+flip_h = true
+flip_v = true
+
+[node name="StoneLand25" type="Sprite2D" parent="StoneLands"]
+position = Vector2(864, 947)
+texture = ExtResource("3_4pa61")
+flip_h = true
+flip_v = true
+
+[node name="StoneLand26" type="Sprite2D" parent="StoneLands"]
+position = Vector2(770, 947)
+texture = ExtResource("3_4pa61")
+flip_v = true
+
+[node name="StoneLand27" type="Sprite2D" parent="StoneLands"]
+position = Vector2(674, 947)
+texture = ExtResource("3_4pa61")
+flip_h = true
+flip_v = true
+
+[node name="StoneLand28" type="Sprite2D" parent="StoneLands"]
+position = Vector2(580, 947)
+texture = ExtResource("3_4pa61")
+flip_v = true
+
+[node name="StoneLand29" type="Sprite2D" parent="StoneLands"]
+position = Vector2(864, 851)
+texture = ExtResource("3_4pa61")
+flip_h = true
+
+[node name="StoneLand30" type="Sprite2D" parent="StoneLands"]
+position = Vector2(770, 851)
+texture = ExtResource("3_4pa61")
+
+[node name="StoneLand31" type="Sprite2D" parent="StoneLands"]
+position = Vector2(580, 851)
+texture = ExtResource("3_4pa61")
+
+[node name="StoneLand32" type="Sprite2D" parent="StoneLands"]
+position = Vector2(674, 851)
+texture = ExtResource("3_4pa61")
+flip_h = true
+
+[node name="StoneLand34" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1721, 659)
+texture = ExtResource("3_4pa61")
+
+[node name="StoneLand37" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1721, 755)
+texture = ExtResource("3_4pa61")
+flip_v = true
+
+[node name="StoneLand44" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1720, 947)
+texture = ExtResource("3_4pa61")
+flip_v = true
+
+[node name="StoneLand47" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1720, 851)
+texture = ExtResource("3_4pa61")
+
+[node name="StoneLand49" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1435, 659)
+texture = ExtResource("3_4pa61")
+flip_h = true
+
+[node name="StoneLand50" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1341, 659)
+texture = ExtResource("3_4pa61")
+
+[node name="StoneLand51" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1531, 659)
+texture = ExtResource("3_4pa61")
+
+[node name="StoneLand52" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1625, 659)
+texture = ExtResource("3_4pa61")
+flip_h = true
+
+[node name="StoneLand53" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1341, 755)
+texture = ExtResource("3_4pa61")
+flip_v = true
+
+[node name="StoneLand54" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1435, 755)
+texture = ExtResource("3_4pa61")
+flip_h = true
+flip_v = true
+
+[node name="StoneLand55" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1531, 755)
+texture = ExtResource("3_4pa61")
+flip_v = true
+
+[node name="StoneLand56" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1625, 755)
+texture = ExtResource("3_4pa61")
+flip_h = true
+flip_v = true
+
+[node name="StoneLand57" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1624, 947)
+texture = ExtResource("3_4pa61")
+flip_h = true
+flip_v = true
+
+[node name="StoneLand58" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1530, 947)
+texture = ExtResource("3_4pa61")
+flip_v = true
+
+[node name="StoneLand59" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1434, 947)
+texture = ExtResource("3_4pa61")
+flip_h = true
+flip_v = true
+
+[node name="StoneLand60" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1340, 947)
+texture = ExtResource("3_4pa61")
+flip_v = true
+
+[node name="StoneLand61" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1624, 851)
+texture = ExtResource("3_4pa61")
+flip_h = true
+
+[node name="StoneLand62" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1530, 851)
+texture = ExtResource("3_4pa61")
+
+[node name="StoneLand63" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1340, 851)
+texture = ExtResource("3_4pa61")
+
+[node name="StoneLand64" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1434, 851)
+texture = ExtResource("3_4pa61")
+flip_h = true
+
+[node name="StoneLand33" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1056, 275)
+texture = ExtResource("3_4pa61")
+flip_h = true
+
+[node name="StoneLand35" type="Sprite2D" parent="StoneLands"]
+position = Vector2(962, 275)
+texture = ExtResource("3_4pa61")
+
+[node name="StoneLand36" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1152, 275)
+texture = ExtResource("3_4pa61")
+
+[node name="StoneLand38" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1246, 275)
+texture = ExtResource("3_4pa61")
+flip_h = true
+
+[node name="StoneLand39" type="Sprite2D" parent="StoneLands"]
+position = Vector2(962, 371)
+texture = ExtResource("3_4pa61")
+flip_v = true
+
+[node name="StoneLand40" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1056, 371)
+texture = ExtResource("3_4pa61")
+flip_h = true
+flip_v = true
+
+[node name="StoneLand41" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1152, 371)
+texture = ExtResource("3_4pa61")
+flip_v = true
+
+[node name="StoneLand42" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1246, 371)
+texture = ExtResource("3_4pa61")
+flip_h = true
+flip_v = true
+
+[node name="StoneLand43" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1245, 563)
+texture = ExtResource("3_4pa61")
+flip_h = true
+flip_v = true
+
+[node name="StoneLand45" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1151, 563)
+texture = ExtResource("3_4pa61")
+flip_v = true
+
+[node name="StoneLand46" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1055, 563)
+texture = ExtResource("3_4pa61")
+flip_h = true
+flip_v = true
+
+[node name="StoneLand48" type="Sprite2D" parent="StoneLands"]
+position = Vector2(961, 563)
+texture = ExtResource("3_4pa61")
+flip_v = true
+
+[node name="StoneLand65" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1245, 467)
+texture = ExtResource("3_4pa61")
+flip_h = true
+
+[node name="StoneLand66" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1151, 467)
+texture = ExtResource("3_4pa61")
+
+[node name="StoneLand67" type="Sprite2D" parent="StoneLands"]
+position = Vector2(961, 467)
+texture = ExtResource("3_4pa61")
+
+[node name="StoneLand68" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1055, 467)
+texture = ExtResource("3_4pa61")
+flip_h = true
+
+[node name="StoneLand69" type="Sprite2D" parent="StoneLands"]
+position = Vector2(676, 275)
+texture = ExtResource("3_4pa61")
+flip_h = true
+
+[node name="StoneLand70" type="Sprite2D" parent="StoneLands"]
+position = Vector2(582, 275)
+texture = ExtResource("3_4pa61")
+
+[node name="StoneLand71" type="Sprite2D" parent="StoneLands"]
+position = Vector2(772, 275)
+texture = ExtResource("3_4pa61")
+
+[node name="StoneLand72" type="Sprite2D" parent="StoneLands"]
+position = Vector2(866, 275)
+texture = ExtResource("3_4pa61")
+flip_h = true
+
+[node name="StoneLand73" type="Sprite2D" parent="StoneLands"]
+position = Vector2(582, 371)
+texture = ExtResource("3_4pa61")
+flip_v = true
+
+[node name="StoneLand74" type="Sprite2D" parent="StoneLands"]
+position = Vector2(676, 371)
+texture = ExtResource("3_4pa61")
+flip_h = true
+flip_v = true
+
+[node name="StoneLand75" type="Sprite2D" parent="StoneLands"]
+position = Vector2(772, 371)
+texture = ExtResource("3_4pa61")
+flip_v = true
+
+[node name="StoneLand76" type="Sprite2D" parent="StoneLands"]
+position = Vector2(866, 371)
+texture = ExtResource("3_4pa61")
+flip_h = true
+flip_v = true
+
+[node name="StoneLand77" type="Sprite2D" parent="StoneLands"]
+position = Vector2(865, 563)
+texture = ExtResource("3_4pa61")
+flip_h = true
+flip_v = true
+
+[node name="StoneLand78" type="Sprite2D" parent="StoneLands"]
+position = Vector2(771, 563)
+texture = ExtResource("3_4pa61")
+flip_v = true
+
+[node name="StoneLand79" type="Sprite2D" parent="StoneLands"]
+position = Vector2(675, 563)
+texture = ExtResource("3_4pa61")
+flip_h = true
+flip_v = true
+
+[node name="StoneLand80" type="Sprite2D" parent="StoneLands"]
+position = Vector2(581, 563)
+texture = ExtResource("3_4pa61")
+flip_v = true
+
+[node name="StoneLand81" type="Sprite2D" parent="StoneLands"]
+position = Vector2(865, 467)
+texture = ExtResource("3_4pa61")
+flip_h = true
+
+[node name="StoneLand82" type="Sprite2D" parent="StoneLands"]
+position = Vector2(771, 467)
+texture = ExtResource("3_4pa61")
+
+[node name="StoneLand83" type="Sprite2D" parent="StoneLands"]
+position = Vector2(581, 467)
+texture = ExtResource("3_4pa61")
+
+[node name="StoneLand84" type="Sprite2D" parent="StoneLands"]
+position = Vector2(675, 467)
+texture = ExtResource("3_4pa61")
+flip_h = true
+
+[node name="StoneLand85" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1722, 275)
+texture = ExtResource("3_4pa61")
+
+[node name="StoneLand86" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1722, 371)
+texture = ExtResource("3_4pa61")
+flip_v = true
+
+[node name="StoneLand87" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1721, 563)
+texture = ExtResource("3_4pa61")
+flip_v = true
+
+[node name="StoneLand88" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1721, 467)
+texture = ExtResource("3_4pa61")
+
+[node name="StoneLand89" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1436, 275)
+texture = ExtResource("3_4pa61")
+flip_h = true
+
+[node name="StoneLand90" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1342, 275)
+texture = ExtResource("3_4pa61")
+
+[node name="StoneLand91" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1532, 275)
+texture = ExtResource("3_4pa61")
+
+[node name="StoneLand92" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1626, 275)
+texture = ExtResource("3_4pa61")
+flip_h = true
+
+[node name="StoneLand93" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1342, 371)
+texture = ExtResource("3_4pa61")
+flip_v = true
+
+[node name="StoneLand94" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1436, 371)
+texture = ExtResource("3_4pa61")
+flip_h = true
+flip_v = true
+
+[node name="StoneLand95" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1532, 371)
+texture = ExtResource("3_4pa61")
+flip_v = true
+
+[node name="StoneLand96" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1626, 371)
+texture = ExtResource("3_4pa61")
+flip_h = true
+flip_v = true
+
+[node name="StoneLand97" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1625, 563)
+texture = ExtResource("3_4pa61")
+flip_h = true
+flip_v = true
+
+[node name="StoneLand98" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1531, 563)
+texture = ExtResource("3_4pa61")
+flip_v = true
+
+[node name="StoneLand99" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1435, 563)
+texture = ExtResource("3_4pa61")
+flip_h = true
+flip_v = true
+
+[node name="StoneLand100" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1341, 563)
+texture = ExtResource("3_4pa61")
+flip_v = true
+
+[node name="StoneLand101" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1625, 467)
+texture = ExtResource("3_4pa61")
+flip_h = true
+
+[node name="StoneLand102" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1531, 467)
+texture = ExtResource("3_4pa61")
+
+[node name="StoneLand103" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1341, 467)
+texture = ExtResource("3_4pa61")
+
+[node name="StoneLand104" type="Sprite2D" parent="StoneLands"]
+position = Vector2(1435, 467)
+texture = ExtResource("3_4pa61")
+flip_h = true
+
+[node name="House" parent="." instance=ExtResource("2_0otqb")]
+position = Vector2(1300, 230)
+scale = Vector2(2, 2)
+
 [node name="Bushes" type="Node2D" parent="."]
 y_sort_enabled = true
 
 [node name="Bush" type="Sprite2D" parent="Bushes"]
-position = Vector2(914.375, 708.022)
+position = Vector2(2358.25, 2036.99)
 scale = Vector2(0.302572, 0.339833)
 texture = ExtResource("4_f8gih")
 
 [node name="Bush2" type="Sprite2D" parent="Bushes"]
-position = Vector2(1218, 703)
+position = Vector2(2284.25, 2002.99)
 scale = Vector2(0.305013, 0.305013)
 texture = ExtResource("4_f8gih")
 flip_h = true
 
 [node name="Bush3" type="Sprite2D" parent="Bushes"]
-position = Vector2(942.375, 792.991)
+position = Vector2(2520, 1985)
 scale = Vector2(0.302572, 0.339833)
 texture = ExtResource("4_f8gih")
 
 [node name="Bush4" type="Sprite2D" parent="Bushes"]
-position = Vector2(1246, 787.969)
+position = Vector2(2565, 2036)
 scale = Vector2(0.305013, 0.305013)
 texture = ExtResource("4_f8gih")
 flip_h = true
 
 [node name="Bush5" type="Sprite2D" parent="Bushes"]
-position = Vector2(942.375, 792.991)
+position = Vector2(2578, 2014)
 scale = Vector2(0.302572, 0.339833)
 texture = ExtResource("4_f8gih")
 
 [node name="Bush6" type="Sprite2D" parent="Bushes"]
-position = Vector2(1246, 787.969)
+position = Vector2(2522.25, 2056.99)
 scale = Vector2(0.305013, 0.305013)
+texture = ExtResource("4_f8gih")
+
+[node name="Bush7" type="Sprite2D" parent="Bushes"]
+position = Vector2(3104, 2033)
+scale = Vector2(0.305, 0.345)
+texture = ExtResource("4_f8gih")
+
+[node name="Bush8" type="Sprite2D" parent="Bushes"]
+position = Vector2(2880, 2079)
+scale = Vector2(0.305, 0.345)
 texture = ExtResource("4_f8gih")
 flip_h = true
 
-[node name="Mailbox" parent="." instance=ExtResource("5_y1oy8")]
-position = Vector2(892, 546)
-scale = Vector2(1.2, 1.2)
+[node name="Bush9" type="Sprite2D" parent="Bushes"]
+position = Vector2(3040, 1954)
+scale = Vector2(0.305, 0.345)
+texture = ExtResource("4_f8gih")
 
-[node name="Player" type="Node2D" parent="."]
+[node name="Bush10" type="Sprite2D" parent="Bushes"]
+position = Vector2(2821.87, 1998.52)
+scale = Vector2(0.305, 0.345)
+texture = ExtResource("4_f8gih")
+flip_h = true
+
+[node name="Bush11" type="Sprite2D" parent="Bushes"]
+position = Vector2(2825.84, 1991.81)
+scale = Vector2(0.305, 0.345)
+texture = ExtResource("4_f8gih")
+
+[node name="Bush12" type="Sprite2D" parent="Bushes"]
+position = Vector2(2853, 2070)
+scale = Vector2(0.305, 0.345)
+texture = ExtResource("4_f8gih")
+
+[node name="Bush13" type="Sprite2D" parent="Bushes"]
+position = Vector2(3201, 1922)
+scale = Vector2(0.4, 0.384)
+texture = ExtResource("4_f8gih")
+
+[node name="Bush14" type="Sprite2D" parent="Bushes"]
+position = Vector2(3004, 2002)
+scale = Vector2(0.4, 0.384)
+texture = ExtResource("4_f8gih")
+flip_h = true
+
+[node name="Bush15" type="Sprite2D" parent="Bushes"]
+position = Vector2(3337, 1982)
+scale = Vector2(0.4, 0.384)
+texture = ExtResource("4_f8gih")
+
+[node name="Bush16" type="Sprite2D" parent="Bushes"]
+position = Vector2(3174, 2044)
+scale = Vector2(0.4, 0.384)
+texture = ExtResource("4_f8gih")
+flip_h = true
+
+[node name="Bush17" type="Sprite2D" parent="Bushes"]
+position = Vector2(3151, 2115)
+scale = Vector2(0.4, 0.384)
+texture = ExtResource("4_f8gih")
+
+[node name="Bush18" type="Sprite2D" parent="Bushes"]
+position = Vector2(3328, 2084)
+scale = Vector2(0.4, 0.384)
+texture = ExtResource("4_f8gih")
+
+[node name="Bush19" type="Sprite2D" parent="Bushes"]
+position = Vector2(3486, 2005)
+scale = Vector2(0.4, 0.384)
+texture = ExtResource("4_f8gih")
+
+[node name="Bush20" type="Sprite2D" parent="Bushes"]
+position = Vector2(3308, 1900)
+scale = Vector2(0.4, 0.384)
+texture = ExtResource("4_f8gih")
+flip_h = true
+
+[node name="Bush21" type="Sprite2D" parent="Bushes"]
+position = Vector2(3303.2, 1883.91)
+scale = Vector2(0.4, 0.384)
+texture = ExtResource("4_f8gih")
+
+[node name="Bush22" type="Sprite2D" parent="Bushes"]
+position = Vector2(3480.2, 1852.91)
+scale = Vector2(0.4, 0.384)
+texture = ExtResource("4_f8gih")
+
+[node name="Bush23" type="Sprite2D" parent="Bushes"]
+position = Vector2(3563, 1852)
+scale = Vector2(0.4, 0.384)
+texture = ExtResource("4_f8gih")
+
+[node name="Bush24" type="Sprite2D" parent="Bushes"]
+position = Vector2(3332.2, 1786.82)
+scale = Vector2(0.4, 0.384)
+texture = ExtResource("4_f8gih")
+
+[node name="Bush25" type="Sprite2D" parent="Bushes"]
+position = Vector2(3509.2, 1755.82)
+scale = Vector2(0.4, 0.384)
+texture = ExtResource("4_f8gih")
+
+[node name="Bush26" type="Sprite2D" parent="Bushes"]
+position = Vector2(3512, 1701)
+scale = Vector2(0.4, 0.384)
+texture = ExtResource("4_f8gih")
+
+[node name="Bush27" type="Sprite2D" parent="Bushes"]
+position = Vector2(3676, 1738)
+scale = Vector2(0.4, 0.384)
+texture = ExtResource("4_f8gih")
+
+[node name="Bush28" type="Sprite2D" parent="Bushes"]
+position = Vector2(3445.2, 1672.82)
+scale = Vector2(0.4, 0.384)
+texture = ExtResource("4_f8gih")
+
+[node name="Bush29" type="Sprite2D" parent="Bushes"]
+position = Vector2(3622.2, 1641.82)
+scale = Vector2(0.4, 0.384)
+texture = ExtResource("4_f8gih")
+
+[node name="Bush30" type="Sprite2D" parent="Bushes"]
+position = Vector2(3553, 1569.91)
+scale = Vector2(0.4, 0.384)
+texture = ExtResource("4_f8gih")
+
+[node name="Environments" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Player" parent="Player" instance=ExtResource("6_43okc")]
-position = Vector2(1768, 346)
+[node name="PondBeta" type="Sprite2D" parent="Environments"]
+position = Vector2(2458, 1350)
+scale = Vector2(1.67103, 1.57825)
+texture = ExtResource("8_th2hq")
 
-[node name="Camera2D" type="Camera2D" parent="Player/Player"]
+[node name="Mailbox" parent="Environments" instance=ExtResource("5_y1oy8")]
+position = Vector2(906, 565)
+scale = Vector2(1.2, 1.2)
 
-[node name="DarkTree" type="Sprite2D" parent="."]
-position = Vector2(628, 942)
-texture = ExtResource("7_jurk8")
+[node name="Player" type="Node2D" parent="Environments"]
+y_sort_enabled = true
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
-[node name="DarkTree2" type="Sprite2D" parent="."]
-position = Vector2(1348, 926)
-texture = ExtResource("7_jurk8")
+[node name="Player" parent="Environments/Player" instance=ExtResource("6_43okc")]
+position = Vector2(1701, 290)
+
+[node name="Camera2D" type="Camera2D" parent="Environments/Player/Player"]
+limit_left = 0
+limit_top = 0
+limit_right = 5000
+limit_bottom = 1167
+
+[node name="CutDownTree-sheet" type="Sprite2D" parent="Environments/Player"]
+position = Vector2(2311, 589)
+texture = ExtResource("11_86fm7")
+
+[node name="Tree" parent="Environments" instance=ExtResource("10_7kolj")]
+position = Vector2(674, 1108)
+
+[node name="Tree2" parent="Environments" instance=ExtResource("10_7kolj")]
+position = Vector2(1271, 1136)
+
+[node name="Tree3" parent="Environments" instance=ExtResource("10_7kolj")]
+position = Vector2(2766, 1609)
+
+[node name="Tree4" parent="Environments" instance=ExtResource("10_7kolj")]
+position = Vector2(2492, 1833)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 script = ExtResource("8_k12yi")
 gradient = ExtResource("9_hg7hj")
+
+[connection signal="body_entered" from="Home/LeaveZone" to="Home/LeaveZone" method="_on_body_entered"]

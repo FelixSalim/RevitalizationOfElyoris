@@ -1,22 +1,38 @@
-[gd_scene load_steps=2 format=3 uid="uid://be2gwwygsjjvy"]
+[gd_scene load_steps=3 format=3 uid="uid://be2gwwygsjjvy"]
 
 [ext_resource type="Script" path="res://UI/Notification.gd" id="1_ogdf2"]
+[ext_resource type="Theme" uid="uid://dkdu8uvx0uyg2" path="res://UI/Notification.tres" id="2_wr4sm"]
 
 [node name="Notification" type="CanvasLayer"]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
 script = ExtResource("1_ogdf2")
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = 2.0
-offset_right = 1082.0
-offset_bottom = 75.0
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.061463
+anchor_right = 0.418917
+anchor_bottom = 0.189278
+offset_left = 26.4
+offset_top = -59.38
+offset_right = 27.6
+offset_bottom = -59.42
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_wr4sm")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 24.0
-offset_right = 2661.0
-offset_bottom = 180.0
-scale = Vector2(0.4, 0.4)
+layout_mode = 1
+anchors_preset = -1
+offset_left = 52.0
+offset_top = 53.0
+offset_right = 3827.0
+offset_bottom = 213.0
+scale = Vector2(0.2, 0.2)
 theme_override_font_sizes/font_size = 100
 text = "Test"
 vertical_alignment = 1
 autowrap_mode = 3
+metadata/_edit_use_anchors_ = true

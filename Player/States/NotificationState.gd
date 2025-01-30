@@ -16,6 +16,8 @@ func initialize(use):
 	self.use = use
 
 # Instantiate the notification when it is called
+
+
 func _ready():
 	# Stop unwanted animation
 	if playerAnimation.current_animation not in ["Fade Out", "Idle Down", ""]:
@@ -31,52 +33,71 @@ func _ready():
 
 # Handles sleep notification
 func sleep_handler():
+	# Set use to postSleep
+	use = "postSleep"
+	
 	# Hides player UI
 	player.get_node("Control/UI").hide()
 	
 	# Move to next day
-	player.get_node("../../CanvasModulate").next_day()
+	player.get_node("../../../CanvasModulate").next_day()
 	
 	# Play fade in animation
 	playerAnimation.play("Fade In")
 	
-	# Wait for 2 seconds
-	await get_tree().create_timer(2).timeout
+	# Wait for 1 seconds
+	await get_tree().create_timer(1).timeout
 	
 	# Move player to the bed
-	player.global_position = Vector2(8468, -1554)
+	var playerCam = player.get_node("Camera2D")
+	player.global_position = Settings.GlobalPositions["Bed"]
+	playerCam.limit_left = Settings.LoadingZones["House"]["Left"]
+	playerCam.limit_bottom = Settings.LoadingZones["House"]["Bottom"]
+	playerCam.limit_right = Settings.LoadingZones["House"]["Right"]
+	playerCam.limit_top = Settings.LoadingZones["House"]["Top"]
 	
 	# reset player
 	playerAnimation.play("Idle Down")
 	hitboxAnimation.play("Interact Down")
-	player.isInteracting = false
 
 	# Wait for 1 seconds
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(0.4).timeout
 	
 	# Play fade out animation
 	playerAnimation.play("Fade Out")
+	
+	# Wait for 0.6 seconds
+	await get_tree().create_timer(0.6).timeout
 	
 	# Show player UI again
 	player.get_node("Control/UI").show()
 	
 	# Reset state
 	player.get_node("Control/UI/Notification").queue_free()
+	
+	# Wait for 0.2 seconds
+	await get_tree().create_timer(0.2).timeout
+	
+	# Player no longer in a cutscene
 	changeState.call("idle")
+	player.isInteracting = false
 
 # Read user input, if player pressed confirm, hide notification, if player interact with it again, show the notification
 func _input(event):
-	if event.is_action_pressed("ui_accept") and player.isInteracting:
+	if event.is_action_pressed("ui_accept") and player.isInteracting and use != "postSleep":
 		player.get_node("Control/UI/Notification").hide()
+		# If player is interacting with a bed
 		if use == "sleep":
 			sleep_handler()
-		player.isInteracting = false
+		else:
+			player.isInteracting = false
 	elif event.is_action_pressed("ui_cancel") and player.isInteracting:
 		player.get_node("Control/UI/Notification").hide()
 		player.isInteracting = false
 	elif event.is_action_pressed("ui_accept") and not player.isInteracting:
-		player.get_node("Control/UI/Notification").show()
-		player.isInteracting = true
+		if player.has_node("Control/UI/Notification"):
+			player.get_node("Control/UI/Notification").show()
+			player.isInteracting = true
 
 # Movement Handling, Change State to Run, calls the function stored in changeState (a.k.a change_state)
 # Also makes sure that player is not interacting and free notification after change of state

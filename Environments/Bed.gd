@@ -12,10 +12,10 @@ func _process(delta: float) -> void:
 
 func enter_sleep():
 	# Stores player
-	var player = get_node("../../Player/Player")
+	var player = get_node("../../Environments/Player/Player")
 	
 	# If player interact then go to sleep
-	if Input.is_action_just_pressed("ui_accept") and player.get_node("InteractBox") in collisions:
+	if Input.is_action_just_pressed("ui_accept") and player.get_node("InteractBox") in collisions and not player.isInteracting:
 		player.sleep(false)
 
 # Adds the area to collision when colliding
