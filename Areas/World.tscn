@@ -3388,6 +3388,8 @@ scale = Vector2(1.2, 1.2)
 
 [node name="Player" type="Node2D" parent="Environments"]
 y_sort_enabled = true
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="Player" parent="Environments/Player" instance=ExtResource("6_43okc")]
 position = Vector2(1701, 290)
