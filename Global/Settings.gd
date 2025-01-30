@@ -9,7 +9,7 @@ const GlobalPositions = {
 const LoadingZones = {
 	"World" : {
 		"Left" : -354.417,
-		"Right" : 3500,
+		"Right" : 3300,
 		"Top" : -600,
 		"Bottom" : 1882.295
 	},
