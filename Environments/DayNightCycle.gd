@@ -70,11 +70,25 @@ func next_day():
 	# Crops growth handler
 	growth_handler()
 	
+	# Money handler
+	var moneyMade = money_handler()
+	
 	# Recalculate time again
 	recalculate_time(true)
 	
 	# Save game
 	Utils.save_game()
+	
+	return moneyMade
+
+func money_handler():
+	# Calculate amount of money made based on item in shipping box
+	var moneyMade = 0
+	for item in Game.items:
+		moneyMade += item["Value"]
+	
+	Game.money += moneyMade
+	return moneyMade
 
 func growth_handler():
 	# get land

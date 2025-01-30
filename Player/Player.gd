@@ -101,6 +101,11 @@ func sleep(forced):
 		self.movementState.initialize("sleep")
 		get_node("Control/UI/Notification").set_notification("You are exhausted, you can't move anymore!")
 
+# Money Notifier
+func notify_money(moneyMade):
+	self.change_moving_state("notify")
+	get_node("Control/UI/Notification").set_notification("You made $" + str(moneyMade) + " yesterday")
+
 # Movement Handling (Handled in the individual state class like RunState and IdleState)
 func move_left():
 	movementState.move_left()

@@ -23,6 +23,6 @@ const harvest = [
 	{
 		"Name" : "Turnip",
 		"Location" : "res://Player/Inventory/Harvest/Turnip.tscn",
-		"Price" : 50
+		"Value" : 50
 	}
 ]
