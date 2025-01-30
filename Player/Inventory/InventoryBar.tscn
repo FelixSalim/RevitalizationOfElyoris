@@ -8,6 +8,7 @@
 size = Vector2(125, 125)
 
 [node name="InventoryBar" type="Node2D"]
+visible = false
 script = ExtResource("1_sg07x")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

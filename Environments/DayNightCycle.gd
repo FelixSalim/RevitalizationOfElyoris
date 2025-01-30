@@ -31,9 +31,9 @@ func _ready():
 # Only do so if player is not interacting
 func _process(delta: float) -> void:
 	if not Game.isInteracting:
-		time += delta / 120
+		time += delta / 80
 		#print(time)
-		colorTime += delta / 240
+		colorTime += delta / 160
 		if(colorTime >= PI):
 			colorTime = 0.0
 		# Calculates value to time
