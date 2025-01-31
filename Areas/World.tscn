@@ -1,5 +1,6 @@
-[gd_scene load_steps=32 format=4 uid="uid://cush35jqh0n05"]
+[gd_scene load_steps=33 format=4 uid="uid://cush35jqh0n05"]
 
+[ext_resource type="Texture2D" uid="uid://cbdxsbqayys6e" path="res://Assets/UI/Notification/Notification_Box.png" id="1_15t0o"]
 [ext_resource type="PackedScene" uid="uid://bpgb66jvhsx41" path="res://Environments/TillableLand.tscn" id="1_bqf72"]
 [ext_resource type="PackedScene" uid="uid://bpwfwhca4dlob" path="res://Environments/House.tscn" id="2_0otqb"]
 [ext_resource type="Script" path="res://Areas/LeaveZone.gd" id="2_sbbi6"]
@@ -307,6 +308,12 @@ texture = ExtResource("5_pj8ny")
 sources/0 = SubResource("TileSetAtlasSource_sirys")
 
 [node name="World" type="Node2D"]
+
+[node name="NotificationBox" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(7954.63, -1219.25)
+scale = Vector2(36.4036, 23.0469)
+texture = ExtResource("1_15t0o")
 
 [node name="Home" type="Node2D" parent="."]
 position = Vector2(8103, -1387)
