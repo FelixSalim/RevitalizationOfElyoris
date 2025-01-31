@@ -12,9 +12,13 @@ func set_daytime(day, hour, minute):
 	var shownHour = hour
 	
 	# Turn the am to pm
-	if hour > 12:
+	if hour >= 12:
 		am_pm = "pm"
-		shownHour -= 12
+		if(hour > 12):
+			shownHour -= 12
+	
+	if hour == 0:
+		shownHour = 12
 	
 	# Update the label
 	timeLabel.text = ("%02d:%02d %s" % [shownHour, minute, am_pm])

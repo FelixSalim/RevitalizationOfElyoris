@@ -897,6 +897,7 @@ position = Vector2(743, 580)
 y_sort_enabled = true
 
 [node name="Ponds" type="Node2D" parent="Ponds Env"]
+modulate = Color(0.717942, 0.372458, 0.0431318, 1)
 
 [node name="Pond2" parent="Ponds Env/Ponds" instance=ExtResource("13_44qi0")]
 position = Vector2(2379, 1338)
@@ -927,26 +928,31 @@ scale = Vector2(0.530719, 0.448018)
 texture = ExtResource("11_5sxk4")
 
 [node name="Bush6" type="Sprite2D" parent="Ponds Env"]
+modulate = Color(1, 0.705882, 0.215686, 1)
 position = Vector2(2125, 1659)
 scale = Vector2(0.277344, 0.257161)
 texture = ExtResource("4_f8gih")
 
 [node name="Bush7" type="Sprite2D" parent="Ponds Env"]
+modulate = Color(1, 0.705882, 0.215686, 1)
 position = Vector2(2089, 1617)
 scale = Vector2(0.277344, 0.257161)
 texture = ExtResource("4_f8gih")
 
 [node name="Bush8" type="Sprite2D" parent="Ponds Env"]
+modulate = Color(1, 0.705882, 0.215686, 1)
 position = Vector2(2257, 1677)
 scale = Vector2(0.277344, 0.257161)
 texture = ExtResource("4_f8gih")
 
 [node name="Bush9" type="Sprite2D" parent="Ponds Env"]
+modulate = Color(1, 0.705882, 0.215686, 1)
 position = Vector2(2146, 1528)
 scale = Vector2(0.277344, 0.257161)
 texture = ExtResource("4_f8gih")
 
 [node name="Bush10" type="Sprite2D" parent="Ponds Env"]
+modulate = Color(1, 0.705882, 0.215686, 1)
 position = Vector2(2387, 1690)
 scale = Vector2(0.277344, 0.257161)
 texture = ExtResource("4_f8gih")
@@ -1168,12 +1174,30 @@ scale = Vector2(0.305013, 0.305013)
 texture = ExtResource("4_f8gih")
 
 [node name="Bush76" type="Sprite2D" parent="Environments/Bushes"]
-position = Vector2(3592, 2191.99)
+position = Vector2(3585, 2113)
 scale = Vector2(0.305, 0.345)
 texture = ExtResource("4_f8gih")
 
 [node name="Bush77" type="Sprite2D" parent="Environments/Bushes"]
 position = Vector2(3368, 2237.99)
+scale = Vector2(0.305, 0.345)
+texture = ExtResource("4_f8gih")
+flip_h = true
+
+[node name="Bush156" type="Sprite2D" parent="Environments/Bushes"]
+position = Vector2(3215, 2232)
+scale = Vector2(0.305, 0.345)
+texture = ExtResource("4_f8gih")
+flip_h = true
+
+[node name="Bush157" type="Sprite2D" parent="Environments/Bushes"]
+position = Vector2(3236, 2154)
+scale = Vector2(0.305, 0.345)
+texture = ExtResource("4_f8gih")
+flip_h = true
+
+[node name="Bush158" type="Sprite2D" parent="Environments/Bushes"]
+position = Vector2(3372, 2143)
 scale = Vector2(0.305, 0.345)
 texture = ExtResource("4_f8gih")
 flip_h = true
@@ -1352,6 +1376,7 @@ modulate = Color(1, 0.705882, 0.215686, 1)
 position = Vector2(564, 2216)
 scale = Vector2(0.4, 0.384)
 texture = ExtResource("4_f8gih")
+offset = Vector2(50, 0)
 
 [node name="Bush30" type="Sprite2D" parent="Environments/Bushes"]
 position = Vector2(3553, 1569.91)
@@ -2431,7 +2456,7 @@ position = Vector2(2031, 2086)
 scale = Vector2(0.645634, 0.598749)
 
 [node name="Tree5" parent="Environments" instance=ExtResource("10_7kolj")]
-modulate = Color(0.703808, 0.703808, 0.703808, 1)
+modulate = Color(0.697051, 0.290405, 0, 1)
 position = Vector2(515, 1543)
 scale = Vector2(0.678734, 0.764729)
 
@@ -2522,80 +2547,6 @@ position = Vector2(-161, 1549)
 scale = Vector2(0.41555, 0.363735)
 texture = ExtResource("11_5sxk4")
 
-[node name="Boulder 2" type="Node2D" parent="Environments"]
-y_sort_enabled = true
-position = Vector2(110, -668)
-
-[node name="RockReguler" type="Sprite2D" parent="Environments/Boulder 2"]
-modulate = Color(0.658824, 0.639216, 0.627451, 1)
-position = Vector2(-98, 1533)
-scale = Vector2(0.587578, 0.505429)
-texture = ExtResource("11_5sxk4")
-
-[node name="RockReguler2" type="Sprite2D" parent="Environments/Boulder 2"]
-modulate = Color(0.658824, 0.639216, 0.627451, 1)
-position = Vector2(-30, 1569.5)
-scale = Vector2(0.579982, 0.513572)
-texture = ExtResource("11_5sxk4")
-
-[node name="RockReguler3" type="Sprite2D" parent="Environments/Boulder 2"]
-modulate = Color(0.658824, 0.639216, 0.627451, 1)
-position = Vector2(65, 1551.5)
-scale = Vector2(0.563003, 0.482085)
-texture = ExtResource("11_5sxk4")
-
-[node name="RockReguler4" type="Sprite2D" parent="Environments/Boulder 2"]
-modulate = Color(0.658824, 0.639216, 0.627451, 1)
-position = Vector2(11.5, 1482)
-scale = Vector2(0.462466, 0.410966)
-texture = ExtResource("11_5sxk4")
-
-[node name="RockReguler5" type="Sprite2D" parent="Environments/Boulder 2"]
-modulate = Color(0.658824, 0.639216, 0.627451, 1)
-position = Vector2(-31, 1477.5)
-scale = Vector2(0.639857, 0.56949)
-texture = ExtResource("11_5sxk4")
-
-[node name="RockReguler6" type="Sprite2D" parent="Environments/Boulder 2"]
-modulate = Color(0.658824, 0.639216, 0.627451, 1)
-position = Vector2(-161, 1549)
-scale = Vector2(0.41555, 0.363735)
-texture = ExtResource("11_5sxk4")
-
-[node name="Boulder 3" type="Node2D" parent="Environments"]
-y_sort_enabled = true
-position = Vector2(350, -1136)
-
-[node name="RockReguler" type="Sprite2D" parent="Environments/Boulder 3"]
-position = Vector2(-98, 1533)
-scale = Vector2(0.587578, 0.505429)
-texture = ExtResource("11_5sxk4")
-
-[node name="RockReguler2" type="Sprite2D" parent="Environments/Boulder 3"]
-position = Vector2(-30, 1569.5)
-scale = Vector2(0.579982, 0.513572)
-texture = ExtResource("11_5sxk4")
-
-[node name="RockReguler3" type="Sprite2D" parent="Environments/Boulder 3"]
-position = Vector2(65, 1551.5)
-scale = Vector2(0.563003, 0.482085)
-texture = ExtResource("11_5sxk4")
-
-[node name="RockReguler4" type="Sprite2D" parent="Environments/Boulder 3"]
-position = Vector2(11.5, 1482)
-scale = Vector2(0.462466, 0.410966)
-texture = ExtResource("11_5sxk4")
-
-[node name="RockReguler5" type="Sprite2D" parent="Environments/Boulder 3"]
-position = Vector2(-31, 1477.5)
-scale = Vector2(0.639857, 0.56949)
-texture = ExtResource("11_5sxk4")
-
-[node name="RockReguler6" type="Sprite2D" parent="Environments/Boulder 3"]
-position = Vector2(-161, 1549)
-scale = Vector2(0.41555, 0.363735)
-texture = ExtResource("11_5sxk4")
-
 [node name="Boulder 4" type="Node2D" parent="Environments"]
 y_sort_enabled = true
 position = Vector2(273, -1621)
@@ -2651,6 +2602,7 @@ scale = Vector2(0.277344, 0.257161)
 texture = ExtResource("4_f8gih")
 
 [node name="Bush5" type="Sprite2D" parent="Environments/Bushes2"]
+modulate = Color(1, 0.705882, 0.215686, 1)
 position = Vector2(1925, 1488)
 scale = Vector2(0.277344, 0.257161)
 texture = ExtResource("4_f8gih")
@@ -2766,11 +2718,6 @@ texture = ExtResource("11_5sxk4")
 
 [node name="RockReguler10" type="Sprite2D" parent="Environments"]
 position = Vector2(608, -130)
-scale = Vector2(0.41555, 0.363735)
-texture = ExtResource("11_5sxk4")
-
-[node name="RockReguler11" type="Sprite2D" parent="Environments"]
-position = Vector2(731, -355)
 scale = Vector2(0.41555, 0.363735)
 texture = ExtResource("11_5sxk4")
 
