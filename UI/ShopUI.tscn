@@ -1,0 +1,211 @@
+[gd_scene load_steps=5 format=3 uid="uid://bilaxjchd5n6c"]
+
+[ext_resource type="Script" path="res://UI/ShopUI.gd" id="1_sqcdp"]
+[ext_resource type="Theme" uid="uid://dkdu8uvx0uyg2" path="res://UI/Notification.tres" id="2_wktw6"]
+[ext_resource type="PackedScene" uid="uid://clowhjxulgw7" path="res://Player/Inventory/Tools/TurnipSeed.tscn" id="3_hwm6y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ft73i"]
+size = Vector2(221, 59)
+
+[node name="ShopUi" type="CanvasLayer"]
+script = ExtResource("1_sqcdp")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -968.5
+offset_top = -417.0
+offset_right = 968.5
+offset_bottom = 417.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_wktw6")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 761.5
+offset_top = 48.0
+offset_right = 1971.5
+offset_bottom = 348.0
+scale = Vector2(0.4, 0.4)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 250
+text = "Seed Shop"
+
+[node name="Item1" type="Panel" parent="."]
+anchors_preset = -1
+anchor_right = 0.093
+anchor_bottom = 0.139
+offset_left = 410.0
+offset_top = 405.0
+offset_right = 406.28
+offset_bottom = 446.88
+
+[node name="Panel" type="Panel" parent="Item1"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 220.0
+offset_right = 220.0
+offset_bottom = 279.0
+
+[node name="Label" type="Label" parent="Item1/Panel"]
+layout_mode = 0
+offset_left = 68.0
+offset_top = -1.0
+offset_right = 508.0
+offset_bottom = 299.0
+scale = Vector2(0.2, 0.2)
+theme_override_font_sizes/font_size = 250
+text = "Buy"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Item1/Panel"]
+position = Vector2(110, 30)
+shape = SubResource("RectangleShape2D_ft73i")
+shape_visible = false
+action = "buy_1"
+
+[node name="TurnipSeed" parent="Item1" instance=ExtResource("3_hwm6y")]
+position = Vector2(112, 77)
+
+[node name="Label" type="Label" parent="Item1"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 136.0
+offset_right = 881.0
+offset_bottom = 376.0
+scale = Vector2(0.2, 0.2)
+theme_override_font_sizes/font_size = 200
+text = "Price : 20"
+horizontal_alignment = 2
+
+[node name="Item2" type="Panel" parent="."]
+anchors_preset = -1
+anchor_right = 0.093
+anchor_bottom = 0.139
+offset_left = 760.0
+offset_top = 405.0
+offset_right = 756.28
+offset_bottom = 446.88
+
+[node name="Panel" type="Panel" parent="Item2"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 220.0
+offset_right = 223.0
+offset_bottom = 279.0
+
+[node name="Label" type="Label" parent="Item2/Panel"]
+layout_mode = 0
+offset_left = 68.0
+offset_top = -1.0
+offset_right = 508.0
+offset_bottom = 299.0
+scale = Vector2(0.2, 0.2)
+theme_override_font_sizes/font_size = 250
+text = "Buy"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="Item2/Panel"]
+position = Vector2(112, 30)
+shape = SubResource("RectangleShape2D_ft73i")
+shape_visible = false
+action = "buy_2"
+
+[node name="Item3" type="Panel" parent="."]
+anchors_preset = -1
+anchor_right = 0.093
+anchor_bottom = 0.139
+offset_left = 1110.0
+offset_top = 405.0
+offset_right = 1106.28
+offset_bottom = 446.88
+
+[node name="Panel" type="Panel" parent="Item3"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 220.0
+offset_right = 222.0
+offset_bottom = 279.0
+
+[node name="Label" type="Label" parent="Item3/Panel"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = -1.0
+offset_right = 514.0
+offset_bottom = 299.0
+scale = Vector2(0.2, 0.2)
+theme_override_font_sizes/font_size = 250
+text = "Buy"
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="Item3/Panel"]
+position = Vector2(112, 30)
+shape = SubResource("RectangleShape2D_ft73i")
+shape_visible = false
+action = "buy_3"
+
+[node name="Item4" type="Panel" parent="."]
+anchors_preset = -1
+anchor_right = 0.093
+anchor_bottom = 0.139
+offset_left = 1460.0
+offset_top = 405.0
+offset_right = 1456.28
+offset_bottom = 446.88
+
+[node name="Panel" type="Panel" parent="Item4"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 220.0
+offset_right = 222.0
+offset_bottom = 279.0
+
+[node name="Label" type="Label" parent="Item4/Panel"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = -1.0
+offset_right = 505.0
+offset_bottom = 299.0
+scale = Vector2(0.2, 0.2)
+theme_override_font_sizes/font_size = 250
+text = "Buy"
+
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="Item4/Panel"]
+position = Vector2(112, 30)
+shape = SubResource("RectangleShape2D_ft73i")
+shape_visible = false
+action = "buy_4"
+
+[node name="Item5" type="Panel" parent="."]
+anchors_preset = -1
+anchor_right = 0.093
+anchor_bottom = 0.139
+offset_left = 1810.0
+offset_top = 405.0
+offset_right = 1806.28
+offset_bottom = 446.88
+
+[node name="Panel" type="Panel" parent="Item5"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 220.0
+offset_right = 222.0
+offset_bottom = 279.0
+
+[node name="Label" type="Label" parent="Item5/Panel"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = -1.0
+offset_right = 502.0
+offset_bottom = 299.0
+scale = Vector2(0.2, 0.2)
+theme_override_font_sizes/font_size = 250
+text = "Buy"
+
+[node name="TouchScreenButton5" type="TouchScreenButton" parent="Item5/Panel"]
+position = Vector2(112, 30)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_ft73i")
+shape_visible = false
+action = "buy_5"

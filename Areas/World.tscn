@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://cush35jqh0n05"]
+[gd_scene load_steps=34 format=4 uid="uid://cush35jqh0n05"]
 
 [ext_resource type="Texture2D" uid="uid://cbdxsbqayys6e" path="res://Assets/UI/Notification/Notification_Box.png" id="1_15t0o"]
 [ext_resource type="PackedScene" uid="uid://bpgb66jvhsx41" path="res://Environments/TillableLand.tscn" id="1_bqf72"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://dofn471xoaf6c" path="res://NPC/Red Panda/RedPanda.tscn" id="12_3k0kd"]
 [ext_resource type="PackedScene" uid="uid://c1hbtwct1tsae" path="res://Environments/Pond.tscn" id="13_44qi0"]
 [ext_resource type="PackedScene" uid="uid://cmlhis5ugxdai" path="res://Environments/ShippingBox.tscn" id="16_irb4x"]
+[ext_resource type="PackedScene" uid="uid://c8h3d26uo1gik" path="res://NPC/Shop/Shop.tscn" id="17_vwpoo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5yje1"]
 texture = ExtResource("4_02iys")
@@ -1037,22 +1038,6 @@ position = Vector2(2410.25, 1283.99)
 scale = Vector2(0.419922, 0.41862)
 texture = ExtResource("4_f8gih")
 
-[node name="Tree6" parent="Farmland-To-Town/Bushes" instance=ExtResource("10_7kolj")]
-position = Vector2(3505, 1647)
-
-[node name="Tree7" parent="Farmland-To-Town/Bushes" instance=ExtResource("10_7kolj")]
-position = Vector2(3370, 1849)
-
-[node name="Tree8" parent="Farmland-To-Town/Bushes" instance=ExtResource("10_7kolj")]
-position = Vector2(3463, 925)
-
-[node name="Tree10" parent="Farmland-To-Town/Bushes" instance=ExtResource("10_7kolj")]
-position = Vector2(3539, 1068)
-
-[node name="Tree9" parent="Farmland-To-Town/Bushes" instance=ExtResource("10_7kolj")]
-position = Vector2(3458, 1424)
-scale = Vector2(1.2835, 1.60976)
-
 [node name="GrassLand" type="TileMapLayer" parent="."]
 modulate = Color(0.998664, 0.369858, 0.297637, 1)
 position = Vector2(810, 697)
@@ -1585,6 +1570,9 @@ scale = Vector2(2, 2)
 
 [node name="ShippingBox" parent="." instance=ExtResource("16_irb4x")]
 position = Vector2(743, 580)
+
+[node name="Shop" parent="." instance=ExtResource("17_vwpoo")]
+position = Vector2(1805, -34)
 
 [node name="Ponds Env" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -3442,6 +3430,22 @@ texture = ExtResource("11_5sxk4")
 position = Vector2(608, -130)
 scale = Vector2(0.41555, 0.363735)
 texture = ExtResource("11_5sxk4")
+
+[node name="Tree17" parent="Environments" instance=ExtResource("10_7kolj")]
+position = Vector2(1827, 3971)
+
+[node name="Tree18" parent="Environments" instance=ExtResource("10_7kolj")]
+position = Vector2(1692, 4173)
+
+[node name="Tree19" parent="Environments" instance=ExtResource("10_7kolj")]
+position = Vector2(1785, 3249)
+
+[node name="Tree20" parent="Environments" instance=ExtResource("10_7kolj")]
+position = Vector2(1861, 3392)
+
+[node name="Tree21" parent="Environments" instance=ExtResource("10_7kolj")]
+position = Vector2(1780, 3748)
+scale = Vector2(1.2835, 1.60976)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 script = ExtResource("8_k12yi")
