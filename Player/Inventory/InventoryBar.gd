@@ -37,7 +37,7 @@ func update_amount():
 		else:
 			get_node("Slots").get_child(i).get_child(1).text = str(get_node("Slots").get_child(i).get_child(2).water) + "%"
 			get_node("Slots").get_child(i).get_child(1).visible = true
-
+	
 # Move to the slot every frame and check for tools and item amounts
 func _process(delta):
 	# Check for amounts

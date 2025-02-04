@@ -23,12 +23,14 @@ func _ready() -> void:
 		slot.get_node("Label").text = "Price : " + str(itemsForSale[i]["Price"])
 
 func add_item_to_inv(itemID):
+	var player = get_node("../../..")
 	var found = false
 	for i in range(len(Game.inventory)):
 		if Game.inventory[i] == itemID:
 			if Game.inventoryAmount[i] < 99:
 				Game.inventoryAmount[i] += 1
 				found = true
+				break
 	
 	if found:
 		return
@@ -36,9 +38,11 @@ func add_item_to_inv(itemID):
 	var inventoryAvailable = false
 	for i in range(len(Game.inventory)):
 		if Game.inventory[i] == -1:
-			Game.inventory[i] = itemID
 			Game.inventoryAmount[i] = 1
+			Game.inventory[i] = itemID
+			player.get_node("Control/UI/InventoryBar").load_inventory()
 			inventoryAvailable = true
+			break
 	
 	if inventoryAvailable:
 		return
@@ -51,6 +55,7 @@ func _input(event):
 		if len(itemsForSale) >= 1 and Game.money >= itemsForSale[0]["Price"]:
 			Game.money -= itemsForSale[0]["Price"]
 			add_item_to_inv(itemsForSale[0]["ID"])
+			print(Game.inventory, Game.inventoryAmount)
 	if event.is_action_pressed("buy_2"):
 		if len(itemsForSale) >= 2 and Game.money >= itemsForSale[1]["Price"]:
 			Game.money -= itemsForSale[1]["Price"]
