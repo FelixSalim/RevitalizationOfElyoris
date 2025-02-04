@@ -32,10 +32,10 @@ func _ready():
 	change_moving_state("idle")
 	movementState.playerAnimation.play("Idle Down")
 	movementState.hitboxAnimation.play("Interact Down")
-	get_node("Camera2D").limit_left = Settings.LoadingZones["World"]["Left"]
-	get_node("Camera2D").limit_bottom = Settings.LoadingZones["World"]["Bottom"]
-	get_node("Camera2D").limit_right = Settings.LoadingZones["World"]["Right"]
-	get_node("Camera2D").limit_top = Settings.LoadingZones["World"]["Top"]
+	get_node("Camera2D").limit_left = Settings.LoadingZones["WorldFromHome"]["Left"]
+	get_node("Camera2D").limit_bottom = Settings.LoadingZones["WorldFromHome"]["Bottom"]
+	get_node("Camera2D").limit_right = Settings.LoadingZones["WorldFromHome"]["Right"]
+	get_node("Camera2D").limit_top = Settings.LoadingZones["WorldFromHome"]["Top"]
 
 # Process User Input
 func get_input(delta):
