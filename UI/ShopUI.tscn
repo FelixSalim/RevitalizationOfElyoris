@@ -205,7 +205,6 @@ text = "Buy"
 
 [node name="TouchScreenButton5" type="TouchScreenButton" parent="Item5/Panel"]
 position = Vector2(112, 30)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ft73i")
 shape_visible = false
 action = "buy_5"
