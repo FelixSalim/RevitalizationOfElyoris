@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cljl3kgittaw4"
-path="res://.godot/imported/Stone Floor-Sheet.png-9233cc8bc286e63b69122cdece1768d6.ctex"
+uid="uid://ceqgwagr803sk"
+path="res://.godot/imported/Stone land-sheet.png-45077b00dba40158786a895a470a1279.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/EnvironmentSprites/Stone Floor-Sheet.png"
-dest_files=["res://.godot/imported/Stone Floor-Sheet.png-9233cc8bc286e63b69122cdece1768d6.ctex"]
+source_file="res://Assets/EnvironmentSprites/Stone land-sheet.png"
+dest_files=["res://.godot/imported/Stone land-sheet.png-45077b00dba40158786a895a470a1279.ctex"]
 
 [params]
 
