@@ -5,7 +5,7 @@
 
 [node name="Turnip" type="Sprite2D"]
 texture = ExtResource("1_ru6tj")
-offset = Vector2(-5, 0)
+offset = Vector2(-6, 0)
 hframes = 5
 frame = 4
 script = ExtResource("1_36doq")
