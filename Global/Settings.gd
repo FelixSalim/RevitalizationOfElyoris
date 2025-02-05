@@ -5,7 +5,9 @@ const GlobalPositions = {
 	"House" : Vector2(7184.991, 500.46),
 	"Bed" : Vector2(8189, -1554),
 	"WorldLower" : Vector2(1093.167, 1914.927),
-	"FarmlandToTownUpper" : Vector2(1173.551, 3110.885)
+	"FarmlandToTownUpper" : Vector2(1173.551, 3110.885),
+	"FarmlandToTownLower" : Vector2(-88.566, 3767.213),
+	"CityRight" : Vector2(-908.351, 3742.47)
 }
 
 const LoadingZones = {
@@ -32,5 +34,17 @@ const LoadingZones = {
 		"Right" : 2123.355,
 		"Top" : 2989.02,
 		"Bottom" : 4084.526
+	},
+	"FarmlandToTownLower" : {
+		"Left" : 21.467,
+		"Right" : 2123.355,
+		"Top" : 2989.02,
+		"Bottom" : 4084.526
+	},
+	"CityRight" : {
+		"Left" : -4387.51,
+		"Right" : -665.056,
+		"Top" : 2977.116,
+		"Bottom" : 5429.956
 	}
 }
