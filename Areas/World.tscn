@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cbdxsbqayys6e" path="res://Assets/UI/Notification/Notification_Box.png" id="1_15t0o"]
 [ext_resource type="PackedScene" uid="uid://bpgb66jvhsx41" path="res://Environments/TillableLand.tscn" id="1_bqf72"]
-[ext_resource type="PackedScene" path="res://Environments/House.tscn" id="2_0otqb"]
+[ext_resource type="PackedScene" uid="uid://bpwfwhca4dlob" path="res://Environments/House.tscn" id="2_0otqb"]
 [ext_resource type="Script" path="res://Areas/LeaveZone.gd" id="2_sbbi6"]
 [ext_resource type="Texture2D" uid="uid://cmuuy1jbkuu0v" path="res://Assets/EnvironmentSprites/house tile.png" id="4_02iys"]
 [ext_resource type="Texture2D" uid="uid://dcg4o2px5betb" path="res://Assets/EnvironmentSprites/Bush.png" id="4_f8gih"]
@@ -15,14 +15,14 @@
 [ext_resource type="Texture2D" uid="uid://db3u1qn5g7yyg" path="res://Assets/EnvironmentSprites/House Window-Sheet.png" id="8_51fha"]
 [ext_resource type="Script" path="res://Environments/DayNightCycle.gd" id="8_k12yi"]
 [ext_resource type="Texture2D" uid="uid://bkpc1kjm4t2xn" path="res://Assets/UI/daynightcycle-gradient-texture.tres" id="9_hg7hj"]
-[ext_resource type="PackedScene" path="res://Environments/Bed.tscn" id="10_0bcbb"]
-[ext_resource type="PackedScene" path="res://Environments/Tree.tscn" id="10_7kolj"]
+[ext_resource type="PackedScene" uid="uid://c7mm8qy6snsww" path="res://Environments/Bed.tscn" id="10_0bcbb"]
+[ext_resource type="PackedScene" uid="uid://du80ujcd0b21c" path="res://Environments/Tree.tscn" id="10_7kolj"]
 [ext_resource type="Texture2D" uid="uid://b2dpx2tykyqyn" path="res://Assets/EnvironmentSprites/rock reguler.png" id="11_5sxk4"]
 [ext_resource type="Texture2D" uid="uid://cl4100ojg1og4" path="res://Assets/EnvironmentSprites/Cut down tree-Sheet.png" id="11_86fm7"]
 [ext_resource type="PackedScene" uid="uid://dofn471xoaf6c" path="res://NPC/Red Panda/RedPanda.tscn" id="12_3k0kd"]
-[ext_resource type="PackedScene" path="res://Environments/Pond.tscn" id="13_44qi0"]
+[ext_resource type="PackedScene" uid="uid://c1hbtwct1tsae" path="res://Environments/Pond.tscn" id="13_44qi0"]
 [ext_resource type="Texture2D" uid="uid://ceqgwagr803sk" path="res://Assets/EnvironmentSprites/Stone land-sheet.png" id="14_eiowm"]
-[ext_resource type="PackedScene" path="res://Environments/ShippingBox.tscn" id="16_irb4x"]
+[ext_resource type="PackedScene" uid="uid://cmlhis5ugxdai" path="res://Environments/ShippingBox.tscn" id="16_irb4x"]
 [ext_resource type="PackedScene" uid="uid://c8h3d26uo1gik" path="res://NPC/Shop/Shop.tscn" id="17_vwpoo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5yje1"]
@@ -3065,6 +3065,24 @@ loc = "WorldLower"
 position = Vector2(1068, 2977)
 shape = SubResource("RectangleShape2D_78o4a")
 
+[node name="LeaveZone4" type="Area2D" parent="."]
+script = ExtResource("2_sbbi6")
+loc = "CityRight"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeaveZone4"]
+position = Vector2(-317, 3796)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_78o4a")
+
+[node name="LeaveZone5" type="Area2D" parent="."]
+script = ExtResource("2_sbbi6")
+loc = "FarmlandToTownLower"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeaveZone5"]
+position = Vector2(-642, 3789)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_78o4a")
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 script = ExtResource("8_k12yi")
 gradient = ExtResource("9_hg7hj")
@@ -3072,3 +3090,5 @@ gradient = ExtResource("9_hg7hj")
 [connection signal="body_entered" from="LeaveZone" to="LeaveZone" method="_on_body_entered"]
 [connection signal="body_entered" from="LeaveZone2" to="LeaveZone2" method="_on_body_entered"]
 [connection signal="body_entered" from="LeaveZone3" to="LeaveZone3" method="_on_body_entered"]
+[connection signal="body_entered" from="LeaveZone4" to="LeaveZone4" method="_on_body_entered"]
+[connection signal="body_entered" from="LeaveZone5" to="LeaveZone5" method="_on_body_entered"]
