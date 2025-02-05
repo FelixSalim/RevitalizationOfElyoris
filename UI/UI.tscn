@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://ccy2104o4brdk"]
 
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="1_a5bwe"]
-[ext_resource type="PackedScene" uid="uid://caaw2if5xgfgw" path="res://UI/TimeInfo.tscn" id="1_helqx"]
+[ext_resource type="PackedScene" path="res://UI/TimeInfo.tscn" id="1_helqx"]
 [ext_resource type="PackedScene" uid="uid://bu6n07b5fefp5" path="res://Player/Inventory/InventoryBar.tscn" id="1_ii2ni"]
 [ext_resource type="Script" path="res://UI/Connect.gd" id="1_r2qto"]
 [ext_resource type="Script" path="res://UI/ShowStateDebug.gd" id="2_ufnx0"]

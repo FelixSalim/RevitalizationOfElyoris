@@ -2769,7 +2769,6 @@ position = Vector2(2031, 2086)
 scale = Vector2(0.645634, 0.598749)
 
 [node name="Tree5" parent="Environments" instance=ExtResource("10_7kolj")]
-modulate = Color(0.697051, 0.290405, 0, 1)
 position = Vector2(515, 1543)
 scale = Vector2(0.678734, 0.764729)
 
