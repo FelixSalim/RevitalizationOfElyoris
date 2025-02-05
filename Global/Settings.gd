@@ -1,13 +1,21 @@
 extends Node
 
 const GlobalPositions = {
-	"World" : Vector2(1116.419, 667.009),
+	"WorldFromHome" : Vector2(1116.419, 667.009),
 	"House" : Vector2(7184.991, 500.46),
-	"Bed" : Vector2(8189, -1554)
+	"Bed" : Vector2(8189, -1554),
+	"WorldLower" : Vector2(1093.167, 1914.927),
+	"FarmlandToTownUpper" : Vector2(1173.551, 3110.885)
 }
 
 const LoadingZones = {
-	"World" : {
+	"WorldFromHome" : {
+		"Left" : -500.417,
+		"Right" : 3500,
+		"Top" : -600,
+		"Bottom" : 2100.295
+	},
+	"WorldLower" : {
 		"Left" : -500.417,
 		"Right" : 3500,
 		"Top" : -600,
@@ -18,5 +26,11 @@ const LoadingZones = {
 		"Right" : 9053,
 		"Top" : -2038,
 		"Bottom" : 1027.965
+	},
+	"FarmlandToTownUpper" : {
+		"Left" : 21.467,
+		"Right" : 2123.355,
+		"Top" : 2989.02,
+		"Bottom" : 4084.526
 	}
 }
