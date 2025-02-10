@@ -4,7 +4,7 @@ extends Area2D
 var collision = []
 
 var dialogue = ['Are you the grandchild of the owner?', 'Hi Player, what are you up to?']
-var default_page = 0
+var defaultPage = 0
 var page = 0
 var choiceIdx = [0, 1]
 var choices = [
@@ -25,11 +25,19 @@ var choicesAns = [
 
 var currentChoices = 0
 
+# Load saved dialogue
+func _ready():
+	self.defaultPage = int(Game.redPanda['defaultPage'])
+	self.page = self.defaultPage
+	self.currentChoices = int(Game.redPanda['currentChoice'])
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 # If player interaction is colliding, show notification
 func _process(delta: float) -> void:
 	if collision.size() > 0:
 		enter()
+	Game.redPanda['defaultPage'] = self.defaultPage
+	Game.redPanda['currentChoice'] = self.currentChoices
 
 func enter():
 	# Stores player
@@ -51,7 +59,7 @@ func next_dialogue():
 			choice(choices[currentChoices], choicesAns[currentChoices])
 			if(currentChoices == 0):
 				currentChoices = 1
-				default_page = 1
+				defaultPage = 1
 				page = dialogue.size()
 			
 		page += 1
@@ -59,11 +67,11 @@ func next_dialogue():
 		if(page >= dialogue.size() and not player.isChoosing):
 			player.isChatting = false
 			#player.chattingWith = null
-			page = default_page
+			page = defaultPage
 	else:
 		player.isChatting = false
 		#player.chattingWith = null
-		page = default_page
+		page = defaultPage
 			
 func choice(choice, choiceAns):
 	var player = get_node("../../../Environments/Player/Player")

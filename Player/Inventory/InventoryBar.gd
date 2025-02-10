@@ -8,6 +8,7 @@ func _ready():
 	hide_all()
 	load_inventory()
 
+# Load inventory
 func load_inventory():
 	for i in range(len(Game.inventory)):
 		var item
@@ -20,12 +21,23 @@ func load_inventory():
 			item.scale = Vector2(0.75, 0.75)
 			get_node("Slots/Slot" + str(i+1)).add_child(item)
 
+# Update amount to show
 func update_amount():
 	for i in range(len(Game.inventoryAmount)):
-		if Game.inventoryAmount[i] > 0:
-			get_node("Slots").get_child(i).get_child(1).text = str(Game.inventoryAmount[i])
+		# Different Amount for watering cans
+		if Game.inventory[i] != 1:
+			if Game.inventoryAmount[i] > 0:
+				get_node("Slots").get_child(i).get_child(1).text = str(Game.inventoryAmount[i])
+				get_node("Slots").get_child(i).get_child(1).visible = true
+			else:
+				# If it doesn't exist remove it
+				if get_node("Slots").get_child(i).get_child_count() > 2:
+					get_node("Slots").get_child(i).get_child(2).free()
+				Game.inventory[i] = -1
+		else:
+			get_node("Slots").get_child(i).get_child(1).text = str(get_node("Slots").get_child(i).get_child(2).water) + "%"
 			get_node("Slots").get_child(i).get_child(1).visible = true
-
+	
 # Move to the slot every frame and check for tools and item amounts
 func _process(delta):
 	# Check for amounts
@@ -47,13 +59,14 @@ func _process(delta):
 func tool_check():
 	var tool = get_node("Slots").get_child(Game.selected).get_child(2)
 	# change to the corresponding state if the tool is selected
-	if ItemData.item[tool.itemID]["Name"] == "Hoe" and Game.currentInteractingState != "till": 
-		player.change_interacting_state("till")
-	elif ItemData.item[tool.itemID]["Name"] == "WateringCan" and Game.currentInteractingState != "water":
-		player.change_interacting_state("water")
-	elif ItemData.item[tool.itemID]["Name"] == "TurnipSeed" and Game.currentInteractingState != "seed":
-		player.change_interacting_state("seed")
-	player.isHolding = false
+	if Game.inventory[Game.selected] != -1:
+		if ItemData.item[tool.itemID]["Name"] == "Hoe" and Game.currentInteractingState != "till": 
+			player.change_interacting_state("till")
+		elif ItemData.item[tool.itemID]["Name"] == "WateringCan" and Game.currentInteractingState != "water":
+			player.change_interacting_state("water")
+		elif ItemData.item[tool.itemID]["Name"] == "TurnipSeed" and Game.currentInteractingState != "seed":
+			player.change_interacting_state("seed")
+		player.isHolding = false
 
 # Check for items
 func item_check():
@@ -72,10 +85,10 @@ func update_holding_sprite():
 			if player.get_node("HoldItem").harvestID != item.harvestID:
 				player.get_node("HoldItem").queue_free()
 				player.get_node("Sprite2D").add_sibling(item, true)
-				player.get_node("HoldItem").position = Vector2(0, -65)
+				player.get_node("HoldItem").position = Vector2(0, -110)
 		else:
 			player.get_node("Sprite2D").add_sibling(item, true)
-			player.get_node("HoldItem").position = Vector2(0, -65)
+			player.get_node("HoldItem").position = Vector2(0, -110)
 	else:
 		# If an item is held reset
 		if player.has_node("HoldItem"):

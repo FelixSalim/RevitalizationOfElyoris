@@ -32,10 +32,10 @@ func _ready():
 	change_moving_state("idle")
 	movementState.playerAnimation.play("Idle Down")
 	movementState.hitboxAnimation.play("Interact Down")
-	get_node("Camera2D").limit_left = Settings.LoadingZones["World"]["Left"]
-	get_node("Camera2D").limit_bottom = Settings.LoadingZones["World"]["Bottom"]
-	get_node("Camera2D").limit_right = Settings.LoadingZones["World"]["Right"]
-	get_node("Camera2D").limit_top = Settings.LoadingZones["World"]["Top"]
+	get_node("Camera2D").limit_left = Settings.LoadingZones["WorldFromHome"]["Left"]
+	get_node("Camera2D").limit_bottom = Settings.LoadingZones["WorldFromHome"]["Bottom"]
+	get_node("Camera2D").limit_right = Settings.LoadingZones["WorldFromHome"]["Right"]
+	get_node("Camera2D").limit_top = Settings.LoadingZones["WorldFromHome"]["Top"]
 
 # Process User Input
 func get_input(delta):
@@ -100,6 +100,11 @@ func sleep(forced):
 		self.change_moving_state("notify")
 		self.movementState.initialize("sleep")
 		get_node("Control/UI/Notification").set_notification("You are exhausted, you can't move anymore!")
+
+# Money Notifier
+func notify_money(moneyMade):
+	self.change_moving_state("notify")
+	get_node("Control/UI/Notification").set_notification("You made $" + str(moneyMade) + " yesterday")
 
 # Movement Handling (Handled in the individual state class like RunState and IdleState)
 func move_left():

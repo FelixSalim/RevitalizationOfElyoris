@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cljl3kgittaw4"
-path="res://.godot/imported/Stone Floor-Sheet.png-9233cc8bc286e63b69122cdece1768d6.ctex"
+uid="uid://bdhkvccil3ncx"
+path="res://.godot/imported/Dead Tree.png-c988ae460c5ff5f1ba64e75c3a35783b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/EnvironmentSprites/Stone Floor-Sheet.png"
-dest_files=["res://.godot/imported/Stone Floor-Sheet.png-9233cc8bc286e63b69122cdece1768d6.ctex"]
+source_file="res://Assets/EnvironmentSprites/Dead Tree.png"
+dest_files=["res://.godot/imported/Dead Tree.png-c988ae460c5ff5f1ba64e75c3a35783b.ctex"]
 
 [params]
 

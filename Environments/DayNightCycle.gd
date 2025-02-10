@@ -31,9 +31,9 @@ func _ready():
 # Only do so if player is not interacting
 func _process(delta: float) -> void:
 	if not Game.isInteracting:
-		time += delta / 120
+		time += delta / 50
 		#print(time)
-		colorTime += delta / 240
+		colorTime += delta / 100
 		if(colorTime >= PI):
 			colorTime = 0.0
 		# Calculates value to time
@@ -67,6 +67,9 @@ func next_day():
 	time += ingame_to_real_time(missingTime)
 	colorTime = 0.08 * PI
 	
+	# Money handler
+	var moneyMade = money_handler()
+	
 	# Crops growth handler
 	growth_handler()
 	
@@ -75,6 +78,18 @@ func next_day():
 	
 	# Save game
 	Utils.save_game()
+	
+	return moneyMade
+
+func money_handler():
+	var moneyMade = 0
+	for item in Game.items:
+		moneyMade += item["Value"]
+	
+	Game.items = []
+	
+	Game.money += moneyMade
+	return moneyMade
 
 func growth_handler():
 	# get land

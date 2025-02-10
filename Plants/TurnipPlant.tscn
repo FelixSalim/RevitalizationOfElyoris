@@ -1,9 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://clw47wvhxyp8n"]
 
 [ext_resource type="Script" path="res://Plants/TurnipPlant.gd" id="1_k2nlh"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0h1n0"]
-size = Vector2(80, 80)
+[ext_resource type="Texture2D" uid="uid://dqvggiixrntbm" path="res://Assets/EnvironmentSprites/Parsnip_Plant-Sheet.png" id="2_8jn3x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ciu74"]
 size = Vector2(32, 30)
@@ -12,7 +10,8 @@ size = Vector2(32, 30)
 script = ExtResource("1_k2nlh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("PlaceholderTexture2D_0h1n0")
+texture = ExtResource("2_8jn3x")
+hframes = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ciu74")

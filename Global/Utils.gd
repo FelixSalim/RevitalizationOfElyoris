@@ -32,7 +32,8 @@ func save_game():
 		"plot" : Game.plot,
 		"inventory" : Game.inventory,
 		"inventoryAmount" : Game.inventoryAmount,
-		"time" : Game.gameTime
+		"time" : Game.gameTime,
+		"redPanda" : Game.redPanda
 	}
 	
 	# Store data
@@ -57,5 +58,6 @@ func load_game():
 			Game.inventory = curLine["inventory"]
 			Game.inventoryAmount = curLine["inventoryAmount"]
 			Game.gameTime = curLine["time"]
+			Game.redPanda = curLine["redPanda"]
 	# Close file
 	saveGame.close()

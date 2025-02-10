@@ -30,6 +30,7 @@ func interact(tile, tileState, collision):
 			var plant
 			if ItemData.item[Game.inventory[Game.selected]]["Name"] == "TurnipSeed":
 				plant = turnip.instantiate()
+				Game.inventoryAmount[Game.selected] -= 1
 			
 			tile.add_child(plant)
 			

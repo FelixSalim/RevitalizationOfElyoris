@@ -2,6 +2,7 @@ extends Area2D
 
 # Stores plant sprite
 @onready var plant = $Label # Subject to change when sprite is ready
+@onready var plantSprite = $Sprite2D
 
 # Stores plant stage
 var stage = 1
@@ -14,8 +15,6 @@ var collision = []
 
 # Update sprites accordingly and check collision
 func _process(delta):
-	plant.text = "Stage " + str(stage)
-	
 	# Update stage
 	if progress == 2:
 		stage = 2
@@ -23,6 +22,9 @@ func _process(delta):
 		stage = 3
 	elif progress == 5:
 		stage = 4
+		
+	plant.text = "Stage " + str(stage)
+	plantSprite.frame = stage - 1
 		
 	# If player is in collision prepare for harvest
 	if len(collision) > 1:

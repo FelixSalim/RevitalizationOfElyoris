@@ -1,7 +1,7 @@
 # Inherit State Class
 extends MovementState
 
-# IdleState Class
+# DialogueState Class
 class_name DialogueState
 
 # Load the notification

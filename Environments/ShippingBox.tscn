@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmlhis5ugxdai"]
+
+[ext_resource type="Script" path="res://Environments/ShippingBox.gd" id="1_37vwx"]
+[ext_resource type="Texture2D" uid="uid://nf8gnjukgci6" path="res://Assets/EnvironmentSprites/Shipping Box.png" id="2_ifqsq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fbnsx"]
+size = Vector2(118, 119)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5c7hj"]
+size = Vector2(68, 67)
+
+[node name="ShippingBox" type="StaticBody2D"]
+script = ExtResource("1_37vwx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ifqsq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 3.5)
+shape = SubResource("RectangleShape2D_fbnsx")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3, 1.5)
+shape = SubResource("RectangleShape2D_5c7hj")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

@@ -40,7 +40,7 @@ func sleep_handler():
 	player.get_node("Control/UI").hide()
 	
 	# Move to next day
-	player.get_node("../../../CanvasModulate").next_day()
+	var moneyMade = player.get_node("../../../CanvasModulate").next_day()
 	
 	# Play fade in animation
 	playerAnimation.play("Fade In")
@@ -81,6 +81,10 @@ func sleep_handler():
 	# Player no longer in a cutscene
 	changeState.call("idle")
 	player.isInteracting = false
+	
+	# If money is made notify the player
+	if moneyMade > 0:
+		player.notify_money(moneyMade)
 
 # Read user input, if player pressed confirm, hide notification, if player interact with it again, show the notification
 func _input(event):
@@ -89,16 +93,23 @@ func _input(event):
 		# If player is interacting with a bed
 		if use == "sleep":
 			sleep_handler()
+		elif use == "store" and Game.inventory[Game.selected] >= 100:
+			var item = ItemData.harvest[Game.inventory[Game.selected] - 100]
+			Game.inventoryAmount[Game.selected] -= 1
+			Game.items.append(item)
+			player.isInteracting = false
+			if Game.inventoryAmount[Game.selected] == 0:
+				player.get_node("Control/UI/Notification").set_notification("You ran out of items")
 		else:
 			player.isInteracting = false
-	elif event.is_action_pressed("ui_cancel") and player.isInteracting:
+	elif event.is_action_pressed("ui_cancel") and player.isInteracting and use != "store":
 		player.get_node("Control/UI/Notification").hide()
 		player.isInteracting = false
 	elif event.is_action_pressed("ui_accept") and not player.isInteracting:
 		if player.has_node("Control/UI/Notification"):
 			player.get_node("Control/UI/Notification").show()
 			player.isInteracting = true
-
+			
 # Movement Handling, Change State to Run, calls the function stored in changeState (a.k.a change_state)
 # Also makes sure that player is not interacting and free notification after change of state
 func move_left():
