@@ -12,6 +12,11 @@ var redPanda = {
 	"defaultPage" : 0
 }
 
+var mayor = {
+	"currentChoice" : 0,
+	"defaultPage" : 0
+}
+
 # Stores plot condition
 var plot = {
 	

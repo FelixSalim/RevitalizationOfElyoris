@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/rock reguler.png-9374f8197c5697528c0738121dd7
 
 [params]
 
-compress/mode=1
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.0
 compress/hdr_compression=1

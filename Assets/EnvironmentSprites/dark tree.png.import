@@ -15,9 +15,9 @@ dest_files=["res://.godot/imported/dark tree.png-b6e06e1d024de6cc36ac8e6d22e14ff
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
