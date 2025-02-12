@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=3 uid="uid://ccy2104o4brdk"]
 
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="1_a5bwe"]
-[ext_resource type="PackedScene" uid="uid://caaw2if5xgfgw" path="res://UI/TimeInfo.tscn" id="1_helqx"]
+[ext_resource type="PackedScene" path="res://UI/TimeInfo.tscn" id="1_helqx"]
 [ext_resource type="PackedScene" uid="uid://bu6n07b5fefp5" path="res://Player/Inventory/InventoryBar.tscn" id="1_ii2ni"]
 [ext_resource type="Script" path="res://UI/Connect.gd" id="1_r2qto"]
 [ext_resource type="Script" path="res://UI/ShowStateDebug.gd" id="2_ufnx0"]
 [ext_resource type="Script" path="res://UI/ShowMoney.gd" id="3_qr15h"]
 [ext_resource type="Texture2D" uid="uid://brsh6dpmect78" path="res://Assets/Buttons/action_button.png" id="6_7kd46"]
-[ext_resource type="Theme" uid="uid://dkdu8uvx0uyg2" path="res://UI/Notification.tres" id="6_scbym"]
+[ext_resource type="Theme" path="res://UI/Notification.tres" id="6_scbym"]
 [ext_resource type="Texture2D" uid="uid://8a0w4y2ypm3n" path="res://Assets/Buttons/cancel_button.png" id="7_3ffad"]
 [ext_resource type="Texture2D" uid="uid://c0hvby0lmy1m4" path="res://Assets/Buttons/quest_icon.png" id="10_of3or"]
 
