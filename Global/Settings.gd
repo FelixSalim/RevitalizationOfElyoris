@@ -3,7 +3,7 @@ extends Node
 const GlobalPositions = {
 	"WorldFromHome" : Vector2(1116.419, 667.009),
 	"House" : Vector2(7184.991, 500.46),
-	"Bed" : Vector2(8121, -1050),
+	"Bed" : Vector2(8121, -1700),
 	"WorldLower" : Vector2(1093.167, 1914.927),
 	"FarmlandToTownUpper" : Vector2(1173.551, 3110.885),
 	"FarmlandToTownLower" : Vector2(-88.566, 3767.213),
