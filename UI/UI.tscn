@@ -1,13 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://ccy2104o4brdk"]
+[gd_scene load_steps=11 format=3 uid="uid://ccy2104o4brdk"]
 
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="1_a5bwe"]
-[ext_resource type="PackedScene" path="res://UI/TimeInfo.tscn" id="1_helqx"]
+[ext_resource type="PackedScene" uid="uid://caaw2if5xgfgw" path="res://UI/TimeInfo.tscn" id="1_helqx"]
 [ext_resource type="PackedScene" uid="uid://bu6n07b5fefp5" path="res://Player/Inventory/InventoryBar.tscn" id="1_ii2ni"]
 [ext_resource type="Script" path="res://UI/Connect.gd" id="1_r2qto"]
 [ext_resource type="Script" path="res://UI/ShowStateDebug.gd" id="2_ufnx0"]
 [ext_resource type="Script" path="res://UI/ShowMoney.gd" id="3_qr15h"]
 [ext_resource type="Texture2D" uid="uid://brsh6dpmect78" path="res://Assets/Buttons/action_button.png" id="6_7kd46"]
+[ext_resource type="Theme" uid="uid://dkdu8uvx0uyg2" path="res://UI/Notification.tres" id="6_scbym"]
 [ext_resource type="Texture2D" uid="uid://8a0w4y2ypm3n" path="res://Assets/Buttons/cancel_button.png" id="7_3ffad"]
+[ext_resource type="Texture2D" uid="uid://c0hvby0lmy1m4" path="res://Assets/Buttons/quest_icon.png" id="10_of3or"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_r2qto")
@@ -43,16 +45,19 @@ text = "State : None"
 script = ExtResource("2_ufnx0")
 
 [node name="Panel2" type="Panel" parent="."]
-offset_left = 1894.0
-offset_right = 2398.0
-offset_bottom = 84.0
+offset_left = 1806.0
+offset_top = 1.0
+offset_right = 2381.0
+offset_bottom = 137.0
+theme = ExtResource("6_scbym")
 
 [node name="Money" type="Label" parent="Panel2"]
 layout_mode = 0
-offset_left = 21.0
-offset_top = 11.0
-offset_right = 316.0
-offset_bottom = 71.0
+offset_left = 57.0
+offset_top = 51.0
+offset_right = 352.0
+offset_bottom = 111.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "Money : "
 script = ExtResource("3_qr15h")
@@ -68,3 +73,9 @@ position = Vector2(1838, 802)
 scale = Vector2(0.641221, 0.641221)
 texture_normal = ExtResource("7_3ffad")
 action = "ui_cancel"
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="."]
+position = Vector2(2244, 188)
+scale = Vector2(0.224, 0.218437)
+texture_normal = ExtResource("10_of3or")
+action = "open_quest"

@@ -3,7 +3,7 @@ extends CanvasLayer
 var itemsForSale = [{
 	"ID" : 2,
 	"Item" : ItemData.item[2],
-	"Price" : 20
+	"Price" : 70
 }]
 
 # Called when the node enters the scene tree for the first time.

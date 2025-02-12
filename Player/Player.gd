@@ -51,6 +51,8 @@ func get_input(delta):
 		move_up()
 	if Input.is_action_pressed("ui_down"):
 		move_down()
+	if Input.is_action_just_pressed("open_quest"):
+		open_quest()
 	
 	# Update Velocity
 	velocity = velocity.normalized() * speed * delta
@@ -87,6 +89,10 @@ func check_idling_animation():
 				$AnimationPlayer.play("Idle Down")
 			elif lastDir == "up":
 				$AnimationPlayer.play("Idle Up")
+
+# Open quest UI
+func open_quest():
+	self.change_moving_state("quest")
 
 # Sleep, move to the next day
 func sleep(forced):		
