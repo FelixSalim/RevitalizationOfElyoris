@@ -59,14 +59,15 @@ func get_input(delta):
 
 # Get Input and Move Player Each Frame, also updates on player if it is interacting
 func _process(delta):
-	get_input(delta)
-	move_and_slide()
 	if Game.isInteracting != self.isInteracting:
 		Game.isInteracting = self.isInteracting
 
 	# If player holding condition change then change animation
 	check_idling_animation()
-
+func _physics_process(delta):
+	get_input(delta)
+	move_and_slide()
+	
 # Check Idling Animation, update to current condition
 func check_idling_animation():
 	if lastIsHolding != isHolding and not isInteracting:
