@@ -57,7 +57,6 @@ func get_input(delta):
 	# Update Velocity
 	velocity = velocity.normalized() * speed * delta
 
-# Get Input and Move Player Each Frame, also updates on player if it is interacting
 # updates on player if it is interacting
 func _process(delta):
 	if Game.isInteracting != self.isInteracting:
@@ -65,7 +64,6 @@ func _process(delta):
 
 	# If player holding condition change then change animation
 	check_idling_animation()
-func _physics_process(delta):
 
 # Get Input and Move Player Each Frame
 func _physics_process(delta: float) -> void:
