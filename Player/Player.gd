@@ -58,6 +58,7 @@ func get_input(delta):
 	velocity = velocity.normalized() * speed * delta
 
 # Get Input and Move Player Each Frame, also updates on player if it is interacting
+# updates on player if it is interacting
 func _process(delta):
 	if Game.isInteracting != self.isInteracting:
 		Game.isInteracting = self.isInteracting
@@ -65,9 +66,12 @@ func _process(delta):
 	# If player holding condition change then change animation
 	check_idling_animation()
 func _physics_process(delta):
+
+# Get Input and Move Player Each Frame
+func _physics_process(delta: float) -> void:
 	get_input(delta)
 	move_and_slide()
-	
+
 # Check Idling Animation, update to current condition
 func check_idling_animation():
 	if lastIsHolding != isHolding and not isInteracting:
@@ -93,7 +97,8 @@ func check_idling_animation():
 
 # Open quest UI
 func open_quest():
-	self.change_moving_state("quest")
+	if not self.isInteracting:
+		self.change_moving_state("quest")
 
 # Sleep, move to the next day
 func sleep(forced):		

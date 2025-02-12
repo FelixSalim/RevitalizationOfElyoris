@@ -26,7 +26,7 @@ const LoadingZones = {
 	"House" : {
 		"Left" : 4200.259,
 		"Right" : 9053,
-		"Top" : -1470,
+		"Top" : -2070,
 		"Bottom" : 1027.965
 	},
 	"FarmlandToTownUpper" : {

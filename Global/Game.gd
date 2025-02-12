@@ -39,3 +39,7 @@ var items = []
 
 # Stores player money
 var money = 0
+
+# Stores current quest progress
+var questProgress = -1
+var curQuestCompletion = 0
