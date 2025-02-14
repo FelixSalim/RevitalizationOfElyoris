@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://po5f1tj56up7"]
+[gd_scene load_steps=4 format=3 uid="uid://po5f1tj56up7"]
 
+[ext_resource type="Script" path="res://Player/QuestManager.gd" id="1_mbdnh"]
 [ext_resource type="Theme" uid="uid://dkdu8uvx0uyg2" path="res://UI/Notification.tres" id="1_xwjf1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oi0jr"]
 size = Vector2(221, 59)
 
 [node name="QuestUi" type="CanvasLayer"]
+script = ExtResource("1_mbdnh")
 
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = 8
@@ -49,34 +51,6 @@ offset_left = 123.5
 offset_top = 201.0
 offset_right = 163.5
 offset_bottom = 241.0
-
-[node name="Requirement1" type="Control" parent="Panel/QuestRequirements"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="QuestDesc" type="Label" parent="Panel/QuestRequirements/Requirement1"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 101.0
-offset_right = 2131.0
-offset_bottom = 443.0
-scale = Vector2(0.2, 0.2)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 250
-text = "Talk to Red Panda"
-
-[node name="Progress" type="Label" parent="Panel/QuestRequirements/Requirement1"]
-layout_mode = 0
-offset_left = 1324.0
-offset_top = 101.0
-offset_right = 3453.0
-offset_bottom = 443.0
-scale = Vector2(0.2, 0.2)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 250
-text = "<0/1>"
-horizontal_alignment = 2
 
 [node name="Panel2" type="Panel" parent="."]
 offset_left = 1886.0

@@ -21,6 +21,7 @@ Game="*res://Global/Game.gd"
 ItemData="*res://Global/ItemData.gd"
 Settings="*res://Global/Settings.gd"
 Utils="*res://Global/Utils.gd"
+QuestData="*res://Global/QuestData.gd"
 
 [display]
 
