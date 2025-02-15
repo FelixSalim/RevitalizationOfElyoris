@@ -15,6 +15,20 @@ var quest = [
 				"CurrentProgress" : 0,
 				"QuestType" : "Talk"
 			}
-		]
+		],
+		"Rewards" : 50
+	},
+	{
+		"Name" : "Start Plating",
+		"Requirements" : [
+			{
+				"QuestDesc" : "Plant a turnip on your farmland",
+				"Target" : "TurnipPlant",
+				"MaxProgress" : 1,
+				"CurrentProgress" : 0,
+				"QuestType" : "Plant"
+			}
+		],
+		"Rewards" : 50
 	}
 ]

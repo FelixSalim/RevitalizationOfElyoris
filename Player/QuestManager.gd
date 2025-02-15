@@ -4,17 +4,21 @@ class_name QuestDetailsManager
 
 # Updates Quest each time opened
 func _ready() -> void:
-	var curQuest = QuestData.quest[QuestData.questProgress]
-	get_node("Panel/QuestName").text = curQuest["Name"]
-	for i in range(len(curQuest["Requirements"])):
-		var control = Control.new()
-		control.name = "Requirement" + str(i + 1)
-		get_node("Panel/QuestRequirements").add_child(control)
-		control.position = Vector2(0, 75 * i)
-		
-		update_quest_description(i, curQuest, control)
-		update_quest_progress(i, curQuest, control)
-		
+	# if quest is available : 
+	if QuestData.questProgress < len(QuestData.quest):
+		var curQuest = QuestData.quest[QuestData.questProgress]
+		get_node("Panel/QuestName").text = curQuest["Name"]
+		for i in range(len(curQuest["Requirements"])):
+			var control = Control.new()
+			control.name = "Requirement" + str(i + 1)
+			get_node("Panel/QuestRequirements").add_child(control)
+			control.position = Vector2(0, 75 * i)
+			
+			update_quest_description(i, curQuest, control)
+			update_quest_progress(i, curQuest, control)
+	else:
+		# quest not available
+		get_node("Panel/QuestName").text = "You have completed all quests"
 
 func update_quest_description(i, curQuest, control):
 	var questDescription = Label.new()

@@ -70,6 +70,32 @@ func _physics_process(delta: float) -> void:
 	get_input(delta)
 	move_and_slide()
 
+# Check for quest progress
+func check_progress(questType, target):
+	var questReq = QuestData.quest[QuestData.questProgress]["Requirements"]
+	for quest in questReq:
+		if quest["QuestType"] == questType:
+			if quest["Target"] == target and quest["CurrentProgress"] < quest["MaxProgress"]:
+				quest["CurrentProgress"] += 1
+
+	# Check for player quest completion
+	check_completion()
+
+# Check if quest is completed
+func check_completion():
+	if QuestData.questProgress < len(QuestData.quest):
+		var completed = true
+		var curQuest = QuestData.quest[QuestData.questProgress]
+		# Check each requirements
+		for req in curQuest["Requirements"]:
+			if req["CurrentProgress"] != req["MaxProgress"]:
+				completed = false
+				break
+		
+		if completed:
+			Game.money += curQuest["Rewards"]
+			QuestData.questProgress += 1
+
 # Check Idling Animation, update to current condition
 func check_idling_animation():
 	if lastIsHolding != isHolding and not isInteracting:
