@@ -53,10 +53,10 @@ offset_bottom = 279.0
 
 [node name="Label" type="Label" parent="Item1/Panel"]
 layout_mode = 0
-offset_left = 68.0
-offset_top = -1.0
-offset_right = 508.0
-offset_bottom = 299.0
+offset_left = 75.0
+offset_top = 1.0
+offset_right = 515.0
+offset_bottom = 301.0
 scale = Vector2(0.2, 0.2)
 theme_override_font_sizes/font_size = 250
 text = "Buy"
@@ -79,7 +79,7 @@ offset_bottom = 376.0
 scale = Vector2(0.2, 0.2)
 theme_override_font_sizes/font_size = 200
 text = "Price : 20"
-horizontal_alignment = 2
+horizontal_alignment = 1
 
 [node name="Item2" type="Panel" parent="."]
 anchors_preset = -1
@@ -99,10 +99,10 @@ offset_bottom = 279.0
 
 [node name="Label" type="Label" parent="Item2/Panel"]
 layout_mode = 0
-offset_left = 68.0
-offset_top = -1.0
-offset_right = 508.0
-offset_bottom = 299.0
+offset_left = 78.0
+offset_top = 3.0
+offset_right = 518.0
+offset_bottom = 303.0
 scale = Vector2(0.2, 0.2)
 theme_override_font_sizes/font_size = 250
 text = "Buy"
@@ -131,16 +131,16 @@ offset_bottom = 279.0
 
 [node name="Label" type="Label" parent="Item3/Panel"]
 layout_mode = 0
-offset_left = 74.0
-offset_top = -1.0
-offset_right = 514.0
-offset_bottom = 299.0
+offset_left = 77.0
+offset_top = 2.0
+offset_right = 517.0
+offset_bottom = 302.0
 scale = Vector2(0.2, 0.2)
 theme_override_font_sizes/font_size = 250
 text = "Buy"
 
 [node name="TouchScreenButton3" type="TouchScreenButton" parent="Item3/Panel"]
-position = Vector2(112, 30)
+position = Vector2(113, 30)
 shape = SubResource("RectangleShape2D_ft73i")
 shape_visible = false
 action = "buy_3"
@@ -163,10 +163,10 @@ offset_bottom = 279.0
 
 [node name="Label" type="Label" parent="Item4/Panel"]
 layout_mode = 0
-offset_left = 65.0
-offset_top = -1.0
-offset_right = 505.0
-offset_bottom = 299.0
+offset_left = 75.0
+offset_top = 2.0
+offset_right = 515.0
+offset_bottom = 302.0
 scale = Vector2(0.2, 0.2)
 theme_override_font_sizes/font_size = 250
 text = "Buy"
@@ -195,10 +195,9 @@ offset_bottom = 279.0
 
 [node name="Label" type="Label" parent="Item5/Panel"]
 layout_mode = 0
-offset_left = 62.0
-offset_top = -1.0
-offset_right = 502.0
-offset_bottom = 299.0
+offset_left = 80.0
+offset_right = 520.0
+offset_bottom = 300.0
 scale = Vector2(0.2, 0.2)
 theme_override_font_sizes/font_size = 250
 text = "Buy"

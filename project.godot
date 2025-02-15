@@ -32,7 +32,7 @@ window/vsync/vsync_mode=0
 
 [gui]
 
-theme/custom_font="res://Assets/Fonts/PixelifySans-VariableFont_wght.ttf"
+theme/custom_font="res://Assets/Fonts/Jersey15-Regular.ttf"
 theme/default_font_antialiasing=0
 theme/default_font_subpixel_positioning=0
 
