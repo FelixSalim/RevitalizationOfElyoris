@@ -31,6 +31,9 @@ func interact(tile, tileState, collision):
 			if ItemData.item[Game.inventory[Game.selected]]["Name"] == "TurnipSeed":
 				plant = turnip.instantiate()
 				Game.inventoryAmount[Game.selected] -= 1
+				
+				# Check for quest
+				player.check_progress("Plant", "TurnipPlant")
 			
 			tile.add_child(plant)
 			

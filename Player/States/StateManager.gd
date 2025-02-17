@@ -15,6 +15,7 @@ func _init():
 		"notify" : NotificationState,
 		"dialogue" : DialogueState,
 		"shop" : ShoppingState,
+		"quest" : QuestMenuState,
 		"till" : TillState,
 		"water" : WaterState,
 		"seed" : SeedState

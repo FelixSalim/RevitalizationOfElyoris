@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dbdg4lqy2sigj"]
 
 [ext_resource type="Script" path="res://UI/Choices.gd" id="1_sjtgb"]
-[ext_resource type="Theme" path="res://UI/Notification.tres" id="2_4l5df"]
+[ext_resource type="Theme" uid="uid://dkdu8uvx0uyg2" path="res://UI/Notification.tres" id="2_4l5df"]
 
 [node name="Choices" type="CanvasLayer"]
 scale = Vector2(2, 2)
@@ -35,6 +35,7 @@ offset_top = 0.0499992
 offset_right = 433.6
 offset_bottom = 143.987
 scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 text = "Test"
 horizontal_alignment = 1
@@ -69,6 +70,7 @@ offset_top = 0.0499992
 offset_right = 433.6
 offset_bottom = 143.987
 scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 text = "Test"
 horizontal_alignment = 1

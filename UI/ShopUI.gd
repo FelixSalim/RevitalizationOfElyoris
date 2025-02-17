@@ -3,7 +3,7 @@ extends CanvasLayer
 var itemsForSale = [{
 	"ID" : 2,
 	"Item" : ItemData.item[2],
-	"Price" : 20
+	"Price" : 70
 }]
 
 # Called when the node enters the scene tree for the first time.
@@ -17,6 +17,7 @@ func _ready() -> void:
 		var price = Label.new()
 		price.name = "Label"
 		price.position = Vector2(25, 136)
+		price.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		price.add_theme_font_size_override("font", 200)
 		price.scale = Vector2(0.2, 0.2)
 		slot.add_child(price)

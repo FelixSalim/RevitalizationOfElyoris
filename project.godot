@@ -21,6 +21,7 @@ Game="*res://Global/Game.gd"
 ItemData="*res://Global/ItemData.gd"
 Settings="*res://Global/Settings.gd"
 Utils="*res://Global/Utils.gd"
+QuestData="*res://Global/QuestData.gd"
 
 [display]
 
@@ -31,7 +32,7 @@ window/vsync/vsync_mode=0
 
 [gui]
 
-theme/custom_font="res://Assets/Fonts/PixelifySans-VariableFont_wght.ttf"
+theme/custom_font="res://Assets/Fonts/Jersey15-Regular.ttf"
 theme/default_font_antialiasing=0
 theme/default_font_subpixel_positioning=0
 
@@ -142,6 +143,11 @@ buy_4={
 buy_5={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":true,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":53,"key_label":0,"unicode":37,"location":0,"echo":false,"script":null)
+]
+}
+open_quest={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":81,"key_label":0,"unicode":113,"location":0,"echo":false,"script":null)
 ]
 }
 
