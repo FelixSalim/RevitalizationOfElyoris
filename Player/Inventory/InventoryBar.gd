@@ -85,10 +85,10 @@ func update_holding_sprite():
 			if player.get_node("HoldItem").harvestID != item.harvestID:
 				player.get_node("HoldItem").queue_free()
 				player.get_node("Sprite2D").add_sibling(item, true)
-				player.get_node("HoldItem").position = Vector2(0, -65)
+				player.get_node("HoldItem").position = Vector2(0, -110)
 		else:
 			player.get_node("Sprite2D").add_sibling(item, true)
-			player.get_node("HoldItem").position = Vector2(0, -65)
+			player.get_node("HoldItem").position = Vector2(0, -110)
 	else:
 		# If an item is held reset
 		if player.has_node("HoldItem"):

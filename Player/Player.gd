@@ -24,7 +24,7 @@ var isChoosing = false
 var chattingWith
 
 # Character Speed
-var speed = 30000
+var speed = 24000
 
 # Initiates State Manager, Set Initial State to Idle, Set player camera and set animations accordingly
 func _ready():

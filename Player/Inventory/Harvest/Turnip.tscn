@@ -1,10 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://kofs2neb0hm0"]
 
 [ext_resource type="Script" path="res://Player/Inventory/Harvest/Turnip.gd" id="1_36doq"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ki0cq"]
-size = Vector2(50, 50)
+[ext_resource type="Texture2D" uid="uid://dqvggiixrntbm" path="res://Assets/EnvironmentSprites/Parsnip_Plant-Sheet.png" id="1_ru6tj"]
 
 [node name="Turnip" type="Sprite2D"]
-texture = SubResource("PlaceholderTexture2D_ki0cq")
+texture = ExtResource("1_ru6tj")
+offset = Vector2(-6, 0)
+hframes = 5
+frame = 4
 script = ExtResource("1_36doq")
