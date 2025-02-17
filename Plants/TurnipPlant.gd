@@ -62,6 +62,8 @@ func harvest():
 	
 	# Remove plant
 	self.queue_free()
+	
+	player.check_progress("Harvest", "TurnipPlant")
 
 # Advance to next stage
 func next_progress():

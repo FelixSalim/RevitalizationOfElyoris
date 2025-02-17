@@ -30,5 +30,18 @@ var quest = [
 			}
 		],
 		"Rewards" : 50
+	},
+	{
+		"Name" : "Start Harvesting",
+		"Requirements" : [
+			{
+				"QuestDesc" : "Harvest a turnip",
+				"Target" : "TurnipPlant",
+				"MaxProgress" : 1,
+				"CurrentProgress" : 0,
+				"QuestType" : "Harvest"
+			}
+		],
+		"Rewards" : 50
 	}
 ]
