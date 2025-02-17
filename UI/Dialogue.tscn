@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpuk4xaq13bjs"]
+[gd_scene load_steps=4 format=3 uid="uid://cpuk4xaq13bjs"]
 
 [ext_resource type="Script" path="res://UI/Dialogue.gd" id="1_4cisr"]
 [ext_resource type="Theme" uid="uid://dkdu8uvx0uyg2" path="res://UI/Notification.tres" id="2_786sq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7n3m"]
+size = Vector2(570, 80)
 
 [node name="Dialogue" type="CanvasLayer"]
 scale = Vector2(2, 2)
@@ -72,3 +75,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(597, 444)
+shape = SubResource("RectangleShape2D_s7n3m")
+action = "ui_accept"
