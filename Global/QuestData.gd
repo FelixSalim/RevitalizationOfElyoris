@@ -43,5 +43,25 @@ var quest = [
 			}
 		],
 		"Rewards" : 50
+	},
+	{
+		"Name" : "All Steps Together",
+		"Requirements" : [
+			{
+				"QuestDesc" : "Plant 3 turnips",
+				"Target" : "TurnipPlant",
+				"MaxProgress" : 3,
+				"CurrentProgress" : 0,
+				"QuestType" : "Plant"
+			},
+			{
+				"QuestDesc" : "Harvest 3 turnips",
+				"Target" : "TurnipPlant",
+				"MaxProgress" : 3,
+				"CurrentProgress" : 0,
+				"QuestType" : "Harvest"
+			}
+		],
+		"Rewards" : 150
 	}
 ]
