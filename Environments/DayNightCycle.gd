@@ -76,10 +76,20 @@ func next_day():
 	# Recalculate time again
 	recalculate_time(true)
 	
+	# Check for quest progress
+	quest_handler()
+	
 	# Save game
 	Utils.save_game()
 	
 	return moneyMade
+
+func quest_handler():
+	# Quest Requirements has been reached, move to a new area
+	if QuestData.questProgress >= 9:
+		Settings.fix_home()
+		for land in get_node("../TillableLands2").get_children():
+			land.init_plant()
 
 func money_handler():
 	var moneyMade = 0

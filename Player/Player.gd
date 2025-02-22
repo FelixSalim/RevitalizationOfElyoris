@@ -72,14 +72,15 @@ func _physics_process(delta: float) -> void:
 
 # Check for quest progress
 func check_progress(questType, target):
-	var questReq = QuestData.quest[QuestData.questProgress]["Requirements"]
-	for quest in questReq:
-		if quest["QuestType"] == questType:
-			if quest["Target"] == target and quest["CurrentProgress"] < quest["MaxProgress"]:
-				quest["CurrentProgress"] += 1
+	if QuestData.questProgress < len(QuestData.quest):
+		var questReq = QuestData.quest[QuestData.questProgress]["Requirements"]
+		for quest in questReq:
+			if quest["QuestType"] == questType:
+				if quest["Target"] == target and quest["CurrentProgress"] < quest["MaxProgress"]:
+					quest["CurrentProgress"] += 1
 
-	# Check for player quest completion
-	check_completion()
+		# Check for player quest completion
+		check_completion()
 
 # Check if quest is completed
 func check_completion():
