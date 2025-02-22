@@ -36,6 +36,7 @@ func save_game():
 		"redPanda" : Game.redPanda,
 		"mayor" : Game.mayor,
 		"money" : Game.money,
+		"totalPlant" : Game.totalPlant,
 		"quest" : QuestData.quest,
 		"questProgress" : QuestData.questProgress
 	}
@@ -65,6 +66,7 @@ func load_game():
 			Game.redPanda = curLine["redPanda"]
 			Game.mayor = curLine["mayor"]
 			Game.money = int(curLine["money"])
+			Game.totalPlant = int(curLine["totalPlant"])
 			QuestData.quest = curLine["quest"]
 			QuestData.questProgress = int(curLine["questProgress"])
 	# Close file

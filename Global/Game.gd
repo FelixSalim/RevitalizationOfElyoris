@@ -39,3 +39,6 @@ var items = []
 
 # Stores player money
 var money = 0
+
+# Stores how many plants has been planted
+var totalPlant = 0
