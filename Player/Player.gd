@@ -32,10 +32,6 @@ func _ready():
 	change_moving_state("idle")
 	movementState.playerAnimation.play("Idle Down")
 	movementState.hitboxAnimation.play("Interact Down")
-	get_node("Camera2D").limit_left = Settings.LoadingZones["WorldFromHome"]["Left"]
-	get_node("Camera2D").limit_bottom = Settings.LoadingZones["WorldFromHome"]["Bottom"]
-	get_node("Camera2D").limit_right = Settings.LoadingZones["WorldFromHome"]["Right"]
-	get_node("Camera2D").limit_top = Settings.LoadingZones["WorldFromHome"]["Top"]
 
 # Process User Input
 func get_input(delta):
@@ -72,14 +68,15 @@ func _physics_process(delta: float) -> void:
 
 # Check for quest progress
 func check_progress(questType, target):
-	var questReq = QuestData.quest[QuestData.questProgress]["Requirements"]
-	for quest in questReq:
-		if quest["QuestType"] == questType:
-			if quest["Target"] == target and quest["CurrentProgress"] < quest["MaxProgress"]:
-				quest["CurrentProgress"] += 1
+	if QuestData.questProgress < len(QuestData.quest):
+		var questReq = QuestData.quest[QuestData.questProgress]["Requirements"]
+		for quest in questReq:
+			if quest["QuestType"] == questType:
+				if quest["Target"] == target and quest["CurrentProgress"] < quest["MaxProgress"]:
+					quest["CurrentProgress"] += 1
 
-	# Check for player quest completion
-	check_completion()
+		# Check for player quest completion
+		check_completion()
 
 # Check if quest is completed
 func check_completion():

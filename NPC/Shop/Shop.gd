@@ -9,7 +9,7 @@ func _process(delta: float) -> void:
 
 func enter():
 	# Stores player
-	var player = get_node("../Environments/Player/Player")
+	var player = get_node("../../Environments/Player/Player")
 	# If player is colliding and pressed interact, pop notification and put item in box
 	if player.get_node("InteractBox") in collision and Input.is_action_just_pressed("ui_accept") and not player.isInteracting:
 		player.change_moving_state("shop")

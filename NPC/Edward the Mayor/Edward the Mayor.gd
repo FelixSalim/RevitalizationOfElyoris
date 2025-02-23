@@ -73,6 +73,9 @@ func next_dialogue():
 		#player.chattingWith = null
 		page = defaultPage
 			
+		# Checks quest and add progress if available
+		player.check_progress("Talk", "Edward")
+			
 func choice(choice, choiceAns):
 	var player = get_node("../../../Environments/Player/Player")
 	player.get_node("Control/UI/Choices").set_choice(choice, choiceAns)
