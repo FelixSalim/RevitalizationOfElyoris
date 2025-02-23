@@ -64,11 +64,18 @@ func fix_home():
 func fix_farmland_to_town():
 	GlobalPositions["FarmlandToTownUpper"] = Vector2(7686.951, 7551.2)
 	GlobalPositions["FarmlandToTownLower"] = Vector2(6409.214, 8202.491)
-	LoadingZones["FarmlandToTownUpper"]["Left"] = 6591.906
-	LoadingZones["FarmlandToTownUpper"]["Right"] = 8594.291
+	LoadingZones["FarmlandToTownUpper"]["Left"] = 6641.906
+	LoadingZones["FarmlandToTownUpper"]["Right"] = 8644.291
 	LoadingZones["FarmlandToTownUpper"]["Top"] = 7392.021
 	LoadingZones["FarmlandToTownUpper"]["Bottom"] = 8517.171
-	LoadingZones["FarmlandToTownLower"]["Left"] = 6591.906
-	LoadingZones["FarmlandToTownLower"]["Right"] = 8594.291
+	LoadingZones["FarmlandToTownLower"]["Left"] = 6641.906
+	LoadingZones["FarmlandToTownLower"]["Right"] = 8644.291
 	LoadingZones["FarmlandToTownLower"]["Top"] = 7392.021
 	LoadingZones["FarmlandToTownLower"]["Bottom"] = 8517.171
+
+func fix_town():
+	GlobalPositions["CityRight"] = Vector2(5764.4, 8185.834)
+	LoadingZones["CityRight"]["Left"] = 2275.556
+	LoadingZones["CityRight"]["Right"] = 5858.456
+	LoadingZones["CityRight"]["Top"] = 7409.476
+	LoadingZones["CityRight"]["Bottom"] = 9766.646

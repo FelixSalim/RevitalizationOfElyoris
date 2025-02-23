@@ -94,6 +94,9 @@ func quest_handler():
 		for land in get_node("../TillableLands2").get_children():
 			land.init_plant()
 			
+	if QuestData.questProgress >= 12:
+		Settings.fix_town()
+			
 	if Game.totalPlant >= 30:
 		Settings.fix_farmland_to_town()
 

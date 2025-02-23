@@ -68,7 +68,7 @@ var quest = [
 				"QuestType" : "Talk"
 			}
 		],
-		"Rewards" : 50
+		"Rewards" : 100
 	},
 	{
 		"Name" : "All Steps Together",
@@ -134,7 +134,52 @@ var quest = [
 				"QuestType" : "Talk"
 			}
 		],
+		"Rewards" : 250
+	},
+	{
+		"Name" : "Moving to Town",
+		"Requirements" : [
+			{
+				"QuestDesc" : "Talk to the Mayor in Town",
+				"Target" : "Edward",
+				"MaxProgress" : 1,
+				"CurrentProgress" : 0,
+				"QuestType" : "Talk"
+			}
+		],
 		"Rewards" : 150
+	},
+	{
+		"Name" : "Fix the Town",
+		"Requirements" : [
+			{
+				"QuestDesc" : "Plant 50 turnips",
+				"Target" : "TurnipPlant",
+				"MaxProgress" : 50,
+				"CurrentProgress" : 0,
+				"QuestType" : "Plant"
+			},
+			{
+				"QuestDesc" : "Harvest 50 turnips",
+				"Target" : "TurnipPlant",
+				"MaxProgress" : 50,
+				"CurrentProgress" : 0,
+				"QuestType" : "Harvest"
+			}
+		],
+		"Rewards" : 0
+	},
+	{
+		"Name" : "Quest Completed",
+		"Requirements" : [
+			{
+				"QuestDesc" : "Report back to the Mayor",
+				"Target" : "Edward",
+				"MaxProgress" : 1,
+				"CurrentProgress" : 0,
+				"QuestType" : "Talk"
+			}
+		],
+		"Rewards" : 1000
 	}
-	
 ]
