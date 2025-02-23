@@ -41,4 +41,4 @@ var items = []
 var money = 0
 
 # Stores how many plants has been planted
-var totalPlant = 0
+var totalPlant = 50

@@ -60,3 +60,15 @@ func fix_home():
 	LoadingZones["WorldLower"]["Right"] = 10000.278
 	LoadingZones["WorldLower"]["Top"] = 3800.495
 	LoadingZones["WorldLower"]["Bottom"] = 6329.927
+
+func fix_farmland_to_town():
+	GlobalPositions["FarmlandToTownUpper"] = Vector2(7686.951, 7551.2)
+	GlobalPositions["FarmlandToTownLower"] = Vector2(6409.214, 8202.491)
+	LoadingZones["FarmlandToTownUpper"]["Left"] = 6591.906
+	LoadingZones["FarmlandToTownUpper"]["Right"] = 8594.291
+	LoadingZones["FarmlandToTownUpper"]["Top"] = 7392.021
+	LoadingZones["FarmlandToTownUpper"]["Bottom"] = 8517.171
+	LoadingZones["FarmlandToTownLower"]["Left"] = 6591.906
+	LoadingZones["FarmlandToTownLower"]["Right"] = 8594.291
+	LoadingZones["FarmlandToTownLower"]["Top"] = 7392.021
+	LoadingZones["FarmlandToTownLower"]["Bottom"] = 8517.171
