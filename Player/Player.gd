@@ -24,7 +24,7 @@ var isChoosing = false
 var chattingWith
 
 # Character Speed
-var speed = 24000
+var speed = 35000
 
 # Initiates State Manager, Set Initial State to Idle, Set player camera and set animations accordingly
 func _ready():
@@ -32,10 +32,6 @@ func _ready():
 	change_moving_state("idle")
 	movementState.playerAnimation.play("Idle Down")
 	movementState.hitboxAnimation.play("Interact Down")
-	get_node("Camera2D").limit_left = Settings.LoadingZones["WorldFromHome"]["Left"]
-	get_node("Camera2D").limit_bottom = Settings.LoadingZones["WorldFromHome"]["Bottom"]
-	get_node("Camera2D").limit_right = Settings.LoadingZones["WorldFromHome"]["Right"]
-	get_node("Camera2D").limit_top = Settings.LoadingZones["WorldFromHome"]["Top"]
 
 # Process User Input
 func get_input(delta):
@@ -51,19 +47,51 @@ func get_input(delta):
 		move_up()
 	if Input.is_action_pressed("ui_down"):
 		move_down()
+	if Input.is_action_just_pressed("open_quest"):
+		open_quest()
 	
 	# Update Velocity
 	velocity = velocity.normalized() * speed * delta
 
-# Get Input and Move Player Each Frame, also updates on player if it is interacting
+# updates on player if it is interacting
 func _process(delta):
-	get_input(delta)
-	move_and_slide()
 	if Game.isInteracting != self.isInteracting:
 		Game.isInteracting = self.isInteracting
 
 	# If player holding condition change then change animation
 	check_idling_animation()
+
+# Get Input and Move Player Each Frame
+func _physics_process(delta: float) -> void:
+	get_input(delta)
+	move_and_slide()
+
+# Check for quest progress
+func check_progress(questType, target):
+	if QuestData.questProgress < len(QuestData.quest):
+		var questReq = QuestData.quest[QuestData.questProgress]["Requirements"]
+		for quest in questReq:
+			if quest["QuestType"] == questType:
+				if quest["Target"] == target and quest["CurrentProgress"] < quest["MaxProgress"]:
+					quest["CurrentProgress"] += 1
+
+		# Check for player quest completion
+		check_completion()
+
+# Check if quest is completed
+func check_completion():
+	if QuestData.questProgress < len(QuestData.quest):
+		var completed = true
+		var curQuest = QuestData.quest[QuestData.questProgress]
+		# Check each requirements
+		for req in curQuest["Requirements"]:
+			if req["CurrentProgress"] != req["MaxProgress"]:
+				completed = false
+				break
+		
+		if completed:
+			Game.money += curQuest["Rewards"]
+			QuestData.questProgress += 1
 
 # Check Idling Animation, update to current condition
 func check_idling_animation():
@@ -87,6 +115,11 @@ func check_idling_animation():
 				$AnimationPlayer.play("Idle Down")
 			elif lastDir == "up":
 				$AnimationPlayer.play("Idle Up")
+
+# Open quest UI
+func open_quest():
+	if not self.isInteracting:
+		self.change_moving_state("quest")
 
 # Sleep, move to the next day
 func sleep(forced):		

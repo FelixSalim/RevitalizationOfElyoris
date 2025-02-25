@@ -72,6 +72,9 @@ func next_dialogue():
 		player.isChatting = false
 		#player.chattingWith = null
 		page = defaultPage
+		
+		# Checks quest and add progress if available
+		player.check_progress("Talk", "RedPanda")
 			
 func choice(choice, choiceAns):
 	var player = get_node("../../../Environments/Player/Player")

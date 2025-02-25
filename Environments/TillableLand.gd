@@ -19,15 +19,7 @@ var collision = []
 # Stores land id
 var id
 
-func _ready():
-	# Get land id based on the number in name
-	var i = 1
-	while self.name.right(i).is_valid_int():
-		i += 1
-		
-	id = int(self.name.right(i - 1)) 
-	
-	# Get land data
+func init_plant():
 	if Game.plot.has(str(id - 1)):
 		var landData = Game.plot[str(id - 1)]
 	
@@ -43,6 +35,17 @@ func _ready():
 				plant = preload("res://Plants/TurnipPlant.tscn").instantiate()
 				self.add_child(plant)
 				plant.progress = landData["plantProgress"]
+
+func _ready():
+	# Get land id based on the number in name
+	var i = 1
+	while self.name.right(i).is_valid_int():
+		i += 1
+		
+	id = int(self.name.right(i - 1)) 
+	
+	# Get land data
+	init_plant()
 
 # Called every 1/60s (1 frame) 
 # Set the text of this state (prototype, later will change the sprite) to the state it is on

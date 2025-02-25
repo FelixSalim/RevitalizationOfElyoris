@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://oqe4y5x25kl4"]
+
+[ext_resource type="Script" path="res://NPC/Red Panda/RedPanda.gd" id="1_1tmms"]
+[ext_resource type="Texture2D" uid="uid://oydi74chaa62" path="res://Assets/NPC/RedPanda/redpanda-Sheet.png" id="2_8cyve"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kllml"]
+radius = 62.0
+height = 214.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a4fj0"]
+radius = 50.0
+height = 120.0
+
+[node name="Red Panda" type="CharacterBody2D"]
+script = ExtResource("1_1tmms")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_8cyve")
+
+[node name="ChatDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChatDetection"]
+shape = SubResource("CapsuleShape2D_kllml")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_a4fj0")

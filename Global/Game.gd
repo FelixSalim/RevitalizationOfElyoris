@@ -12,6 +12,11 @@ var redPanda = {
 	"defaultPage" : 0
 }
 
+var mayor = {
+	"currentChoice" : 0,
+	"defaultPage" : 0
+}
+
 # Stores plot condition
 var plot = {
 	
@@ -34,3 +39,6 @@ var items = []
 
 # Stores player money
 var money = 0
+
+# Stores how many plants has been planted
+var totalPlant = 0

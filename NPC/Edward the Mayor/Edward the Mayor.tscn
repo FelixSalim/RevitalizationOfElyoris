@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcwnskbo1yma7"]
+
+[ext_resource type="Texture2D" uid="uid://cadlysnnw2y1h" path="res://Assets/NPC/Edward/edward.png" id="1_jlbeh"]
+[ext_resource type="Script" path="res://NPC/Edward the Mayor/Edward the Mayor.gd" id="2_ac2ea"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sxu7s"]
+radius = 59.0
+height = 214.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pgrnl"]
+radius = 29.0
+height = 68.0
+
+[node name="Edward" type="CharacterBody2D"]
+
+[node name="Edward" type="Sprite2D" parent="."]
+position = Vector2(1, -4)
+texture = ExtResource("1_jlbeh")
+
+[node name="InteractArea" type="Area2D" parent="."]
+script = ExtResource("2_ac2ea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+shape = SubResource("CapsuleShape2D_sxu7s")
+
+[node name="Collision1" type="CollisionShape2D" parent="."]
+position = Vector2(2, 53)
+shape = SubResource("CapsuleShape2D_pgrnl")
+
+[connection signal="area_entered" from="InteractArea" to="InteractArea" method="_on_area_entered"]
+[connection signal="area_exited" from="InteractArea" to="InteractArea" method="_on_area_exited"]

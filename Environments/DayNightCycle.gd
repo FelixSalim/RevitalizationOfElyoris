@@ -25,6 +25,9 @@ var lastMinute = 0
 # load saved time
 func _ready():
 	self.time = Game.gameTime
+	
+	# Check for quest progress
+	quest_handler()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 # Every frame add time and adjust color to time cycle
@@ -76,10 +79,26 @@ func next_day():
 	# Recalculate time again
 	recalculate_time(true)
 	
+	# Check for quest progress
+	quest_handler()
+	
 	# Save game
 	Utils.save_game()
 	
 	return moneyMade
+
+func quest_handler():
+	# Quest Requirements has been reached, move to a new area
+	if QuestData.questProgress >= 9:
+		Settings.fix_home()
+		for land in get_node("../TillableLands2").get_children():
+			land.init_plant()
+			
+	if QuestData.questProgress >= 12:
+		Settings.fix_town()
+			
+	if Game.totalPlant >= 30:
+		Settings.fix_farmland_to_town()
 
 func money_handler():
 	var moneyMade = 0

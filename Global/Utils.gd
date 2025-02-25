@@ -33,7 +33,12 @@ func save_game():
 		"inventory" : Game.inventory,
 		"inventoryAmount" : Game.inventoryAmount,
 		"time" : Game.gameTime,
-		"redPanda" : Game.redPanda
+		"redPanda" : Game.redPanda,
+		"mayor" : Game.mayor,
+		"money" : Game.money,
+		"totalPlant" : Game.totalPlant,
+		"quest" : QuestData.quest,
+		"questProgress" : QuestData.questProgress
 	}
 	
 	# Store data
@@ -59,5 +64,10 @@ func load_game():
 			Game.inventoryAmount = curLine["inventoryAmount"]
 			Game.gameTime = curLine["time"]
 			Game.redPanda = curLine["redPanda"]
+			Game.mayor = curLine["mayor"]
+			Game.money = int(curLine["money"])
+			Game.totalPlant = int(curLine["totalPlant"])
+			QuestData.quest = curLine["quest"]
+			QuestData.questProgress = int(curLine["questProgress"])
 	# Close file
 	saveGame.close()
