@@ -17,10 +17,10 @@ dest_files=["res://.godot/imported/Dead Bush-Sheet.png-c351d24c0659f30b3b06fb7bc
 
 compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.0
 compress/hdr_compression=1
 compress/normal_map=0
-compress/channel_pack=0
+compress/channel_pack=1
 mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
