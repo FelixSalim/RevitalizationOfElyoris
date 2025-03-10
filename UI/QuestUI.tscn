@@ -1,7 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://po5f1tj56up7"]
+[gd_scene load_steps=6 format=3 uid="uid://po5f1tj56up7"]
 
 [ext_resource type="Script" path="res://Player/QuestManager.gd" id="1_mbdnh"]
 [ext_resource type="Theme" uid="uid://dkdu8uvx0uyg2" path="res://UI/Notification.tres" id="1_xwjf1"]
+[ext_resource type="FontFile" uid="uid://bk2dttdvav1wm" path="res://Assets/Fonts/Custom/allcharacters-Sheet.png" id="3_0gqmu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pj1xq"]
+bg_color = Color(0.933333, 0.839216, 0.741176, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oi0jr"]
 size = Vector2(221, 59)
@@ -31,7 +41,8 @@ offset_right = 2426.5
 offset_bottom = 394.0
 scale = Vector2(0.4, 0.4)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 250
+theme_override_fonts/font = ExtResource("3_0gqmu")
+theme_override_font_sizes/font_size = 300
 text = "Current Quest"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -44,7 +55,8 @@ offset_right = 1944.5
 offset_bottom = 543.0
 scale = Vector2(0.3, 0.3)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 250
+theme_override_fonts/font = ExtResource("3_0gqmu")
+theme_override_font_sizes/font_size = 275
 text = "Introduction"
 vertical_alignment = 1
 
@@ -60,6 +72,7 @@ offset_left = 1886.0
 offset_top = 198.0
 offset_right = 2109.0
 offset_bottom = 257.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pj1xq")
 
 [node name="Label" type="Label" parent="Panel2"]
 layout_mode = 0
@@ -68,6 +81,7 @@ offset_top = -5.0
 offset_right = 690.0
 offset_bottom = 337.0
 scale = Vector2(0.2, 0.2)
+theme_override_fonts/font = ExtResource("3_0gqmu")
 theme_override_font_sizes/font_size = 250
 text = "Close"
 horizontal_alignment = 1

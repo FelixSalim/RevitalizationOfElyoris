@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://caaw2if5xgfgw"]
+[gd_scene load_steps=5 format=3 uid="uid://caaw2if5xgfgw"]
 
 [ext_resource type="Script" path="res://UI/TimeInfo.gd" id="1_pr1jq"]
 [ext_resource type="Texture2D" uid="uid://dw6nm7cnofl7s" path="res://Assets/UI/daynightcycle-ui.png" id="2_kkmre"]
+[ext_resource type="FontFile" uid="uid://bk2dttdvav1wm" path="res://Assets/Fonts/Custom/allcharacters-Sheet.png" id="3_eqqeu"]
 [ext_resource type="Texture2D" uid="uid://dhj0mhse4my7s" path="res://Assets/UI/arrow.png" id="3_tmciq"]
 
 [node name="TimeInfo" type="Control"]
@@ -27,8 +28,9 @@ scale = Vector2(0.2, 0.2)
 
 [node name="DayLabel" type="Label" parent="CenterContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 60
-text = "Day 1"
+theme_override_fonts/font = ExtResource("3_eqqeu")
+theme_override_font_sizes/font_size = 75
+text = "Day1"
 
 [node name="CenterContainer2" type="CenterContainer" parent="."]
 layout_mode = 0
@@ -40,8 +42,9 @@ scale = Vector2(0.15, 0.15)
 
 [node name="TimeLabel" type="Label" parent="CenterContainer2"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 70
-text = "06:00 am"
+theme_override_fonts/font = ExtResource("3_eqqeu")
+theme_override_font_sizes/font_size = 75
+text = "06:00AM"
 
 [node name="Arrow" type="TextureRect" parent="."]
 layout_mode = 0

@@ -16,12 +16,13 @@ func _ready() -> void:
 		slot.add_child(item)
 		var price = Label.new()
 		price.name = "Label"
-		price.position = Vector2(25, 136)
+		price.position = Vector2(12, 144)
 		price.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		price.add_theme_font_size_override("font", 200)
+		price.add_theme_font_size_override("font_size", 250)
+		price.add_theme_font_override("font", load("res://Assets/Fonts/Custom/allcharacters-Sheet.png"))
 		price.scale = Vector2(0.2, 0.2)
 		slot.add_child(price)
-		slot.get_node("Label").text = "Price : " + str(itemsForSale[i]["Price"])
+		slot.get_node("Label").text = "Price:" + str(itemsForSale[i]["Price"])
 
 func add_item_to_inv(itemID):
 	var player = get_node("../../..")
