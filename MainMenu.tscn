@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bbgkgw7yqo2ab"]
+[gd_scene load_steps=4 format=3 uid="uid://bbgkgw7yqo2ab"]
 
 [ext_resource type="Script" path="res://MainMenu.gd" id="1_4h8qh"]
 [ext_resource type="Texture2D" uid="uid://bf8lkl671yjy0" path="res://Assets/Buttons/start_button.png" id="2_n2ldx"]
+[ext_resource type="AudioStream" uid="uid://cyg0r2nbufsxh" path="res://Assets/Audio/main-menu.mp3" id="3_jqme0"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_4h8qh")
@@ -9,5 +10,10 @@ script = ExtResource("1_4h8qh")
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
 position = Vector2(865, 398)
 texture_normal = ExtResource("2_n2ldx")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jqme0")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
