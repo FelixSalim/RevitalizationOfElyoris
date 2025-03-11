@@ -11,14 +11,14 @@ script = ExtResource("1_sjtgb")
 
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = -1
-anchor_left = 0.0172083
-anchor_top = 0.062389
-anchor_right = 0.390375
-anchor_bottom = 0.335463
-offset_left = -39.3
-offset_top = 130.12
-offset_right = -150.9
-offset_bottom = -53.8
+anchor_left = 0.017
+anchor_top = 0.062852
+anchor_right = 0.255167
+anchor_bottom = 0.335926
+offset_left = 174.7
+offset_top = 191.62
+offset_right = 63.1001
+offset_bottom = 7.69989
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_4l5df")
@@ -46,14 +46,14 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Panel2" type="Panel" parent="."]
 anchors_preset = -1
-anchor_left = 0.0172083
-anchor_top = 0.062389
-anchor_right = 0.389958
-anchor_bottom = 0.335463
-offset_left = -39.3
+anchor_left = 0.0853333
+anchor_top = 0.062852
+anchor_right = 0.390167
+anchor_bottom = 0.335926
+offset_left = 512.7
 offset_top = 192.12
-offset_right = -150.9
-offset_bottom = 8.19995
+offset_right = 241.1
+offset_bottom = 8.19983
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_4l5df")
