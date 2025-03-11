@@ -13,6 +13,7 @@ texture_normal = ExtResource("2_n2ldx")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_jqme0")
+volume_db = -8.0
 autoplay = true
 parameters/looping = true
 

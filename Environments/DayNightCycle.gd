@@ -50,6 +50,7 @@ func _process(delta: float) -> void:
 
 # Move to beginning of next day
 func next_day():
+	
 	# Current total game minutes
 	var curTime = real_to_ingame_time(time)
 	

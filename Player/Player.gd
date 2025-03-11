@@ -92,6 +92,8 @@ func check_completion():
 		if completed:
 			Game.money += curQuest["Rewards"]
 			QuestData.questProgress += 1
+			self.get_node("AudioStreamPlayer").stream = load("res://Assets/Audio/quest-complete.mp3")
+			self.get_node("AudioStreamPlayer").play()
 
 # Check Idling Animation, update to current condition
 func check_idling_animation():
