@@ -36,4 +36,5 @@ func interact(tile, tileState, collision):
 				player.check_progress("Plant", "TurnipPlant")
 			
 			tile.add_child(plant)
-			
+			player.get_node("AudioStreamPlayer").stream = load("res://Assets/Audio/planting.mp3")
+			player.get_node("AudioStreamPlayer").play()

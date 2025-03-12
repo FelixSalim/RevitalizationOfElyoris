@@ -36,7 +36,7 @@ movie_writer/disable_vsync=true
 
 [gui]
 
-theme/custom_font="res://Assets/Fonts/Jersey15-Regular.ttf"
+theme/custom_font="res://Assets/Fonts/Custom/allcharacters-Sheet.png"
 theme/default_font_antialiasing=0
 theme/default_font_subpixel_positioning=0
 

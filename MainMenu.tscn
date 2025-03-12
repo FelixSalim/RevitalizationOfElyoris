@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cgwqte5ojukdo" path="res://Assets/EnvironmentSprites/hoe.png" id="7_mfxpm"]
 [ext_resource type="Texture2D" uid="uid://dvc5boj2lakyn" path="res://Assets/EnvironmentSprites/watering_can.png" id="8_tvvjj"]
 [ext_resource type="Texture2D" uid="uid://br525c17wyla5" path="res://Assets/EnvironmentSprites/turnip_seedbag.png" id="9_pkj6y"]
+[ext_resource type="AudioStream" uid="uid://cyg0r2nbufsxh" path="res://Assets/Audio/main-menu.mp3" id="3_jqme0"]
+[gd_scene load_steps=4 format=3 uid="uid://bbgkgw7yqo2ab"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_4h8qh")
@@ -205,3 +207,11 @@ texture = ExtResource("8_tvvjj")
 [node name="TurnipSeedbag" type="Sprite2D" parent="."]
 position = Vector2(847, 766)
 texture = ExtResource("9_pkj6y")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jqme0")
+volume_db = -8.0
+autoplay = true
+parameters/looping = true
+
+[connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]

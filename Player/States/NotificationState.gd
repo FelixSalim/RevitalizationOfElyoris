@@ -33,6 +33,8 @@ func _ready():
 
 # Handles sleep notification
 func sleep_handler():
+	var stream = player.get_node("../../../AudioStreamPlayer")
+	
 	# Set use to postSleep
 	use = "postSleep"
 	
@@ -44,6 +46,9 @@ func sleep_handler():
 	
 	# Play fade in animation
 	playerAnimation.play("Fade In")
+	
+	# Momentarily stop music
+	stream.stop()
 	
 	# Wait for 1 seconds
 	await get_tree().create_timer(1).timeout
@@ -65,6 +70,9 @@ func sleep_handler():
 	
 	# Play fade out animation
 	playerAnimation.play("Fade Out")
+	
+	# Play music again
+	stream.play()
 	
 	# Wait for 0.6 seconds
 	await get_tree().create_timer(0.6).timeout

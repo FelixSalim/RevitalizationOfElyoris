@@ -17,8 +17,10 @@ func load_inventory():
 				item = load(ItemData.item[Game.inventory[i]]["Location"]).instantiate()
 			elif Game.inventory[i] >= 100:
 				item = load(ItemData.harvest[Game.inventory[i] - 100]["Location"]).instantiate()
-			item.position = Vector2(89 + i * 125, 88)
+			item.position = Vector2(89 + i * 125, 85)
 			item.scale = Vector2(0.75, 0.75)
+			if Game.inventory[i] == 100:
+				item.offset = Vector2(-6, 0)
 			get_node("Slots/Slot" + str(i+1)).add_child(item)
 
 # Update amount to show
