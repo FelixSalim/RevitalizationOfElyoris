@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://po5f1tj56up7"]
 
 [ext_resource type="Script" path="res://Player/QuestManager.gd" id="1_mbdnh"]
-[ext_resource type="Theme" uid="uid://dkdu8uvx0uyg2" path="res://UI/Notification.tres" id="1_xwjf1"]
+[ext_resource type="Theme" uid="uid://dxwvjugjctsk5" path="res://UI/Notification.tres" id="1_xwjf1"]
 [ext_resource type="FontFile" uid="uid://bk2dttdvav1wm" path="res://Assets/Fonts/Custom/allcharacters-Sheet.png" id="3_0gqmu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pj1xq"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bilaxjchd5n6c"]
 
 [ext_resource type="Script" path="res://UI/ShopUI.gd" id="1_sqcdp"]
-[ext_resource type="Theme" uid="uid://dkdu8uvx0uyg2" path="res://UI/Notification.tres" id="2_wktw6"]
+[ext_resource type="Theme" uid="uid://dxwvjugjctsk5" path="res://UI/Notification.tres" id="2_wktw6"]
 [ext_resource type="FontFile" uid="uid://bk2dttdvav1wm" path="res://Assets/Fonts/Custom/allcharacters-Sheet.png" id="3_84j0u"]
 [ext_resource type="PackedScene" uid="uid://clowhjxulgw7" path="res://Player/Inventory/Tools/TurnipSeed.tscn" id="3_hwm6y"]
 

@@ -1,16 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://bbgkgw7yqo2ab"]
+[gd_scene load_steps=12 format=3 uid="uid://bbgkgw7yqo2ab"]
 
 [ext_resource type="Script" path="res://MainMenu.gd" id="1_4h8qh"]
 [ext_resource type="Texture2D" uid="uid://xkah2kt4qgki" path="res://Assets/EnvironmentSprites/Fridge-Sheet.png" id="2_k7jtb"]
 [ext_resource type="Theme" uid="uid://dxwvjugjctsk5" path="res://UI/Notification.tres" id="2_mr3yj"]
+[ext_resource type="AudioStream" uid="uid://cyg0r2nbufsxh" path="res://Assets/Audio/main-menu.mp3" id="3_jqme0"]
 [ext_resource type="Texture2D" uid="uid://cw2xffe5lfk2r" path="res://Assets/EnvironmentSprites/tree.png" id="4_m8b62"]
 [ext_resource type="Texture2D" uid="uid://dcg4o2px5betb" path="res://Assets/EnvironmentSprites/Bush.png" id="5_1plsa"]
 [ext_resource type="Texture2D" uid="uid://bvokb7fbi5qib" path="res://Assets/UI/Inventory & Hotbar/Active_Icon.png" id="6_tpimk"]
 [ext_resource type="Texture2D" uid="uid://cgwqte5ojukdo" path="res://Assets/EnvironmentSprites/hoe.png" id="7_mfxpm"]
 [ext_resource type="Texture2D" uid="uid://dvc5boj2lakyn" path="res://Assets/EnvironmentSprites/watering_can.png" id="8_tvvjj"]
 [ext_resource type="Texture2D" uid="uid://br525c17wyla5" path="res://Assets/EnvironmentSprites/turnip_seedbag.png" id="9_pkj6y"]
-[ext_resource type="AudioStream" uid="uid://cyg0r2nbufsxh" path="res://Assets/Audio/main-menu.mp3" id="3_jqme0"]
-[gd_scene load_steps=4 format=3 uid="uid://bbgkgw7yqo2ab"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7kn0"]
+size = Vector2(475, 100)
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_4h8qh")
@@ -22,10 +24,10 @@ scale = Vector2(96.3906, 53.963)
 texture = ExtResource("2_k7jtb")
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 564.0
-offset_top = 112.0
-offset_right = 7592.0
-offset_bottom = 863.0
+offset_left = 240.0
+offset_top = 108.0
+offset_right = 8365.0
+offset_bottom = 859.0
 scale = Vector2(0.2, 0.2)
 theme_override_font_sizes/font_size = 650
 text = "REVITALIZATION OF ELYORIS"
@@ -48,6 +50,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 300
 text = "New Game"
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Panel"]
+position = Vector2(273, 101)
+shape = SubResource("RectangleShape2D_p7kn0")
+
 [node name="Panel2" type="Panel" parent="."]
 offset_left = 940.0
 offset_top = 467.0
@@ -56,6 +62,7 @@ offset_bottom = 633.0
 theme = ExtResource("2_mr3yj")
 
 [node name="Label" type="Label" parent="Panel2"]
+layout_mode = 0
 offset_left = 158.0
 offset_top = 69.0
 offset_right = 1425.0
@@ -65,6 +72,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 300
 text = "Load Game"
 
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="Panel2"]
+position = Vector2(277, 102)
+shape = SubResource("RectangleShape2D_p7kn0")
+
 [node name="Panel3" type="Panel" parent="."]
 offset_left = 940.0
 offset_top = 660.0
@@ -73,6 +84,7 @@ offset_bottom = 826.0
 theme = ExtResource("2_mr3yj")
 
 [node name="Label" type="Label" parent="Panel3"]
+layout_mode = 0
 offset_left = 158.0
 offset_top = 69.0
 offset_right = 1425.0
@@ -81,6 +93,10 @@ scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 300
 text = "Exit Game"
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="Panel3"]
+position = Vector2(272, 101)
+shape = SubResource("RectangleShape2D_p7kn0")
 
 [node name="Node2D" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -192,7 +208,7 @@ scale = Vector2(0.526693, 0.557292)
 texture = ExtResource("5_1plsa")
 
 [node name="ActiveIcon" type="Sprite2D" parent="."]
-position = Vector2(2218, 151)
+position = Vector2(2051, 170)
 scale = Vector2(0.847222, 0.84375)
 texture = ExtResource("6_tpimk")
 
@@ -214,4 +230,6 @@ volume_db = -8.0
 autoplay = true
 parameters/looping = true
 
-[connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
+[connection signal="pressed" from="Panel/TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
+[connection signal="pressed" from="Panel2/TouchScreenButton2" to="." method="_on_touch_screen_button_2_pressed"]
+[connection signal="pressed" from="Panel3/TouchScreenButton3" to="." method="_on_touch_screen_button_3_pressed"]
