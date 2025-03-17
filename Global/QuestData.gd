@@ -1,7 +1,7 @@
 extends Node
 
 # Stores current quest progress
-var questProgress = 0
+var questProgress = 9
 
 # Stores quest list
 var quest = [

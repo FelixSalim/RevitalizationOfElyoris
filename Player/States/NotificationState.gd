@@ -80,6 +80,10 @@ func sleep_handler():
 	# Show player UI again
 	player.get_node("Control/UI").show()
 	
+	# for presentation purposes
+	if player.get_node("Control/UI/InventoryBar").visible == false:
+		player.get_node("Control/UI/InventoryBar").visible = true
+	
 	# Reset state
 	player.get_node("Control/UI/Notification").queue_free()
 	

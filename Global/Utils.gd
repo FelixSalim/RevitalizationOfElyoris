@@ -38,7 +38,7 @@ func save_game():
 		"money" : Game.money,
 		"totalPlant" : Game.totalPlant,
 		"quest" : QuestData.quest,
-		"questProgress" : QuestData.questProgress
+		"questProgress" : QuestData.questProgress,
 	}
 	
 	# Store data
@@ -69,5 +69,6 @@ func load_game():
 			Game.totalPlant = int(curLine["totalPlant"])
 			QuestData.quest = curLine["quest"]
 			QuestData.questProgress = int(curLine["questProgress"])
+	
 	# Close file
 	saveGame.close()

@@ -17,6 +17,7 @@ script = ExtResource("1_r2qto")
 scale = Vector2(4, 4)
 
 [node name="InventoryBar" parent="." instance=ExtResource("1_ii2ni")]
+visible = false
 position = Vector2(661, 907)
 
 [node name="Virtual Joystick" parent="." instance=ExtResource("1_a5bwe")]
