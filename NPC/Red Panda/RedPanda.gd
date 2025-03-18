@@ -69,8 +69,8 @@ func next_dialogue():
 		if(page in choiceIdx):
 			player.isChoosing = true
 			choice(choices[currentChoices], choicesAns[currentChoices])
-			if(currentChoices == 0):
-				currentChoices = 1
+			if(currentChoices < len(choiceIdx) - 1):
+				currentChoices += 1
 				defaultPage = page + 1
 				page = dialogue.size()
 		elif QuestData.questProgress <= questRequired[page]:
@@ -94,6 +94,10 @@ func next_dialogue():
 		
 		# Checks quest and add progress if available
 		player.check_progress("Talk", "RedPanda")
+		
+		# for presentation purposes
+		if player.get_node("Control/UI/InventoryBar").visible == false:
+			player.get_node("Control/UI/InventoryBar").visible = true
 			
 func choice(choice, choiceAns):
 	var player = get_node("../../../Environments/Player/Player")

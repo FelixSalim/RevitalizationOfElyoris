@@ -93,6 +93,7 @@ func fix_generator_area():
 	LoadingZones["toGenerator"]["Right"] = 5319
 	LoadingZones["toGenerator"]["Top"] = 10017
 	LoadingZones["toGenerator"]["Bottom"] = 11496
+
 func fix_town():
 	GlobalPositions["CityRight"] = Vector2(5764.4, 8185.834)
 	GlobalPositions["LeaveGenerator"] = Vector2(4057.503, 9618.105)

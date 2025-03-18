@@ -255,10 +255,10 @@ var quest = [
 			#Quest Type baru?
 			{
 				"QuestDesc" : "Pay Jack to repair the Town",
-				"Target" : "TurnipPlant",
-				"MaxProgress" : 50,
+				"Target" : "Jack",
+				"MaxProgress" : 1,
 				"CurrentProgress" : 0,
-				"QuestType" : "Harvest"
+				"QuestType" : "Rebuild"
 			},
 		],
 		"Rewards" : 0

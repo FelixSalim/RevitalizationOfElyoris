@@ -54,6 +54,7 @@ func harvest():
 	Game.inventory[Game.selected] = 100
 	Game.inventoryAmount[Game.selected] += 1
 	player.get_node("Control/UI/InventoryBar").load_inventory()
+	Game.totalPlant += 1
 	
 	# Return land back to normal
 	get_parent().tileState = "Tillable"

@@ -102,7 +102,7 @@ func quest_handler():
 	if QuestData.questProgress >= 15:
 		Settings.fix_town()
 			
-	if Game.totalPlant >= 17:
+	if Game.totalPlant >= 5:
 		Settings.fix_farmland_to_town()
 
 func money_handler():

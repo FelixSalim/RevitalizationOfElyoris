@@ -40,23 +40,23 @@ var choicesAns = [
 	],
 	
 	[
-		['Alright then, I\'ll work ont it!'], 
-		['Fine']
+		['Alright then, I\'ll work on it!'], 
+		['Guess you haven\'t met the requirement yet']
 	],
 	
 	[
-		['Alright then, I\'ll work ont it!'], 
-		['Fine']
+		['Alright then, I\'ll work on it!'], 
+		['Guess you haven\'t met the requirement yet']
 	],
 	
 	[
-		['Alright then, I\'ll work ont it!'], 
-		['Fine']
+		['Alright then, I\'ll work on it!'], 
+		['Guess you haven\'t met the requirement yet']
 	],
 	
 	[
-		['Alright then, I\'ll work ont it!'], 
-		['Fine']
+		['Alright then, I\'ll work on it!'], 
+		['Guess you haven\'t met the requirement yet']
 	],
 	
 	[
@@ -101,10 +101,10 @@ func next_dialogue():
 		player.get_node("Control/UI/Dialogue").set_dialogue(dialogue[page])
 		if(page in choiceIdx):
 			player.isChoosing = true
-			choice(choices[currentChoices], choicesAns[currentChoices])
-			if(currentChoices == 0):
-				currentChoices = 1
-				defaultPage = 1
+			choice(choices[currentChoices], choicesAns[currentChoices], specialRequirements[currentChoices])
+			if(currentChoices < len(choiceIdx) - 1):
+				currentChoices += 1
+				defaultPage = page + 1
 				page = dialogue.size()
 		elif QuestData.questProgress <= questRequired[page]:
 			defaultPage = page
@@ -127,9 +127,11 @@ func next_dialogue():
 		# Checks quest and add progress if available
 		player.check_progress("Talk", "Jack")
 			
-func choice(choice, choiceAns):
+func choice(choice, choiceAns, specialReq):
 	var player = get_node("../../../Environments/Player/Player")
 	player.get_node("Control/UI/Choices").set_choice(choice, choiceAns)
+	if specialReq > 0:
+		player.get_node("Control/UI/Choices").init("Pay", specialReq)
 	player.get_node("Control/UI/Choices").show()
 
 # When a collision occurs, add the collision to the array
