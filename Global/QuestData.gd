@@ -178,12 +178,40 @@ var quest = [
 		"Rewards" : 0
 	},
 	
+	{
+		"Name" : "Coal Plant is Gone!",
+		"Requirements" : [
+			{
+				"QuestDesc" : "Talk to Jack",
+				"Target" : "Jack",
+				"MaxProgress" : 1,
+				"CurrentProgress" : 0,
+				"QuestType" : "Talk"
+			}
+		],
+		"Rewards" : 0
+	},
+	
 	#Quest Type baru
 	{
 		"Name" : "Repairing the Windmill",
 		"Requirements" : [
 			{
 				"QuestDesc" : "Pay Jack to repair the windmill",
+				"Target" : "Jack",
+				"MaxProgress" : 1,
+				"CurrentProgress" : 0,
+				"QuestType" : "Talk"
+			}
+		],
+		"Rewards" : 0
+	},
+	
+	{
+		"Name" : "Two Birds with One Stone",
+		"Requirements" : [
+			{
+				"QuestDesc" : "Talk to Jack",
 				"Target" : "Jack",
 				"MaxProgress" : 1,
 				"CurrentProgress" : 0,
@@ -255,6 +283,20 @@ var quest = [
 		"Requirements" : [
 			{
 				"QuestDesc" : "Pay Jack to build the windmills",
+				"Target" : "Jack",
+				"MaxProgress" : 1,
+				"CurrentProgress" : 0,
+				"QuestType" : "Talk"
+			}
+		],
+		"Rewards" : 0
+	},
+	
+	{
+		"Name" : "Electricity of Elyoris",
+		"Requirements" : [
+			{
+				"QuestDesc" : "Talk to Jack",
 				"Target" : "Jack",
 				"MaxProgress" : 1,
 				"CurrentProgress" : 0,
