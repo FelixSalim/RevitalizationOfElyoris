@@ -109,14 +109,14 @@ var quest = [
 			{
 				"QuestDesc" : "Plant 16 turnips",
 				"Target" : "TurnipPlant",
-				"MaxProgress" : 6,
+				"MaxProgress" : 16,
 				"CurrentProgress" : 0,
 				"QuestType" : "Plant"
 			},
 			{
 				"QuestDesc" : "Harvest 16 turnips",
 				"Target" : "TurnipPlant",
-				"MaxProgress" : 6,
+				"MaxProgress" : 16,
 				"CurrentProgress" : 0,
 				"QuestType" : "Harvest"
 			}

@@ -15,6 +15,7 @@ var dialogue = ['Are you the grandchild of the owner?', #Introduction to Elyoris
 var defaultPage = 0
 var page = 0
 var choiceIdx = [0, 7]
+var questRequired = [0, 1, 2, 3, 4, 5, 6, 7]
 var choices = [
 	['Yes', 'No'],
 	['I\'m doing just fine', 'Goodbye']	
@@ -61,21 +62,31 @@ func enter():
 func next_dialogue():
 	var player = get_node("../../../Environments/Player/Player")
 	if(page < dialogue.size()):
+		if QuestData.questProgress > questRequired[self.page]:
+			self.page += 1
+		
 		player.get_node("Control/UI/Dialogue").set_dialogue(dialogue[page])
 		if(page in choiceIdx):
 			player.isChoosing = true
 			choice(choices[currentChoices], choicesAns[currentChoices])
 			if(currentChoices == 0):
 				currentChoices = 1
-				defaultPage = 1
+				defaultPage = page + 1
 				page = dialogue.size()
-			
+		elif QuestData.questProgress <= questRequired[page]:
+			defaultPage = page
+			page = dialogue.size()
+		
 		page += 1
+			
 		
 		if(page >= dialogue.size() and not player.isChoosing):
 			player.isChatting = false
 			#player.chattingWith = null
 			page = defaultPage
+			
+			# Checks quest and add progress if available
+			player.check_progress("Talk", "RedPanda")
 	else:
 		player.isChatting = false
 		#player.chattingWith = null

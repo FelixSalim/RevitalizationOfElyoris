@@ -31,10 +31,11 @@ func _ready():
 	dialogue.name = "Dialogue"
 	player.get_node("Control/UI").add_child(dialogue)
 	
-	var choices = choice.instantiate()
-	choices.name = "Choices"
-	player.get_node("Control/UI").add_child(choices)
-	player.get_node("Control/UI/Choices").hide()
+	if not player.has_node("Control/UI/Choices"):
+		var choices = choice.instantiate()
+		choices.name = "Choices"
+		player.get_node("Control/UI").add_child(choices)
+		player.get_node("Control/UI/Choices").hide()
 
 # Read user input, if player pressed confirm, hide notification, if player interact with it again, show the notification
 func _input(event):
