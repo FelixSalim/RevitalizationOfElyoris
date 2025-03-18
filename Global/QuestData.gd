@@ -19,7 +19,7 @@ var quest = [
 		"Rewards" : 50
 	},
 	{
-		"Name" : "Start Plating",
+		"Name" : "Start Planting",
 		"Requirements" : [
 			{
 				"QuestDesc" : "Plant a turnip on your farmland",
@@ -68,53 +68,53 @@ var quest = [
 				"QuestType" : "Talk"
 			}
 		],
-		"Rewards" : 100
+		"Rewards" : 1050
 	},
-	{
-		"Name" : "All Steps Together",
-		"Requirements" : [
-			{
-				"QuestDesc" : "Plant 3 turnips",
-				"Target" : "TurnipPlant",
-				"MaxProgress" : 3,
-				"CurrentProgress" : 0,
-				"QuestType" : "Plant"
-			},
-			{
-				"QuestDesc" : "Harvest 3 turnips",
-				"Target" : "TurnipPlant",
-				"MaxProgress" : 3,
-				"CurrentProgress" : 0,
-				"QuestType" : "Harvest"
-			}
-		],
-		"Rewards" : 0
-	},
-	{
-		"Name" : "Quest Completed",
-		"Requirements" : [
-			{
-				"QuestDesc" : "Report back to Red Panda",
-				"Target" : "RedPanda",
-				"MaxProgress" : 1,
-				"CurrentProgress" : 0,
-				"QuestType" : "Talk"
-			}
-		],
-		"Rewards" : 150
-	},
+	#{
+		#"Name" : "All Steps Together",
+		#"Requirements" : [
+			#{
+				#"QuestDesc" : "Plant 16 turnips",
+				#"Target" : "TurnipPlant",
+				#"MaxProgress" : 3,
+				#"CurrentProgress" : 0,
+				#"QuestType" : "Plant"
+			#},
+			#{
+				#"QuestDesc" : "Harvest 16 turnips",
+				#"Target" : "TurnipPlant",
+				#"MaxProgress" : 3,
+				#"CurrentProgress" : 0,
+				#"QuestType" : "Harvest"
+			#}
+		#],
+		#"Rewards" : 0
+	#},
+	#{
+		#"Name" : "Quest Completed",
+		#"Requirements" : [
+			#{
+				#"QuestDesc" : "Report back to Red Panda",
+				#"Target" : "RedPanda",
+				#"MaxProgress" : 1,
+				#"CurrentProgress" : 0,
+				#"QuestType" : "Talk"
+			#}
+		#],
+		#"Rewards" : 500
+	#},
 	{
 		"Name" : "Restore Homeland!",
 		"Requirements" : [
 			{
-				"QuestDesc" : "Plant 6 turnips",
+				"QuestDesc" : "Plant 16 turnips",
 				"Target" : "TurnipPlant",
 				"MaxProgress" : 6,
 				"CurrentProgress" : 0,
 				"QuestType" : "Plant"
 			},
 			{
-				"QuestDesc" : "Harvest 6 turnips",
+				"QuestDesc" : "Harvest 16 turnips",
 				"Target" : "TurnipPlant",
 				"MaxProgress" : 6,
 				"CurrentProgress" : 0,
@@ -134,7 +134,7 @@ var quest = [
 				"QuestType" : "Talk"
 			}
 		],
-		"Rewards" : 250
+		"Rewards" : 900
 	},
 	{
 		"Name" : "Moving to Town",
@@ -149,6 +149,64 @@ var quest = [
 		],
 		"Rewards" : 150
 	},
+	{
+		"Name" : "The Main Problem",
+		"Requirements" : [
+			{
+				"QuestDesc" : "Talk to Jack in Town",
+				"Target" : "Jack",
+				"MaxProgress" : 1,
+				"CurrentProgress" : 0,
+				"QuestType" : "Talk"
+			}
+		],
+		"Rewards" : 0
+	},
+	
+	#Quest Type Baru
+	{
+		"Name" : "Removing the Coal Powerplant",
+		"Requirements" : [
+			{
+				"QuestDesc" : "Pay Jack to remove the powerplant",
+				"Target" : "Jack",
+				"MaxProgress" : 1,
+				"CurrentProgress" : 0,
+				"QuestType" : "Talk"
+			}
+		],
+		"Rewards" : 0
+	},
+	
+	#Quest Type baru
+	{
+		"Name" : "Repairing the Windmill",
+		"Requirements" : [
+			{
+				"QuestDesc" : "Pay Jack to repair the windmill",
+				"Target" : "Jack",
+				"MaxProgress" : 1,
+				"CurrentProgress" : 0,
+				"QuestType" : "Talk"
+			}
+		],
+		"Rewards" : 0
+	},
+	
+	{
+		"Name" : "Addressing the Town Problem",
+		"Requirements" : [
+			{
+				"QuestDesc" : "Talk to the Mayor in Town",
+				"Target" : "Edward",
+				"MaxProgress" : 1,
+				"CurrentProgress" : 0,
+				"QuestType" : "Talk"
+			}
+		],
+		"Rewards" : 150
+	},
+	
 	{
 		"Name" : "Fix the Town",
 		"Requirements" : [
@@ -165,12 +223,20 @@ var quest = [
 				"MaxProgress" : 50,
 				"CurrentProgress" : 0,
 				"QuestType" : "Harvest"
-			}
+			},
+			#Quest Type baru?
+			{
+				"QuestDesc" : "Pay Jack to repair the Town",
+				"Target" : "TurnipPlant",
+				"MaxProgress" : 50,
+				"CurrentProgress" : 0,
+				"QuestType" : "Harvest"
+			},
 		],
 		"Rewards" : 0
 	},
 	{
-		"Name" : "Quest Completed",
+		"Name" : "Electricity?",
 		"Requirements" : [
 			{
 				"QuestDesc" : "Report back to the Mayor",
@@ -180,6 +246,35 @@ var quest = [
 				"QuestType" : "Talk"
 			}
 		],
-		"Rewards" : 1000
-	}
+		"Rewards" : 150
+	},
+	
+	#Quest Type Baru
+	{
+		"Name" : "Electricity for Elyoris",
+		"Requirements" : [
+			{
+				"QuestDesc" : "Pay Jack to build the windmills",
+				"Target" : "Jack",
+				"MaxProgress" : 1,
+				"CurrentProgress" : 0,
+				"QuestType" : "Talk"
+			}
+		],
+		"Rewards" : 0
+	},
+	
+	{
+		"Name" : "Revitalization of Elyoris",
+		"Requirements" : [
+			{
+				"QuestDesc" : "Report back to the Mayor",
+				"Target" : "Edward",
+				"MaxProgress" : 1,
+				"CurrentProgress" : 0,
+				"QuestType" : "Talk"
+			}
+		],
+		"Rewards" : 2500
+	},
 ]

@@ -3,22 +3,30 @@ extends Area2D
 # Stores colliding objects
 var collision = []
 
-var dialogue = ['Are you the grandchild of the owner?', 'Hi Player, what are you up to?']
+var dialogue = ['Are you the grandchild of the owner?', #Introduction to Elyoris
+				'I\'ll be waiting for your next progress, good luck!', #Nyangkut untuk Start Planting
+				'Looks like you have successfully planted a turnip! Here\'s some coin for you', #Quest Completed
+				'I\'ll be waiting for your next progress, good luck!', #Nyangkut Start Harvesting
+				'Is that a turnip? It\'s been so long.. Congrats! Now, I need you to plant 16 turnips, hopefully by planting a lot of crops, we can revitalize this land.', #Quest Completed
+				'Now, I need you to plant 16 turnips, hopefully by planting a lot of crops, we can revitalize this land.', #Nyangkut Restore Homeland
+				'You\'ve done it! Look at our farm now, it\'so green and beautiful, from the deepest of my tiny heart, thank you, you can now start to talk to the mayor in town, I think he\'s facing some issue', #Quest Completed
+				'Hi, what are you up to?'
+				]
 var defaultPage = 0
 var page = 0
-var choiceIdx = [0, 1]
+var choiceIdx = [0, 7]
 var choices = [
 	['Yes', 'No'],
-	['What do I need to do?', 'Goodbye']	
+	['I\'m doing just fine', 'Goodbye']	
 ]
 var choicesAns = [
 	[
-		['I am so happy that you have come back, my name is Lign, I am the guardian of this land.', 'There\'s so many things that we\'ll need to do to restore Elyoris.', 'I\'ll be waiting for your next progress, good luck!'], 
-		['You must have forgotten, well anyway, my name is Lign, I am the guardian of this land.', 'There\'s so many things that we\'ll need to do to restore Elyoris.', 'I\'ll be waiting for your next progress, good luck!']
+		['I am so happy that you have come back, my name is Lign, I am the guardian of this land.', 'There\'s so many things that we\'ll need to do to restore Elyoris.', 'You can start by planting a turnip, here is a seed for you', 'I\'ll be waiting for your next progress, good luck!'], 
+		['You must have forgotten, well anyway, my name is Lign, I am the guardian of this land.', 'There\'s so many things that we\'ll need to do to restore Elyoris.', 'You can start by planting a turnip, here is a seed for you', 'I\'ll be waiting for your next progress, good luck!']
 	],
 	
 	[
-		['There\'s so many things that we\'ll need to do to restore Elyoris.', 'I\'ll be waiting for your next progress, good luck!'], 
+		['Nice to hear that! I\'m forever thankful for what you did for our farm, goodluck on your future journey.'], 
 		['Goodbye'],
 	],
 ]
