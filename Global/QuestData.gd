@@ -18,7 +18,7 @@ var quest = [
 		],
 		"Rewards" : 50
 	},
-	{
+	{ 	
 		"Name" : "Start Planting",
 		"Requirements" : [
 			{
@@ -124,7 +124,7 @@ var quest = [
 		"Rewards" : 0
 	},
 	{
-		"Name" : "Quest Completed",
+		"Name" : "Revitalized the Farmland",
 		"Requirements" : [
 			{
 				"QuestDesc" : "Report back to Red Panda",

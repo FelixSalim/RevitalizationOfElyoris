@@ -3,22 +3,34 @@ extends Area2D
 # Stores colliding objects
 var collision = []
 
-var dialogue = ['Hi Player, my name is Edward, I am the mayor of this town, I have a favor to ask you', 'My town is dying, it\'s environment withering and our villagers are sick, If you are willing, can you investigate this issue for us?', 'Hi Player, what are you up to?']
+var dialogue = ['Hi, my name is Edward, I am the mayor of this town', #Nyangkut disini kecuali udah sampe moving to town
+				'Hi, my name is Edward, I am the mayor of this town, I have a favor to ask you', #Moving to Town
+				'My town is dying, it\'s environment withering and our villagers are sick, If you are willing, can you investigate this issue for us?', #Moving to Town
+				'You can try to ask Jack near the land below our town, some villagers are noticeably more sick there', #Nyangkut dari quest The Main Problem sampe Repairing the Windmill, abis itu masuk ke dialog selanjutnya
+				'So the problem is that coal power plant huh, and also that broken windmill', #Addressing the Town Problem
+				'Thank you so much, our villagers aren\'t sick anymore but, well our town is at a bad state. You can try asking jack again for the reparation of our town', #Addressing the Town Problem
+				'You can try asking jack again for the reparation of our town', #Nyangkut, Fix the Town
+				'I can\'t believe it, our town is back, thank you so much but there is just one problem now, we don\'t have enough electricity anymore, this is my final request to you, talk to jack for a new renewable energy power plant like windmill', #Electricity?
+				'This is my final request to you, talk to jack for a new renewable energy power plant like windmill', #Nyangkut, electricity for elyoris
+				'You truly have revitalized Elyoris, I\'m forever grateful and thankful for what you\'ve done', #Revitalization of Elyoris
+				'It isn\'t much but, here is some gold for you' , #Revitalization of Elyoris
+				'I don\'t think there is anymore I can ask you, enjoy Elyoris and give my thanks to your parent for raising such a wonderful child like you' , #Revitalization of Elyoris
+				'Hi, what are you up to?']
 var defaultPage = 0
 var page = 0
-var choiceIdx = [1, 2]
+var choiceIdx = [2, 12]
 var choices = [
 	['Ofcourse', 'What\'s in it for me'],
 	['How\'s the villager and environment in this town?', 'Goodbye']	
 ]
 var choicesAns = [
 	[
-		['Thank you, our town will thank you for your generosity', 'You can start to investigate the land below our town, some villager are noticeably more sick there'], 
-		['Well.. we do have some reward that is ready', 'if you want to, you can start to investigate the land below our town, some villager are noticeably more sick there']
+		['Thank you, our town will thank you for your generosity', 'You can try to ask Jack near the land below our town, some villagers are noticeably more sick there'], 
+		['Well.. we do have some reward that is ready', 'If you want to, you can try to ask Jack near the land below our town, some villagers are noticeably more sick there']
 	],
 	
 	[
-		['It\'s still bleak, I\'m worried that things will get worse from here', 'I\'ll keep updating our condition to you, good luck in any of your journey'], 
+		['It\'s great now since you\'ve fixed everything, thanks!', 'If you need anything just let us know, We\'ll be happy to help anytime!'], 
 		['Goodbye'],
 	],
 ]
@@ -59,7 +71,7 @@ func next_dialogue():
 			choice(choices[currentChoices], choicesAns[currentChoices])
 			if(currentChoices == 0):
 				currentChoices = 1
-				defaultPage = 2
+				defaultPage = 3
 				page = dialogue.size()
 			
 		page += 1
