@@ -29,6 +29,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
+anchor_right = 0.896786
 offset_left = 52.0
 offset_top = 53.0
 offset_right = 3827.0

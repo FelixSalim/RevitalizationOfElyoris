@@ -7,8 +7,8 @@ var dialogue = ['Are you the grandchild of the owner?', #Introduction to Elyoris
 				'I\'ll be waiting for your next progress, good luck!', #Nyangkut untuk Start Planting
 				'Looks like you have successfully planted a turnip! Here\'s some coin for you', #Quest Completed
 				'I\'ll be waiting for your next progress, good luck!', #Nyangkut Start Harvesting
-				'Is that a turnip? It\'s been so long.. Congrats! Now, I need you to plant 16 turnips, hopefully by planting a lot of crops, we can revitalize this land.', #Quest Completed
-				'Now, I need you to plant 16 turnips, hopefully by planting a lot of crops, we can revitalize this land.', #Nyangkut Restore Homeland
+				'Is that a turnip? It\'s been so long.. Congrats! Now, I need you to plant 4 turnips, hopefully by planting a lot of crops, we can revitalize this land.', #Quest Completed
+				'Now, I need you to plant 4 turnips, hopefully by planting a lot of crops, we can revitalize this land.', #Nyangkut Restore Homeland
 				'You\'ve done it! Look at our farm now, it\'so green and beautiful, from the deepest of my tiny heart, thank you, you can now start to talk to the mayor in town, I think he\'s facing some issue', #Quest Completed
 				'Hi, what are you up to?'
 				]

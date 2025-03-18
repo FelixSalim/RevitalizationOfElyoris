@@ -68,7 +68,7 @@ var quest = [
 				"QuestType" : "Talk"
 			}
 		],
-		"Rewards" : 1050
+		"Rewards" : 100
 	},
 	#{
 		#"Name" : "All Steps Together",
@@ -107,16 +107,16 @@ var quest = [
 		"Name" : "Restore Homeland!",
 		"Requirements" : [
 			{
-				"QuestDesc" : "Plant 16 turnips",
+				"QuestDesc" : "Plant 4 turnips",
 				"Target" : "TurnipPlant",
-				"MaxProgress" : 16,
+				"MaxProgress" : 4,
 				"CurrentProgress" : 0,
 				"QuestType" : "Plant"
 			},
 			{
-				"QuestDesc" : "Harvest 16 turnips",
+				"QuestDesc" : "Harvest 4 turnips",
 				"Target" : "TurnipPlant",
-				"MaxProgress" : 16,
+				"MaxProgress" : 4,
 				"CurrentProgress" : 0,
 				"QuestType" : "Harvest"
 			}
@@ -232,23 +232,23 @@ var quest = [
 				"QuestType" : "Talk"
 			}
 		],
-		"Rewards" : 150
+		"Rewards" : 1000
 	},
 	
 	{
 		"Name" : "Fix the Town",
 		"Requirements" : [
 			{
-				"QuestDesc" : "Plant 50 turnips",
+				"QuestDesc" : "Plant 8 turnips",
 				"Target" : "TurnipPlant",
-				"MaxProgress" : 50,
+				"MaxProgress" : 8,
 				"CurrentProgress" : 0,
 				"QuestType" : "Plant"
 			},
 			{
-				"QuestDesc" : "Harvest 50 turnips",
+				"QuestDesc" : "Harvest 8 turnips",
 				"Target" : "TurnipPlant",
-				"MaxProgress" : 50,
+				"MaxProgress" : 8,
 				"CurrentProgress" : 0,
 				"QuestType" : "Harvest"
 			},
@@ -257,11 +257,11 @@ var quest = [
 				"QuestDesc" : "Pay Jack to repair the Town",
 				"Target" : "Jack",
 				"MaxProgress" : 1,
-				"CurrentProgress" : 0,
+				"CurrentProgress" : 1200,
 				"QuestType" : "Rebuild"
 			},
 		],
-		"Rewards" : 0
+		"Rewards" : 250
 	},
 	{
 		"Name" : "Electricity?",
@@ -274,7 +274,7 @@ var quest = [
 				"QuestType" : "Talk"
 			}
 		],
-		"Rewards" : 150
+		"Rewards" : 2500
 	},
 	
 	#Quest Type Baru
@@ -285,8 +285,8 @@ var quest = [
 				"QuestDesc" : "Pay Jack to build the windmills",
 				"Target" : "Jack",
 				"MaxProgress" : 1,
-				"CurrentProgress" : 0,
-				"QuestType" : "Talk"
+				"CurrentProgress" : 2500,
+				"QuestType" : "Rebuild"
 			}
 		],
 		"Rewards" : 0
@@ -317,6 +317,6 @@ var quest = [
 				"QuestType" : "Talk"
 			}
 		],
-		"Rewards" : 2500
+		"Rewards" : 5000
 	},
 ]

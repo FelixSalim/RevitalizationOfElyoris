@@ -11,10 +11,10 @@ var dialogue = ['(cough, cough) Hello, I\'m busy right now', #Nyangkut sampe the
 				'I\'ll fix that windmill for us, but I need more resources, 1000 gold to be exact', #Nyangkut, repairing the windmill
 				'Just look at that!, the land below us is healing, and we are no longer sick. Thank you for your help!', #Two Birds with One Stone
 				'If you need anything, I\'ll help you to the best of my ability', #Nyangkut sampe fix the town
-				'I\'ve heard that the mayor wants to repair this town, I can try to repair this town but this time I need even more resources, 3000 gold to be exact', #Nyangkut, Fix the Town
+				'I\'ve heard that the mayor wants to repair this town, I can try to repair this town but this time I need even more resources, 1200 gold should be enough', #Nyangkut, Fix the Town
 				'If you need anything, I\'ll help you to the best of my ability', #Nyangkut abis quest dia di fix the town, stop kalo udah sampe quest electricity of for elyoris
 				'Ah, so the mayor wants to build a sustainable energy source like windmill', #Electricity for Elyoris
-				'I\'ll build it for you, but like usual, I need more resources, 5000 gold should be enough', #Nyangkut, Electricity for Elyoris
+				'I\'ll build it for you, but like usual, I need more resources, around 2500 gold', #Nyangkut, Electricity for Elyoris
 				'It\'s finally done, we have enough electricity for everyone, thank you so much for all of your help', #Electricity of Elyoris
 				'Hi, what are you up to?'
 				]
@@ -22,7 +22,7 @@ var defaultPage = 0
 var page = 0
 var choiceIdx = [1, 2, 5, 8, 11, 13]
 var questRequired = [7, 8, 9, 10, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
-var specialRequirements = [0, 500, 1000, 3000, 5000, 0]
+var specialRequirements = [0, 500, 1000, 1200, 2500, 0]
 
 var choices = [
 	['Yeah', 'Nope'],
