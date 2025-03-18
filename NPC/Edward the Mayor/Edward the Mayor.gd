@@ -19,6 +19,7 @@ var dialogue = ['Hi, my name is Edward, I am the mayor of this town', #Nyangkut 
 var defaultPage = 0
 var page = 0
 var choiceIdx = [2, 12]
+var questRequired = [6, 7, 7, 12, 14, 14, 15, 16, 17, 18, 18, 18, 19]
 var choices = [
 	['Ofcourse', 'What\'s in it for me'],
 	['How\'s the villager and environment in this town?', 'Goodbye']	
@@ -57,7 +58,7 @@ func enter():
 	# If player is colliding and pressed interact, pop notification
 	if player.get_node("InteractBox") in collision and Input.is_action_just_pressed("ui_accept") and player.movementState.name != "dialogue":
 		player.change_moving_state("dialogue")
-		player.get_node("Control/UI/Dialogue").set_npc_name("Lign")
+		player.get_node("Control/UI/Dialogue").set_npc_name("Mayor")
 		player.isChatting = true
 		player.chattingWith = self
 		next_dialogue()
@@ -65,14 +66,20 @@ func enter():
 func next_dialogue():
 	var player = get_node("../../../Environments/Player/Player")
 	if(page < dialogue.size()):
+		if QuestData.questProgress > questRequired[self.page]:
+			self.page += 1
+			
 		player.get_node("Control/UI/Dialogue").set_dialogue(dialogue[page])
 		if(page in choiceIdx):
 			player.isChoosing = true
 			choice(choices[currentChoices], choicesAns[currentChoices])
 			if(currentChoices == 0):
 				currentChoices = 1
-				defaultPage = 3
+				defaultPage = page + 1
 				page = dialogue.size()
+		elif QuestData.questProgress <= questRequired[page]:
+			defaultPage = page
+			page = dialogue.size()
 			
 		page += 1
 		
@@ -80,6 +87,9 @@ func next_dialogue():
 			player.isChatting = false
 			#player.chattingWith = null
 			page = defaultPage
+			
+			# Checks quest and add progress if available
+			player.check_progress("Talk", "Edward")
 	else:
 		player.isChatting = false
 		#player.chattingWith = null

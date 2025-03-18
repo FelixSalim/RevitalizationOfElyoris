@@ -20,15 +20,43 @@ var dialogue = ['(cough, cough) Hello, I\'m busy right now', #Nyangkut sampe the
 				]
 var defaultPage = 0
 var page = 0
-var choiceIdx = [1, 13]
+var choiceIdx = [1, 2, 5, 8, 11, 13]
+var questRequired = [7, 8, 9, 10, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+var specialRequirements = [0, 500, 1000, 3000, 5000, 0]
+
 var choices = [
 	['Yeah', 'Nope'],
+	['Sure', 'Not Yet'],
+	['Sure', 'Not Yet'],
+	['Sure', 'Not Yet'],
+	['Sure', 'Not Yet'],
 	['Great! How\'s your life now?', 'Goodbye']	
 ]
+
 var choicesAns = [
 	[
 		['If you haven\'t visited the land below our town, it\'s miserable, but I think I\'ve found the source of all this problem', 'That wicked coal plant, I can remove it but I need some resources', 'Can you get me 500 gold, I\'ll remove that power plant after that.'], 
 		['Huh, really? Well then, I actually still need to talk to you', 'If you haven\'t visited the land below our town, it\'s miserable, but I think I\'ve found the source of all this problem', 'That wicked coal plant, I can remove it but I need some resources', 'Can you get me 500 gold, I\'ll remove that power plant after that.']
+	],
+	
+	[
+		['Alright then, I\'ll work ont it!'], 
+		['Fine']
+	],
+	
+	[
+		['Alright then, I\'ll work ont it!'], 
+		['Fine']
+	],
+	
+	[
+		['Alright then, I\'ll work ont it!'], 
+		['Fine']
+	],
+	
+	[
+		['Alright then, I\'ll work ont it!'], 
+		['Fine']
 	],
 	
 	[
@@ -41,17 +69,17 @@ var currentChoices = 0
 
 # Load saved dialogue
 func _ready():
-	self.defaultPage = int(Game.redPanda['defaultPage'])
+	self.defaultPage = int(Game.jack['defaultPage'])
 	self.page = self.defaultPage
-	self.currentChoices = int(Game.redPanda['currentChoice'])
+	self.currentChoices = int(Game.jack['currentChoice'])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 # If player interaction is colliding, show notification
 func _process(delta: float) -> void:
 	if collision.size() > 0:
 		enter()
-	Game.redPanda['defaultPage'] = self.defaultPage
-	Game.redPanda['currentChoice'] = self.currentChoices
+	Game.jack['defaultPage'] = self.defaultPage
+	Game.jack['currentChoice'] = self.currentChoices
 
 func enter():
 	# Stores player
@@ -59,7 +87,7 @@ func enter():
 	# If player is colliding and pressed interact, pop notification
 	if player.get_node("InteractBox") in collision and Input.is_action_just_pressed("ui_accept") and player.movementState.name != "dialogue":
 		player.change_moving_state("dialogue")
-		player.get_node("Control/UI/Dialogue").set_npc_name("Lign")
+		player.get_node("Control/UI/Dialogue").set_npc_name("Jack")
 		player.isChatting = true
 		player.chattingWith = self
 		next_dialogue()
@@ -67,6 +95,9 @@ func enter():
 func next_dialogue():
 	var player = get_node("../../../Environments/Player/Player")
 	if(page < dialogue.size()):
+		if QuestData.questProgress > questRequired[self.page]:
+			self.page += 1
+		
 		player.get_node("Control/UI/Dialogue").set_dialogue(dialogue[page])
 		if(page in choiceIdx):
 			player.isChoosing = true
@@ -75,6 +106,9 @@ func next_dialogue():
 				currentChoices = 1
 				defaultPage = 1
 				page = dialogue.size()
+		elif QuestData.questProgress <= questRequired[page]:
+			defaultPage = page
+			page = dialogue.size()
 			
 		page += 1
 		
@@ -82,13 +116,16 @@ func next_dialogue():
 			player.isChatting = false
 			#player.chattingWith = null
 			page = defaultPage
+			
+			# Checks quest and add progress if available
+			player.check_progress("Talk", "Jack")
 	else:
 		player.isChatting = false
 		#player.chattingWith = null
 		page = defaultPage
 		
 		# Checks quest and add progress if available
-		player.check_progress("Talk", "RedPanda")
+		player.check_progress("Talk", "Jack")
 			
 func choice(choice, choiceAns):
 	var player = get_node("../../../Environments/Player/Player")

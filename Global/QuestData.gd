@@ -172,7 +172,7 @@ var quest = [
 				"Target" : "Jack",
 				"MaxProgress" : 1,
 				"CurrentProgress" : 0,
-				"QuestType" : "Talk"
+				"QuestType" : "Rebuild"
 			}
 		],
 		"Rewards" : 0
@@ -201,7 +201,7 @@ var quest = [
 				"Target" : "Jack",
 				"MaxProgress" : 1,
 				"CurrentProgress" : 0,
-				"QuestType" : "Talk"
+				"QuestType" : "Rebuild"
 			}
 		],
 		"Rewards" : 0

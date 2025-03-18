@@ -6,13 +6,18 @@ var currentInteractingState = "None"
 # Stores if player is currently interacting
 var isInteracting = false
 
-# Stores red panda dialogue
+# Stores NPC dialogue
 var redPanda = {
 	"currentChoice" : 0,
 	"defaultPage" : 0
 }
 
 var mayor = {
+	"currentChoice" : 0,
+	"defaultPage" : 0
+}
+
+var jack = {
 	"currentChoice" : 0,
 	"defaultPage" : 0
 }

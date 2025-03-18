@@ -90,15 +90,19 @@ func next_day():
 
 func quest_handler():
 	# Quest Requirements has been reached, move to a new area
-	if QuestData.questProgress >= 9:
+	#if QuestData.questProgress >= 9:
+	if QuestData.questProgress >= 6:
 		Settings.fix_home()
 		for land in get_node("../TillableLands2").get_children():
 			land.init_plant()
 			
 	if QuestData.questProgress >= 12:
+		Settings.fix_generator_area()
+			
+	if QuestData.questProgress >= 15:
 		Settings.fix_town()
 			
-	if Game.totalPlant >= 30:
+	if Game.totalPlant >= 17:
 		Settings.fix_farmland_to_town()
 
 func money_handler():

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dqjlwskvy3m2i"]
 
-[ext_resource type="Texture2D" uid="uid://oydi74chaa62" path="res://Assets/NPC/RedPanda/redpanda-Sheet.png" id="1_xexcg"]
+[ext_resource type="Texture2D" uid="uid://tuipo63cxv8q" path="res://Assets/NPC/Jack/jack.png" id="1_efyco"]
 [ext_resource type="Script" path="res://NPC/Jack the Lumberjack/Jack.gd" id="2_kmw8s"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sxu7s"]
@@ -14,18 +14,22 @@ height = 118.0
 [node name="Jack" type="CharacterBody2D"]
 
 [node name="Jack" type="Sprite2D" parent="."]
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_xexcg")
+position = Vector2(2, 0)
+scale = Vector2(1.06042, 0.986777)
+texture = ExtResource("1_efyco")
 
 [node name="InteractArea" type="Area2D" parent="."]
 script = ExtResource("2_kmw8s")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
 shape = SubResource("CapsuleShape2D_sxu7s")
+metadata/_edit_lock_ = true
 
 [node name="Collision1" type="CollisionShape2D" parent="."]
 position = Vector2(1, 2)
 shape = SubResource("CapsuleShape2D_pgrnl")
+metadata/_edit_lock_ = true
 
 [connection signal="area_entered" from="InteractArea" to="InteractArea" method="_on_area_entered"]
 [connection signal="area_exited" from="InteractArea" to="InteractArea" method="_on_area_exited"]
