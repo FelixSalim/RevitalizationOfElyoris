@@ -82,6 +82,7 @@ func update_holding_sprite():
 	# If player is holding instantiate the node if it is a different node or no node exist
 	if player.isHolding and not player.isInteracting:
 		var item = load(ItemData.harvest[Game.inventory[Game.selected] - 100]["Location"]).instantiate()
+		
 		item.name = "HoldItem"
 		if player.has_node("HoldItem"):
 			if player.get_node("HoldItem").harvestID != item.harvestID:

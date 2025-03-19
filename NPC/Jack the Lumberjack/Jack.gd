@@ -16,13 +16,12 @@ var dialogue = ['(cough, cough) Hello, I\'m busy right now', #Nyangkut sampe the
 				'Ah, so the mayor wants to build a sustainable energy source like windmill', #Electricity for Elyoris
 				'I\'ll build it for you, but like usual, I need more resources, around 2500 gold', #Nyangkut, Electricity for Elyoris
 				'It\'s finally done, we have enough electricity for everyone, thank you so much for all of your help', #Electricity of Elyoris
-				'Hi, what are you up to?'
 				]
-var defaultPage = 0
+var defaultPage = 0	
 var page = 0
-var choiceIdx = [1, 2, 5, 8, 11, 13]
-var questRequired = [7, 8, 9, 10, 10, 11, 12, 13, 14, 15, 15, 16, 17, 19]
-var specialRequirements = [0, 500, 1000, 1200, 2500, 0]
+var choiceIdx = [1, 2, 5, 8, 11]
+var questRequired = [7, 8, 9, 10, 10, 11, 12, 13, 14, 15, 15, 16, 19]
+var specialRequirements = [0, 500, 1000, 1200, 2500]
 
 var choices = [
 	['Yeah', 'Nope'],
@@ -30,7 +29,6 @@ var choices = [
 	['Sure', 'Not Yet'],
 	['Sure', 'Not Yet'],
 	['Sure', 'Not Yet'],
-	['Great! How\'s your life now?', 'Goodbye']	
 ]
 
 var choicesAns = [
@@ -57,11 +55,6 @@ var choicesAns = [
 	[
 		['Alright then, I\'ll work on it!'], 
 		['Guess you haven\'t met the requirement yet']
-	],
-	
-	[
-		['I\'ve also been doing great, just a bit busy now, once again, thanks for all of your help'], 
-		['Goodbye'],
 	],
 ]
 

@@ -14,25 +14,19 @@ var dialogue = ['Hi, my name is Edward, I am the mayor of this town', #Nyangkut 
 				'This is my final request to you, talk to jack for a new renewable energy power plant like windmill', #Nyangkut, electricity for elyoris
 				'You truly have revitalized Elyoris, I\'m forever grateful and thankful for what you\'ve done', #Revitalization of Elyoris
 				'It isn\'t much but, here is some gold for you' , #Revitalization of Elyoris
-				'I don\'t think there is anymore I can ask you, enjoy Elyoris and give my thanks to your parent for raising such a wonderful child like you' , #Revitalization of Elyoris
-				'Hi, what are you up to?']
+				'I don\'t think there is anymore I can ask you, enjoy Elyoris and give my thanks to your parent for raising such a wonderful child like you'
+				] #Revitalization of Elyoris
 var defaultPage = 0
 var page = 0
-var choiceIdx = [2, 12]
-var questRequired = [6, 6, 7, 12, 13, 13, 14, 15, 17, 18, 18, 18, 19]
+var choiceIdx = [2]
+var questRequired = [6, 6, 7, 12, 13, 13, 14, 15, 17, 18, 18, 19]
 var choices = [
 	['Ofcourse', 'What\'s in it for me'],
-	['How\'s the villager and environment in this town?', 'Goodbye']	
 ]
 var choicesAns = [
 	[
 		['Thank you, our town will thank you for your generosity', 'You can try to ask Jack near the land below our town, some villagers are noticeably more sick there'], 
 		['Well.. we do have some reward that is ready', 'If you want to, you can try to ask Jack near the land below our town, some villagers are noticeably more sick there']
-	],
-	
-	[
-		['It\'s great now since you\'ve fixed everything, thanks!', 'If you need anything just let us know, We\'ll be happy to help anytime!'], 
-		['Goodbye'],
 	],
 ]
 
