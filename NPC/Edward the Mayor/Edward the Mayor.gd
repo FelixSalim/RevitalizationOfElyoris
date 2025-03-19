@@ -19,7 +19,7 @@ var dialogue = ['Hi, my name is Edward, I am the mayor of this town', #Nyangkut 
 var defaultPage = 0
 var page = 0
 var choiceIdx = [2, 12]
-var questRequired = [6, 6, 7, 12, 14, 14, 15, 16, 17, 18, 18, 18, 19]
+var questRequired = [6, 6, 7, 12, 13, 13, 14, 15, 17, 18, 18, 18, 19]
 var choices = [
 	['Ofcourse', 'What\'s in it for me'],
 	['How\'s the villager and environment in this town?', 'Goodbye']	

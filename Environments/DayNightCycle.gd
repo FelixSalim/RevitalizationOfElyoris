@@ -119,8 +119,41 @@ func growth_handler():
 	# get land
 	var world = get_parent()
 	var lands = world.get_node("TillableLands")
+	var lands2 = world.get_node("TillableLands2")
 	
 	for land in lands.get_children():
+		# if land is watered and has a seed, advance seed progress
+		if land.isWatered and land.tileState == "Planted":
+			land.get_child(2).next_progress()
+		
+		# if land is not watered and not has a seed, turn back to normal land
+		if not land.isWatered and land.tileState == "Tilled":
+			land.tileState = "Tillable"
+		
+		# if land is watered, remove the water
+		if land.isWatered:
+			land.isWatered = false
+			
+		# Keep track of plot data
+		var data
+		if land.tileState == "Planted":
+			data = {
+				"tileState" : land.tileState,
+				"isWatered" : land.isWatered,
+				"plant" : land.get_child(2).name,
+				"plantProgress" : land.get_child(2).progress
+			}
+		else:
+			data = {
+				"tileState" : land.tileState,
+				"isWatered" : land.isWatered,
+				"plant" : null,
+				"plantProgress" : 0
+			}
+		
+		Game.plot[str(land.id - 1)] = data
+		
+	for land in lands2.get_children():
 		# if land is watered and has a seed, advance seed progress
 		if land.isWatered and land.tileState == "Planted":
 			land.get_child(2).next_progress()

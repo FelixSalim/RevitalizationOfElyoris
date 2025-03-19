@@ -15,11 +15,16 @@ var collision = []
 # Update sprites accordingly and check collision
 func _process(delta):
 	# Update stage
+	#if progress == 2:
+		#stage = 2
+	#elif progress == 4:
+		#stage = 3
+	#elif progress == 5:
+		#stage = 4
+		
 	if progress == 2:
 		stage = 2
-	elif progress == 4:
-		stage = 3
-	elif progress == 5:
+	elif progress == 3:
 		stage = 4
 	
 	plantSprite.frame = stage - 1
@@ -68,7 +73,10 @@ func harvest():
 
 # Advance to next stage
 func next_progress():
-	if self.progress < 6:
+	#if self.progress < 6:
+		#self.progress += 1
+		
+	if self.progress < 4:
 		self.progress += 1
 
 # When a collision occurs, add the collision to the array

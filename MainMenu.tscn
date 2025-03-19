@@ -63,10 +63,10 @@ theme = ExtResource("2_mr3yj")
 
 [node name="Label" type="Label" parent="Panel2"]
 layout_mode = 0
-offset_left = 158.0
-offset_top = 69.0
-offset_right = 1425.0
-offset_bottom = 370.0
+offset_left = 144.0
+offset_top = 65.0
+offset_right = 1494.0
+offset_bottom = 366.0
 scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 300
@@ -85,10 +85,10 @@ theme = ExtResource("2_mr3yj")
 
 [node name="Label" type="Label" parent="Panel3"]
 layout_mode = 0
-offset_left = 158.0
-offset_top = 69.0
-offset_right = 1425.0
-offset_bottom = 370.0
+offset_left = 144.0
+offset_top = 71.0
+offset_right = 1494.0
+offset_bottom = 372.0
 scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 300

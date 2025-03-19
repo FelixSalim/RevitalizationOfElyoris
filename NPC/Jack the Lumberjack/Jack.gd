@@ -21,7 +21,7 @@ var dialogue = ['(cough, cough) Hello, I\'m busy right now', #Nyangkut sampe the
 var defaultPage = 0
 var page = 0
 var choiceIdx = [1, 2, 5, 8, 11, 13]
-var questRequired = [7, 8, 9, 10, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+var questRequired = [7, 8, 9, 10, 10, 11, 12, 13, 14, 15, 15, 16, 17, 19]
 var specialRequirements = [0, 500, 1000, 1200, 2500, 0]
 
 var choices = [

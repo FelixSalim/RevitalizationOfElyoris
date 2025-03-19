@@ -121,7 +121,7 @@ var quest = [
 				"QuestType" : "Harvest"
 			}
 		],
-		"Rewards" : 0
+		"Rewards" : 100
 	},
 	{
 		"Name" : "Revitalized the Farmland",
@@ -160,7 +160,7 @@ var quest = [
 				"QuestType" : "Talk"
 			}
 		],
-		"Rewards" : 0
+		"Rewards" : 50
 	},
 	
 	#Quest Type Baru
@@ -232,7 +232,7 @@ var quest = [
 				"QuestType" : "Talk"
 			}
 		],
-		"Rewards" : 1000
+		"Rewards" : 1050
 	},
 	
 	{
@@ -257,7 +257,7 @@ var quest = [
 				"QuestDesc" : "Pay Jack to repair the Town",
 				"Target" : "Jack",
 				"MaxProgress" : 1,
-				"CurrentProgress" : 1200,
+				"CurrentProgress" : 0,
 				"QuestType" : "Rebuild"
 			},
 		],
@@ -285,7 +285,7 @@ var quest = [
 				"QuestDesc" : "Pay Jack to build the windmills",
 				"Target" : "Jack",
 				"MaxProgress" : 1,
-				"CurrentProgress" : 2500,
+				"CurrentProgress" : 0,
 				"QuestType" : "Rebuild"
 			}
 		],
