@@ -28,7 +28,8 @@ func enter():
 			player.get_node("AnimationPlayer").play("WaterUp")
 			
 		player.get_node("Control/UI/InventoryBar/Slots").get_child(Game.selected).get_child(2).water = 100
-
+		player.get_node("AudioStreamPlayer").stream = load("res://Assets/Audio/filling-water.mp3")
+		player.get_node("AudioStreamPlayer").play()
 	
 # When a collision occurs, add the collision to the array
 func _on_area_2d_area_entered(area: Area2D) -> void:

@@ -92,6 +92,8 @@ func check_completion():
 		if completed:
 			Game.money += curQuest["Rewards"]
 			QuestData.questProgress += 1
+			self.get_node("AudioStreamPlayer").stream = load("res://Assets/Audio/quest-complete.mp3")
+			self.get_node("AudioStreamPlayer").play()
 
 # Check Idling Animation, update to current condition
 func check_idling_animation():
@@ -202,10 +204,10 @@ func change_interacting_state(stateName):
 
 # Read when player is not interacting, change the interacting variable
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	if anim_name not in ["Walk Up", "Walk Down", "Walk Left", "Walk Right", "Idle Up", "Idle Down", "Idle Left", "Idle Right", "HoldUp", "HoldDown", "HoldRight", "HoldLeft", "HoldWalkUp", "HoldWalkDown", "HoldWalkRight", "HoldWalkLeft"] and self.movementState.name != "notify":
+	if anim_name not in ["Walk Up", "Walk Down", "Walk Left", "Walk Right", "Idle Up", "Idle Down", "Idle Left", "Idle Right", "HoldUp", "HoldDown", "HoldRight", "HoldLeft", "HoldWalkUp", "HoldWalkDown", "HoldWalkRight", "HoldWalkLeft", "Fade In", "Fade Out"] and self.movementState.name != "notify":
 		isInteracting = false
 
 # Read when player is interacting, change the interacting variable
 func _on_animation_player_animation_started(anim_name: StringName) -> void:
-	if anim_name not in ["Walk Up", "Walk Down", "Walk Left", "Walk Right", "Idle Up", "Idle Down", "Idle Left", "Idle Right", "HoldUp", "HoldDown", "HoldRight", "HoldLeft", "HoldWalkUp", "HoldWalkDown", "HoldWalkRight", "HoldWalkLeft"] and self.movementState.name != "notify":
+	if anim_name not in ["Walk Up", "Walk Down", "Walk Left", "Walk Right", "Idle Up", "Idle Down", "Idle Left", "Idle Right", "HoldUp", "HoldDown", "HoldRight", "HoldLeft", "HoldWalkUp", "HoldWalkDown", "HoldWalkRight", "HoldWalkLeft", "Fade In", "Fade Out"] and self.movementState.name != "notify":
 		isInteracting = true

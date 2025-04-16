@@ -31,7 +31,7 @@ func init_plant():
 		if tileState == "Planted":
 			var plant
 			# Load plant
-			if landData["plant"] == "TurnipPlant":
+			if landData["plant"] == "TurnipPlant" and self.get_child_count() < 3:
 				plant = preload("res://Plants/TurnipPlant.tscn").instantiate()
 				self.add_child(plant)
 				plant.progress = landData["plantProgress"]

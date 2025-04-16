@@ -23,7 +23,7 @@ func _ready() -> void:
 func update_quest_description(i, curQuest, control):
 	var questDescription = Label.new()
 	questDescription.name = "QuestDesc"
-	questDescription.add_theme_font_size_override("font_size", 250)
+	questDescription.add_theme_font_size_override("font_size", 275)
 	questDescription.add_theme_color_override("font_color", Color.BLACK)
 	questDescription.scale = Vector2(0.2, 0.2)
 	questDescription.position = Vector2(2, 101)
@@ -33,7 +33,7 @@ func update_quest_description(i, curQuest, control):
 func update_quest_progress(i, curQuest, control):
 	var questProgress = Label.new()
 	questProgress.name = "Progress"
-	questProgress.add_theme_font_size_override("font_size", 250)
+	questProgress.add_theme_font_size_override("font_size", 275)
 	questProgress.add_theme_color_override("font_color", Color.BLACK)
 	questProgress.scale = Vector2(0.2, 0.2)
 	questProgress.position = Vector2(1324, 101)

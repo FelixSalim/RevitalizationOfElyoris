@@ -17,8 +17,10 @@ func load_inventory():
 				item = load(ItemData.item[Game.inventory[i]]["Location"]).instantiate()
 			elif Game.inventory[i] >= 100:
 				item = load(ItemData.harvest[Game.inventory[i] - 100]["Location"]).instantiate()
-			item.position = Vector2(89 + i * 125, 88)
+			item.position = Vector2(89 + i * 125, 85)
 			item.scale = Vector2(0.75, 0.75)
+			if Game.inventory[i] == 100:
+				item.offset = Vector2(-6, 0)
 			get_node("Slots/Slot" + str(i+1)).add_child(item)
 
 # Update amount to show
@@ -80,6 +82,7 @@ func update_holding_sprite():
 	# If player is holding instantiate the node if it is a different node or no node exist
 	if player.isHolding and not player.isInteracting:
 		var item = load(ItemData.harvest[Game.inventory[Game.selected] - 100]["Location"]).instantiate()
+		
 		item.name = "HoldItem"
 		if player.has_node("HoldItem"):
 			if player.get_node("HoldItem").harvestID != item.harvestID:

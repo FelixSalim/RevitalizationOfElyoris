@@ -7,13 +7,13 @@ extends Control
 
 func set_daytime(day, hour, minute):
 	# Update text, day is added by 1 because day starts from 0
-	dayLabel.text = "Day " + str(day + 1) 
-	var am_pm = "am"
+	dayLabel.text = "Day" + str(day + 1) 
+	var am_pm = "AM"
 	var shownHour = hour
 	
 	# Turn the am to pm
 	if hour >= 12:
-		am_pm = "pm"
+		am_pm = "PM"
 		if(hour > 12):
 			shownHour -= 12
 	
@@ -21,7 +21,7 @@ func set_daytime(day, hour, minute):
 		shownHour = 12
 	
 	# Update the label
-	timeLabel.text = ("%02d:%02d %s" % [shownHour, minute, am_pm])
+	timeLabel.text = ("%02d:%02d%s" % [shownHour, minute, am_pm])
 	
 	# Set the arrow rotation
 	if hour <= 12:

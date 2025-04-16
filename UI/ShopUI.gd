@@ -16,15 +16,17 @@ func _ready() -> void:
 		slot.add_child(item)
 		var price = Label.new()
 		price.name = "Label"
-		price.position = Vector2(25, 136)
+		price.position = Vector2(12, 144)
 		price.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		price.add_theme_font_size_override("font", 200)
+		price.add_theme_font_size_override("font_size", 250)
+		price.add_theme_font_override("font", load("res://Assets/Fonts/Custom/allcharacters-Sheet.png"))
 		price.scale = Vector2(0.2, 0.2)
 		slot.add_child(price)
-		slot.get_node("Label").text = "Price : " + str(itemsForSale[i]["Price"])
+		slot.get_node("Label").text = "Price:" + str(itemsForSale[i]["Price"])
 
 func add_item_to_inv(itemID):
 	var player = get_node("../../..")
+	player.get_node("AudioStreamPlayer").stream = load("res://Assets/Audio/buying.mp3")
 	var found = false
 	for i in range(len(Game.inventory)):
 		if Game.inventory[i] == itemID:
@@ -34,6 +36,7 @@ func add_item_to_inv(itemID):
 				break
 	
 	if found:
+		player.get_node("AudioStreamPlayer").play()
 		return
 	
 	var inventoryAvailable = false
@@ -46,6 +49,7 @@ func add_item_to_inv(itemID):
 			break
 	
 	if inventoryAvailable:
+		player.get_node("AudioStreamPlayer").play()
 		return
 	
 	print("Ran out of space")
@@ -56,7 +60,6 @@ func _input(event):
 		if len(itemsForSale) >= 1 and Game.money >= itemsForSale[0]["Price"]:
 			Game.money -= itemsForSale[0]["Price"]
 			add_item_to_inv(itemsForSale[0]["ID"])
-			print(Game.inventory, Game.inventoryAmount)
 	if event.is_action_pressed("buy_2"):
 		if len(itemsForSale) >= 2 and Game.money >= itemsForSale[1]["Price"]:
 			Game.money -= itemsForSale[1]["Price"]

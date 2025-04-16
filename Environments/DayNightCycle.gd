@@ -34,9 +34,9 @@ func _ready():
 # Only do so if player is not interacting
 func _process(delta: float) -> void:
 	if not Game.isInteracting:
-		time += delta / 50
+		time += delta / 15
 		#print(time)
-		colorTime += delta / 100
+		colorTime += delta / 30
 		if(colorTime >= PI):
 			colorTime = 0.0
 		# Calculates value to time
@@ -50,6 +50,7 @@ func _process(delta: float) -> void:
 
 # Move to beginning of next day
 func next_day():
+	
 	# Current total game minutes
 	var curTime = real_to_ingame_time(time)
 	
@@ -89,15 +90,19 @@ func next_day():
 
 func quest_handler():
 	# Quest Requirements has been reached, move to a new area
-	if QuestData.questProgress >= 9:
+	#if QuestData.questProgress >= 9:
+	if QuestData.questProgress >= 6:
 		Settings.fix_home()
 		for land in get_node("../TillableLands2").get_children():
 			land.init_plant()
 			
 	if QuestData.questProgress >= 12:
+		Settings.fix_generator_area()
+			
+	if QuestData.questProgress >= 15:
 		Settings.fix_town()
 			
-	if Game.totalPlant >= 30:
+	if Game.totalPlant >= 5:
 		Settings.fix_farmland_to_town()
 
 func money_handler():
@@ -114,8 +119,41 @@ func growth_handler():
 	# get land
 	var world = get_parent()
 	var lands = world.get_node("TillableLands")
+	var lands2 = world.get_node("TillableLands2")
 	
 	for land in lands.get_children():
+		# if land is watered and has a seed, advance seed progress
+		if land.isWatered and land.tileState == "Planted":
+			land.get_child(2).next_progress()
+		
+		# if land is not watered and not has a seed, turn back to normal land
+		if not land.isWatered and land.tileState == "Tilled":
+			land.tileState = "Tillable"
+		
+		# if land is watered, remove the water
+		if land.isWatered:
+			land.isWatered = false
+			
+		# Keep track of plot data
+		var data
+		if land.tileState == "Planted":
+			data = {
+				"tileState" : land.tileState,
+				"isWatered" : land.isWatered,
+				"plant" : land.get_child(2).name,
+				"plantProgress" : land.get_child(2).progress
+			}
+		else:
+			data = {
+				"tileState" : land.tileState,
+				"isWatered" : land.isWatered,
+				"plant" : null,
+				"plantProgress" : 0
+			}
+		
+		Game.plot[str(land.id - 1)] = data
+		
+	for land in lands2.get_children():
 		# if land is watered and has a seed, advance seed progress
 		if land.isWatered and land.tileState == "Planted":
 			land.get_child(2).next_progress()

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cpuk4xaq13bjs"]
 
 [ext_resource type="Script" path="res://UI/Dialogue.gd" id="1_4cisr"]
-[ext_resource type="Theme" uid="uid://dkdu8uvx0uyg2" path="res://UI/Notification.tres" id="2_786sq"]
+[ext_resource type="Theme" uid="uid://dxwvjugjctsk5" path="res://UI/Notification.tres" id="2_786sq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7n3m"]
 size = Vector2(570, 80)
@@ -29,13 +29,14 @@ metadata/_edit_use_anchors_ = true
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
+anchor_right = 0.896786
 offset_left = 52.0
 offset_top = 53.0
 offset_right = 3827.0
 offset_bottom = 213.0
 scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 160
 text = "Test"
 vertical_alignment = 1
 autowrap_mode = 3
@@ -69,7 +70,7 @@ offset_right = 433.6
 offset_bottom = 143.987
 scale = Vector2(0.25, 0.25)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 160
 text = "Test"
 horizontal_alignment = 1
 vertical_alignment = 1

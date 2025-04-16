@@ -22,4 +22,5 @@ func interact(tile, tileState, collision):
 			
 			# Change the state of tile
 			tile.tileState = "Tilled"
-			
+			player.get_node("AudioStreamPlayer").stream = load("res://Assets/Audio/tilling-land.mp3")
+			player.get_node("AudioStreamPlayer").play()
